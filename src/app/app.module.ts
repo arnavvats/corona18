@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { EventButtonComponent } from './shared/components/event-button/event-button.component';
+import { EventComponent } from './pages/event/event.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    EventButtonComponent
+    EventButtonComponent,
+    EventComponent
   ],
   imports: [
     BrowserModule,

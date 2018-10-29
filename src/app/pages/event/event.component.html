@@ -1,0 +1,37 @@
+<main class="position-relative">
+  <div class="about">
+    <h1 class="heading">
+      ALGO-Z-RIPPER
+    </h1>
+    <div class="description">
+      Lorem dsfhsdkfjn sdhfknsd,fs sdfbksbf sfsjfkjsbfksdbf
+      Lorem dsfhsdkfjn sdhfknsd,fs sdfbksbf sfsjfkjsbfksdbf
+      Lorem dsfhsdkfjn sdhfknsd,fs sdfbksbf sfsjfkjsbfksdbf
+      Lorem dsfhsdkfjn sdhfknsd,fs sdfbksbf sfsjfkjsbfksdbf
+    </div>
+    <div class="timer d-flex justify-content-around">
+      <div>
+        <p>{{timer.days}}</p>
+        <p>D</p>
+      </div>
+      <div>
+          <p>{{timer.hours}}</p>
+          <p>H</p>
+      </div>
+      <div>
+          <p>{{timer.minutes}}</p>
+          <p>M</p>
+      </div>
+      <div>
+          <p>{{timer.seconds}}</p>
+          <p>S</p>
+      </div>
+    </div>
+  </div>
+    <div>
+            <app-event-button [left]="true" [imageURL]="events[0].image" [text]="events[0].name">
+                </app-event-button>
+                <app-event-button [left]="false" [imageURL]="events[1].image" [text]="events[1].name"></app-event-button>
+    </div>
+
+</main>

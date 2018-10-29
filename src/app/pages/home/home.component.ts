@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
     ]
   }, {
     name: "Creative",
-    image: "smart-tv.png"
+    image: "smart-tv-2.png"
   }]
   constructor() { }
 
