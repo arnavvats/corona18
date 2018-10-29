@@ -9,24 +9,26 @@
       Lorem dsfhsdkfjn sdhfknsd,fs sdfbksbf sfsjfkjsbfksdbf
       Lorem dsfhsdkfjn sdhfknsd,fs sdfbksbf sfsjfkjsbfksdbf
     </div>
-    <div class="timer d-flex justify-content-around">
-      <div>
+    <div class="text-center pt-5 mb-1 timer-header">- &nbsp;STARTS &nbsp;IN &nbsp;-</div>
+    <div class="timer row mb-3">
+      <div class="col-3">
         <p>{{timer.days}}</p>
-        <p>D</p>
+        <p>DAYS</p>
       </div>
-      <div>
+      <div class="col-3">
           <p>{{timer.hours}}</p>
-          <p>H</p>
+          <p>HRS</p>
       </div>
-      <div>
+      <div class="col-3">
           <p>{{timer.minutes}}</p>
-          <p>M</p>
+          <p>MIN</p>
       </div>
-      <div>
+      <div class="col-3">
           <p>{{timer.seconds}}</p>
-          <p>S</p>
+          <p>SEC</p>
       </div>
     </div>
+    <button class="btn mt-5 p-2">REGISTER</button>
   </div>
     <div>
             <app-event-button [left]="true" [imageURL]="events[0].image" [text]="events[0].name">

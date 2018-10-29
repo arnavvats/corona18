@@ -2,6 +2,7 @@
     height: 82px;
     border-top:  1px solid white;
     border-bottom: 1px solid white;
+    padding: 1em;
     .para {
         vertical-align: middle;
         margin: auto;
@@ -11,11 +12,11 @@
 }
 .img-container {
     border: 1px solid white;
+    margin-left: 41px;
+    position: absolute;
     padding: 1em;
     float: right;
-    position: absolute;
     border-radius: 50px;
-    left: 9em;
     background: black;
 }
 img {
@@ -25,23 +26,33 @@ img {
     float: right;
     .text {
         margin-left: 41px;
-        padding-left: 2em;
+       .para { padding-left: 5em;
+       }
     }
     .img-container {
         left: 0em;
+        margin-left:0; 
+
     }
 }
 .parent {
     width: fit-content;
+    flex-direction: row-reverse;
 
 }
 .parent:hover {
     cursor: pointer;
     .text {
-        background: rgba(255,255,255,0.2);
+        background: black;
+        @media(min-width: 992px) {
+            background: rgba(255,255,255,0.2);
+        }
     }
     img {
         animation: rotate360 1s ease-in-out;
+    }
+    .para {
+        display: block !important;
     }
 }
 @keyframes rotate360 {
