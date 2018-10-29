@@ -16,7 +16,7 @@ export const eventData =
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
 			description:"Are you creative enough to bring your dreams to life, to visualise your ideas and give them a shape? Yes! Then this the right place for you to unveil your talent.Creativity is a wild mind and a disciplined eye. It is an art to explore your ideas to extraordinary way from the ordinary work.Dare to expand your imagination to visualize a landscape to blend man’s technology into nature’s surroundings or design a building that could idealize your thoughts. Have an eye to catch the amazing moments and a mind to turn a waste free world with the following events.",
-			imageURL:
+			imageURL:""
 			children: 
 			[
 				{ 
@@ -26,7 +26,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"Do you belong to the crazy world of gamers, coders and developers ?  If coding is your cardio, gaming is your passion and designing websites is your dream, then gear up for this exhilarating event of TCF’17.Explore your mind, code your thoughts, compile your ideas and give your passion a run !A true gamer knows that the secret of getting ahead is to get started. So what to wait for, shout out your passion to the world  with these exciting events.",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -53,7 +53,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"The web is the new grand coliseum. Web Weaver is an event to showcase your skills in the field of basic development of web pages. Create your own visual style… let it be unique for yourself and yet identifiable for others.",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -80,7 +80,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"For good ideas and true innovation, you need human interaction, conflict, argument and debate. - Margaret Heffernan Come up with a spark of innovation to improve the lives around you by fuelling your brain to ideate the ideas that never existed!!",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -114,7 +114,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"For good ideas and true innovation, you need human interaction, conflict, argument and debate. - Margaret Heffernan Come up with a spark of innovation to improve the lives around you by fuelling your brain to ideate the ideas that never existed!!",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -134,7 +134,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"THE NEWEST AND THE GRANDEST EVENT OF TCF'19",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -164,7 +164,7 @@ export const eventData =
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
 			description:"Are you creative enough to bring your dreams to life, to visualise your ideas and give them a shape? Yes! Then this the right place for you to unveil your talent. “Creativity is a wild mind and a disciplined eye. It is an art to explore your ideas to extraordinary way from the ordinary work.” Dare to expand your imagination to visualize a landscape to blend man’s technology into nature’s surroundings or design a building that could idealize your thoughts. Have an eye to catch the amazing moments and a mind to turn a waste free world with the following events.",
-			imageURL:
+			imageURL:""
 			children: 
 			[
 				{ 
@@ -174,7 +174,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"LOREM IPSUM LANDSCAPE DESIGN",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -201,7 +201,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"LOREM IPSUM MAIN DESIGN",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -228,7 +228,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"lorem ipsum photography",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -262,7 +262,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"LOREM IPSUM BEST OUT OF WASTE",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -282,7 +282,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"LOREM IPSUM ART EXPO",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -312,7 +312,7 @@ export const eventData =
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
 			description:"LOREM IPSUM CONCRETE",
-			imageURL:
+			imageURL:""
 			children: 
 			[
 				{ 
@@ -322,7 +322,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"LOREM IPSUM CEREBRO",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -349,7 +349,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"LOREM IPSUM illubrico",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -376,7 +376,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"lorem ipsum photography",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -410,7 +410,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"LOREM IPSUM BEST OUT OF WASTE",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -433,7 +433,7 @@ export const eventData =
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
 			description:"LOREM IPSUM yantriki",
-			imageURL:
+			imageURL:""
 			children: 
 			[
 				{ 
@@ -443,7 +443,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"LOREM IPSUM Machinist",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -477,7 +477,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"LOREM IPSUM mech-a-rush",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -504,7 +504,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"lorem ipsum Innovative-exempler",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -527,7 +527,7 @@ export const eventData =
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
 			description:"LOREM IPSUM ohm",
-			imageURL:
+			imageURL:""
 			children: 
 			[
 				{ 
@@ -537,7 +537,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"LOREM IPSUM Circuitrix",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -564,7 +564,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"LOREM IPSUM electromaze",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -598,7 +598,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"lorem ipsum smash-d-bug",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -632,7 +632,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"LOREM IPSUM OPEN HARDWARE",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -662,7 +662,7 @@ export const eventData =
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
 			description:"LOREM IPSUM robotrix",
-			imageURL:
+			imageURL:""
 			children: 
 			[
 				{ 
@@ -672,7 +672,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"LOREM IPSUM warriors-rampage",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -699,7 +699,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"LOREM IPSUM robo-demineur",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -741,7 +741,7 @@ export const eventData =
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
 			description:"Are you creative enough to bring your dreams to life, to visualise your ideas and give them a shape? Yes! Then this the right place for you to unveil your talent.Creativity is a wild mind and a disciplined eye. It is an art to explore your ideas to extraordinary way from the ordinary work.Dare to expand your imagination to visualize a landscape to blend man’s technology into nature’s surroundings or design a building that could idealize your thoughts. Have an eye to catch the amazing moments and a mind to turn a waste free world with the following events.",
-			imageURL:
+			imageURL:""
 			children: 
 			[
 				{ 
@@ -751,7 +751,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"Do you belong to the crazy world of gamers, coders and developers ?  If coding is your cardio, gaming is your passion and designing websites is your dream, then gear up for this exhilarating event of TCF’17.Explore your mind, code your thoughts, compile your ideas and give your passion a run !A true gamer knows that the secret of getting ahead is to get started. So what to wait for, shout out your passion to the world  with these exciting events.",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -778,7 +778,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"The web is the new grand coliseum. Web Weaver is an event to showcase your skills in the field of basic development of web pages. Create your own visual style… let it be unique for yourself and yet identifiable for others.",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -798,7 +798,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"For good ideas and true innovation, you need human interaction, conflict, argument and debate. - Margaret Heffernan Come up with a spark of innovation to improve the lives around you by fuelling your brain to ideate the ideas that never existed!!",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -825,7 +825,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"For good ideas and true innovation, you need human interaction, conflict, argument and debate. - Margaret Heffernan Come up with a spark of innovation to improve the lives around you by fuelling your brain to ideate the ideas that never existed!!",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -848,7 +848,7 @@ export const eventData =
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
 			description:"Are you creative enough to bring your dreams to life, to visualise your ideas and give them a shape? Yes! Then this the right place for you to unveil your talent. “Creativity is a wild mind and a disciplined eye. It is an art to explore your ideas to extraordinary way from the ordinary work.” Dare to expand your imagination to visualize a landscape to blend man’s technology into nature’s surroundings or design a building that could idealize your thoughts. Have an eye to catch the amazing moments and a mind to turn a waste free world with the following events.",
-			imageURL:
+			imageURL:""
 			children: 
 			[
 				{ 
@@ -858,7 +858,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"LOREM IPSUM LANDSCAPE DESIGN",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -892,7 +892,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"LOREM IPSUM Word Wars",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -926,7 +926,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"lorem ipsum photography",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -966,7 +966,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"LOREM IPSUM BEST OUT OF WASTE",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -986,7 +986,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"LOREM IPSUM ART EXPO",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -1006,7 +1006,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"LOREM IPSUM ART EXPO",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -1029,7 +1029,7 @@ export const eventData =
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
 			description:"LOREM IPSUM CONCRETE",
-			imageURL:
+			imageURL:""
 			children: 
 			[
 				{ 
@@ -1039,7 +1039,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"LOREM IPSUM CEREBRO",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -1059,7 +1059,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"LOREM IPSUM illubrico",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -1079,7 +1079,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"lorem ipsum photography",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -1106,7 +1106,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"LOREM IPSUM BEST OUT OF WASTE",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -1136,7 +1136,7 @@ export const eventData =
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
 			description:"LOREM IPSUM yantriki",
-			imageURL:
+			imageURL:""
 			children: 
 			[
 				{ 
@@ -1146,7 +1146,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"LOREM IPSUM Machinist",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -1166,7 +1166,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"LOREM IPSUM mech-a-rush",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -1186,7 +1186,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"lorem ipsum Innovative-exempler",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -1206,7 +1206,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"lorem ipsum Innovative-exempler",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -1230,7 +1230,7 @@ export const eventData =
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
 			description:"LOREM IPSUM ohm",
-			imageURL:
+			imageURL:""
 			children: 
 			[
 				{ 
@@ -1240,7 +1240,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"LOREM IPSUM Machinist",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -1260,7 +1260,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"LOREM IPSUM mech-a-rush",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -1280,7 +1280,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"lorem ipsum Innovative-exempler",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -1300,7 +1300,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"lorem ipsum Innovative-exempler",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -1320,7 +1320,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"lorem ipsum Innovative-exempler",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -1340,7 +1340,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"lorem ipsum Innovative-exempler",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -1360,7 +1360,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"lorem ipsum Innovative-exempler",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -1380,7 +1380,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"lorem ipsum Innovative-exempler",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -1400,7 +1400,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"lorem ipsum Innovative-exempler",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -1422,7 +1422,7 @@ export const eventData =
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
 			description:"LOREM IPSUM avlokan",
-			imageURL:
+			imageURL:""
 			children: 
 			[
 				{ 
@@ -1432,7 +1432,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"LOREM IPSUM word-rush",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -1459,7 +1459,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"LOREM IPSUM apti-taste",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -1479,7 +1479,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"LOREM IPSUM geek-o-brain",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -1507,7 +1507,7 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"LOREM IPSUM game-of-riddles",
-					imageURL: 
+					imageURL:"" 
 					rounds: 
 					[
 						{
@@ -1530,7 +1530,7 @@ export const eventData =
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
 			description:"LOREM IPSUM pratibimb",
-			imageURL:		
+			imageURL:""		
 		}
 
 	]
@@ -1552,7 +1552,7 @@ export const eventData =
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
 			description:"Are you creative enough to bring your dreams to life, to visualise your ideas and give them a shape? Yes! Then this the right place for you to unveil your talent.Creativity is a wild mind and a disciplined eye. It is an art to explore your ideas to extraordinary way from the ordinary work.Dare to expand your imagination to visualize a landscape to blend man’s technology into nature’s surroundings or design a building that could idealize your thoughts. Have an eye to catch the amazing moments and a mind to turn a waste free world with the following events.",
-			imageURL:
+			imageURL:""
 			children: 
 			[
 				{
@@ -1572,7 +1572,7 @@ export const eventData =
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
 			description:"Are you creative enough to bring your dreams to life, to visualise your ideas and give them a shape? Yes! Then this the right place for you to unveil your talent.Creativity is a wild mind and a disciplined eye. It is an art to explore your ideas to extraordinary way from the ordinary work.Dare to expand your imagination to visualize a landscape to blend man’s technology into nature’s surroundings or design a building that could idealize your thoughts. Have an eye to catch the amazing moments and a mind to turn a waste free world with the following events.",
-			imageURL:
+			imageURL:""
 			children: 
 			[
 				{
@@ -1592,7 +1592,7 @@ export const eventData =
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
 			description:"Are you creative enough to bring your dreams to life, to visualise your ideas and give them a shape? Yes! Then this the right place for you to unveil your talent.Creativity is a wild mind and a disciplined eye. It is an art to explore your ideas to extraordinary way from the ordinary work.Dare to expand your imagination to visualize a landscape to blend man’s technology into nature’s surroundings or design a building that could idealize your thoughts. Have an eye to catch the amazing moments and a mind to turn a waste free world with the following events.",
-			imageURL:
+			imageURL:""
 			children: 
 			[
 				{
@@ -1612,7 +1612,7 @@ export const eventData =
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
 			description:"Are you creative enough to bring your dreams to life, to visualise your ideas and give them a shape? Yes! Then this the right place for you to unveil your talent.Creativity is a wild mind and a disciplined eye. It is an art to explore your ideas to extraordinary way from the ordinary work.Dare to expand your imagination to visualize a landscape to blend man’s technology into nature’s surroundings or design a building that could idealize your thoughts. Have an eye to catch the amazing moments and a mind to turn a waste free world with the following events.",
-			imageURL:
+			imageURL:""
 			children: 
 			[
 				{
@@ -1644,7 +1644,7 @@ export const eventData =
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
 			description:"THE WORKSHOP IS CONDUCTED BY GOOGLE",
-			imageURL:	
+			imageURL:""	
 		},	
 
 		{
@@ -1654,7 +1654,7 @@ export const eventData =
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
 			description:"THE WORKSHOP IS CONDUCTED BY MICROSOFT",
-			imageURL:	
+			imageURL:""	
 		},	
 
 		{
@@ -1664,7 +1664,7 @@ export const eventData =
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
 			description:"THE WORKSHOP IS CONDUCTED BY FACEBOOK",
-			imageURL:	
+			imageURL:""	
 		},	
 
 		{
@@ -1674,7 +1674,7 @@ export const eventData =
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
 			description:"THE WORKSHOP IS CONDUCTED BY AMAZON",
-			imageURL:	
+			imageURL:""	
 		}	
 	]
 }
