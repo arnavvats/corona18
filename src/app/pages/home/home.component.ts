@@ -6,7 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  events=[{
+    name:"Technical", image:"gears.png",children:[
+        {name:"byteWorld", image:"smart-tv.png", children:[
+        ]}
+    ]
+  }, {
+    name: "Creative",
+    image: "smart-tv.png"
+  }]
   constructor() { }
 
   ngOnInit() {
