@@ -1,5 +1,4 @@
 main {
-  height: 100vh;
   width: 100vw;
 
   .top-area {
@@ -36,4 +35,51 @@ main {
       transform: scale(1.5);
     }
   }
+}
+
+.leaderboard,.prizes {
+  background: white;;
+  * {
+    color: black;
+  }
+  h3 {
+    font-family: 'Josefin Sans', sans-serif;
+    color: #6565ca;
+  }
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  top: -5rem;
+  color: black;
+  background: white;
+  border: 1px solid white;
+  padding: 5rem 1rem 1rem 1rem;
+  @media(min-width: 768px) {
+    position: absolute;
+    width: 45%;
+
+  }
+  @media(max-width: 767px) {
+    width: 100%;
+  }
+  border-radius: 2rem;
+}
+.trophy,.gift {
+  position: absolute;
+  top: -2rem;
+  width: 100%;
+  text-align: center;
+
+}
+.trophy:before,.gift:before {
+  color: white;
+  padding: 1rem;
+  border-radius: 1em;
+  background: #6565ca;
+}
+.prizes {
+  left: 50%;
+}
+.purple {
+  color: #6565ca;
 }
