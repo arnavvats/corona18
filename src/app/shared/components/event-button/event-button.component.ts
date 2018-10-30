@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { text } from '@angular/core/src/render3/instructions';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-event-button',
@@ -10,9 +10,12 @@ export class EventButtonComponent implements OnInit {
   @Input()left;
   @Input()imageURL;
   @Input()text;
-  constructor() { }
+  @Input()route;
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
-
+  navigateToRoute() {
+    this.router.navigateByUrl('/events/' + this.route);
+  }
 }

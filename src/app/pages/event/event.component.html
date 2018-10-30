@@ -1,13 +1,10 @@
 <main class="position-relative">
   <div class="about">
     <h1 class="heading">
-      ALGO-Z-RIPPER
+      {{event.name ? event.name : ''}}
     </h1>
     <div class="description">
-      Lorem dsfhsdkfjn sdhfknsd,fs sdfbksbf sfsjfkjsbfksdbf
-      Lorem dsfhsdkfjn sdhfknsd,fs sdfbksbf sfsjfkjsbfksdbf
-      Lorem dsfhsdkfjn sdhfknsd,fs sdfbksbf sfsjfkjsbfksdbf
-      Lorem dsfhsdkfjn sdhfknsd,fs sdfbksbf sfsjfkjsbfksdbf
+      {{event.description ? event.description : ''}}
     </div>
     <div class="text-center pt-5 mb-1 timer-header">- &nbsp;STARTS &nbsp;IN &nbsp;-</div>
     <div class="timer row mb-3">
@@ -29,11 +26,17 @@
       </div>
     </div>
     <button class="btn mt-5 p-2">REGISTER</button>
+
   </div>
-    <div>
-            <app-event-button [left]="true" [imageURL]="events[0].image" [text]="events[0].name">
+
+    <div *ngIf="event && event.children">
+            <app-event-button 
+            *ngFor="let child of event.children; let i = index"
+             [left]="!(i % 2)" [imageURL]="child.imageURL" 
+             [text]="child.name"
+             [route]="child.id"
+             >
                 </app-event-button>
-                <app-event-button [left]="false" [imageURL]="events[1].image" [text]="events[1].name"></app-event-button>
     </div>
 
 </main>

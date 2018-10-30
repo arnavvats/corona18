@@ -1,4 +1,5 @@
 main{
+  margin-top:4em;
   min-height: calc(100vh - 62px);
   background: linear-gradient(to bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../../../assets/images/coronaBackground.jpg");
   background-repeat: no-repeat;
@@ -11,34 +12,24 @@ main{
 
   }
   .about{
-
       //margin-top: calc(50vh - 105px);;
       @media(min-width: 992px) {
         margin: 0 20% 0 20%;
+        width: 60%;
       }
       @media (min-width: 768px) and (max-width: 991px) {
         margin: 0 10% 0 10%;
+        width: 80%;
 
       }
       @media(max-width: 767px) {
         margin: 0 90px 0 90px;
-
+        width: calc(100% - 180px);
       }
       margin-left: 82px;
       margin-right: 82px;
       text-align: center;
       position: absolute;
-      button {
-        font-size: 1.5em;
-        background: transparent;
-        border: 1px solid white;
-        font-family: 'Press Start 2P', cursive;
-
-      }
-      button:hover {
-        background: rgba(213, 0, 249, 0.52);
-        border-color:rgba(213, 0, 249, 0.52);
-      }
   }
   .timer-header {
     font-size: 2em;
@@ -78,5 +69,16 @@ main{
     }
   }
 
+  button {
+    font-size: 1.5em;
+    bottom: 1em;
+    background: transparent;
+    border: 1px solid white;
+    font-family: 'Press Start 2P', cursive;
 
+  }
+  button:hover {
+    background: rgba(213, 0, 249, 0.52);
+    border-color:rgba(213, 0, 249, 0.52);
+  }
 }

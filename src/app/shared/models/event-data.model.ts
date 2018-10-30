@@ -1540,7 +1540,7 @@ export const eventData =
 {
 	name: "Fun Events",
 	id: "fun-events",
-	startsAt: 1540832488663,
+	startsAt: 1542667434564,
 	endsAt: 1540832488663,
 	description: "LOREM IPSUM Fun Events",
 	children:
@@ -1552,7 +1552,7 @@ export const eventData =
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
 			description:"Are you creative enough to bring your dreams to life, to visualise your ideas and give them a shape? Yes! Then this the right place for you to unveil your talent.Creativity is a wild mind and a disciplined eye. It is an art to explore your ideas to extraordinary way from the ordinary work.Dare to expand your imagination to visualize a landscape to blend man’s technology into nature’s surroundings or design a building that could idealize your thoughts. Have an eye to catch the amazing moments and a mind to turn a waste free world with the following events.",
-			imageURL:"",
+			imageURL:"bowling-2.png",
 			children: 
 			[
 				{
@@ -1569,10 +1569,10 @@ export const eventData =
 			// STREET DANCE
 			name: "Street Dance",
 			id: "street-dance",
-			startsAt: 1540832488663,
+			startsAt: 1542667434564,
 			endsAt: 1540832488663,
 			description:"Are you creative enough to bring your dreams to life, to visualise your ideas and give them a shape? Yes! Then this the right place for you to unveil your talent.Creativity is a wild mind and a disciplined eye. It is an art to explore your ideas to extraordinary way from the ordinary work.Dare to expand your imagination to visualize a landscape to blend man’s technology into nature’s surroundings or design a building that could idealize your thoughts. Have an eye to catch the amazing moments and a mind to turn a waste free world with the following events.",
-			imageURL:"",
+			imageURL:"bowling-2.png",
 			children: 
 			[
 				{
@@ -1592,7 +1592,7 @@ export const eventData =
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
 			description:"Are you creative enough to bring your dreams to life, to visualise your ideas and give them a shape? Yes! Then this the right place for you to unveil your talent.Creativity is a wild mind and a disciplined eye. It is an art to explore your ideas to extraordinary way from the ordinary work.Dare to expand your imagination to visualize a landscape to blend man’s technology into nature’s surroundings or design a building that could idealize your thoughts. Have an eye to catch the amazing moments and a mind to turn a waste free world with the following events.",
-			imageURL:"",
+			imageURL:"bowling-2.png",
 			children: 
 			[
 				{
@@ -1612,7 +1612,7 @@ export const eventData =
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
 			description:"Are you creative enough to bring your dreams to life, to visualise your ideas and give them a shape? Yes! Then this the right place for you to unveil your talent.Creativity is a wild mind and a disciplined eye. It is an art to explore your ideas to extraordinary way from the ordinary work.Dare to expand your imagination to visualize a landscape to blend man’s technology into nature’s surroundings or design a building that could idealize your thoughts. Have an eye to catch the amazing moments and a mind to turn a waste free world with the following events.",
-			imageURL:"",
+			imageURL:"bowling-2.png",
 			children: 
 			[
 				{
@@ -1630,8 +1630,8 @@ export const eventData =
 
 // WORKSHOPS
 {
-	name: "Technical Events",
-	id: "technical-events",
+	name: "Workshops",
+	id: "workshops",
 	startsAt: 1540832488663,
 	endsAt: 1540832488663,
 	description: "fggdg dr g",

@@ -1,6 +1,6 @@
-<div class="d-flex position-relative parent" [class.right-parent]="!left">
+<div class="d-flex position-relative parent mb-5" [class.right-parent]="!left">
     <div class="d-flex text">
-        <p class="para d-none animated fadeIn">{{text}}</p>
+        <p class="para d-none animated fadeIn" (click)="navigateToRoute()">{{text}}</p>
     </div>
     <div class="img-container">
       <img [src]="'assets/images/events-logo/' + imageURL">
