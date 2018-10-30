@@ -1,0 +1,55 @@
+<main class="row">
+    <div class="col-12 row middle ml-0 pl-0 pr-0">
+    <div class="col-md-5 d-none d-md-block p-2 laptop">
+      <i class="fa fa-5x fa-cloud-upload pt-5 pb-3 text-center w-100"></i>
+      <p><i class="fa fa-flash"></i>
+        Sign up with webstream and easily reach to your viewers anywhere in the world.
+      </p>
+      <p><i class="fa fa-flash"></i>
+        Get your api key from the dashboard after signing up.
+      </p>
+      <p><i class="fa fa-flash"></i>
+        Start streaming your video from the stream url.
+      </p>
+      <p><i class="fa fa-flash"></i>
+        Get a 30-day free trial.
+      </p>
+    </div>
+    <div class="col-md-7 col-12  mr-0 p-2 sign-up-block">
+        <div class="row m-2 dark">Sign {{ signInOnly ? 'In' : 'Up'}}</div>
+      <div class=" row h-100 pl-3 pb-5">
+      <div class="col-6 left d-flex flex-column text-center pr-4"
+           [class.justify-content-center]="signInOnly "
+            [class.justify-content-around]="!signInOnly">
+        <p >We will need...</p>
+        <div class="input-group p-2" [hidden]="signInOnly">
+          <input type="text" placeholder="Your name" class="form-control" [formControl]="signUpForm.get('name')">
+          <i class="fa fa-lg fa-smile-o"></i>
+        </div>
+        <div class="input-group p-2">
+          <input type="text" placeholder="Your email address" class="form-control" [formControl]="loginForm.get('email')">
+          <i class="fa fa-lg fa-envelope-o"></i>
+        </div>
+        <div class="input-group p-2">
+          <input type="password" placeholder="Your password" class="form-control" [formControl]="loginForm.get('password')">
+          <i class="fa fa-lg fa-lock"></i>
+        </div>
+        <div class="input-group p-2" [hidden]="signInOnly">
+          <input type="password" placeholder="One more time?" class="form-control" [formControl]="signUpForm.get('confirmPassword')">
+          <i class="fa fa-lg fa-lock"></i>
+        </div>
+        <div class="input-group p-2">
+          <a class="m-auto sign-button" (click)="submit()">Sign {{ signInOnly ? 'In':'Up' }}</a>
+        </div>
+      </div>
+      <div class="col-6 right pl-4">
+        <p class="position-absolute mt-auto ml-0 or dark">OR</p>
+        <p class="pt-4 text-center dark">Or you can...</p>
+        <a class="m-auto sign-button text-center" (click)="signInOnly = !signInOnly">Sign {{signInOnly ? 'Up':'In'}}</a>
+      </div>
+      </div>
+
+
+    </div>
+    </div>
+  </main>

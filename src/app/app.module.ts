@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,6 +8,8 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { EventButtonComponent } from './shared/components/event-button/event-button.component';
 import { EventComponent } from './pages/event/event.component';
+import { SigninComponent } from './pages/signin/signin.component';
+import { AmbassadorComponent } from './pages/ambassador/ambassador.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +17,15 @@ import { EventComponent } from './pages/event/event.component';
     NavbarComponent,
     HomeComponent,
     EventButtonComponent,
-    EventComponent
+    EventComponent,
+    SigninComponent,
+    AmbassadorComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

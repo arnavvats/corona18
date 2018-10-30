@@ -1,0 +1,39 @@
+main {
+  height: 100vh;
+  width: 100vw;
+
+  .top-area {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../../../assets/images/maxresdefault.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 10em;
+    h1 {
+      @media (max-width: 767px) {
+        font-size: 1.8rem;
+      }
+    }
+    font-family: 'Josefin Sans', sans-serif;
+    .dashboard {
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 20px;
+    }
+    .share-message {
+      color: #ffffffa3;
+    background: #ff000052;
+    padding: 1em;
+    border-radius: 1em;
+    width: fit-content;
+    margin: auto;
+    }
+    .social-icons:hover {
+      cursor: pointer;
+    }
+    .social-icons i {
+      transition: transform 0.1s ease-in-out;
+    }
+    .social-icons i:hover {
+      color: black!important;
+      transform: scale(1.5);
+    }
+  }
+}
