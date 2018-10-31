@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-12 row p-2 dashboard">
         <div class="col-2 d-md-flex flex-column justify-content-center d-none">
-          <i class="fa fa-5x fa-users"></i>
+          <i class="fa fa-5x fa-users text-center"></i>
         </div>
         <div class="col-md-10 col-12 text-center">
           <h3>Here is your personalized share message!</h3>
@@ -21,11 +21,25 @@
           </div>
         </div>
       </div>
+      <div class="col-12 row mt-4 p-2 dashboard text-center">
+          <div class="col-4">
+            <h3>Your Rank</h3>
+            <h1 class="dark">{{rank}}</h1>
+          </div>
+          <div class="col-4">
+            <h3>Your Points</h3>
+            <h1 class="dark">{{points}}</h1>
+          </div>
+          <div class="col-4">
+            <h3>Referral Count</h3>
+            <h1 class="dark">{{referrals}}</h1>
+          </div>
+      </div>
     </div>
   </div>
   </div>
   <div class="middle-area">
-    <div class="row col-12">
+    <div class="row col-12 middle-area-inner">
         <div class="leaderboard">
           <i class="fa fa-5x fa-trophy trophy"></i>
           <h3 class="text-center mb-2">Ambassador LeaderBoard</h3>

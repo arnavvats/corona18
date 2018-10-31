@@ -1,8 +1,11 @@
 
 main {
   font-family: 'Nunito', sans-serif !important;
-  min-height: 80vh;
   padding: 100px 120px;
+  @media(max-width: 575px) {
+    padding: 3em;
+  }
+  min-height: 80vh;
   background: url("../../../assets/images/bg-image.png");
   .middle {
    background: white;
@@ -23,7 +26,9 @@ main {
         height: 0;
       }
       .left {
-        border-right: 0.5px solid #495057;
+        @media(min-width: 992px) {
+          border-right: 0.5px solid #495057;
+        }
         input {
           border-radius: 25px;
           font-size: 0.8rem;
@@ -74,7 +79,9 @@ main {
     }
   }
 }
-
-.dark {
-  color: black !important;
+.sign-in-link {
+  color: #ca626c;
+  font-size: 1.3em;
 }
+
+

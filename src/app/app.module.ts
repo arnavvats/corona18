@@ -10,6 +10,8 @@ import { EventButtonComponent } from './shared/components/event-button/event-but
 import { EventComponent } from './pages/event/event.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { AmbassadorComponent } from './pages/ambassador/ambassador.component';
+import { SponsorsComponent } from './pages/sponsors/sponsors.component';
+import { ListItemDirective } from './shared/directives/list-item.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { AmbassadorComponent } from './pages/ambassador/ambassador.component';
     EventButtonComponent,
     EventComponent,
     SigninComponent,
-    AmbassadorComponent
+    AmbassadorComponent,
+    SponsorsComponent,
+    ListItemDirective
   ],
   imports: [
     BrowserModule,

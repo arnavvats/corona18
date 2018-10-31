@@ -18,10 +18,10 @@
     <div class="col-md-7 col-12  mr-0 p-2 sign-up-block">
         <div class="row m-2 dark">Sign {{ signInOnly ? 'In' : 'Up'}}</div>
       <div class=" row h-100 pl-3 pb-5">
-      <div class="col-6 left d-flex flex-column text-center pr-4"
+      <div class="col-12 col-lg-6 left d-flex flex-column text-center pr-4"
            [class.justify-content-center]="signInOnly "
             [class.justify-content-around]="!signInOnly">
-        <p >We will need...</p>
+        <p class="dark">We will need...</p>
         <div class="input-group p-2" [hidden]="signInOnly">
           <input type="text" placeholder="Your name" class="form-control" [formControl]="signUpForm.get('name')">
           <i class="fa fa-lg fa-smile-o"></i>
@@ -38,13 +38,13 @@
           <input type="password" placeholder="One more time?" class="form-control" [formControl]="signUpForm.get('confirmPassword')">
           <i class="fa fa-lg fa-lock"></i>
         </div>
-        <div class="input-group p-2">
+        <div class="input-group p-2 d-flex flex-column">
           <a class="m-auto sign-button" (click)="submit()">Sign {{ signInOnly ? 'In':'Up' }}</a>
+          <p class="dark text-center mt-1 mb-0 d-block d-lg-none">or &nbsp;</p><a href="#" class="sign-in-link d-block d-lg-none">Sign {{signInOnly ? 'Up':'In'}}</a>
         </div>
       </div>
-      <div class="col-6 right pl-4">
+      <div class="col-6 right d-none d-lg-block pl-4">
         <p class="position-absolute mt-auto ml-0 or dark">OR</p>
-        <p class="pt-4 text-center dark">Or you can...</p>
         <a class="m-auto sign-button text-center" (click)="signInOnly = !signInOnly">Sign {{signInOnly ? 'Up':'In'}}</a>
       </div>
       </div>

@@ -1,0 +1,85 @@
+main {
+    height: 100%;
+    h1 {
+        font-family: 'Pacifico', cursive;
+        font-size: 5em;
+        @media(max-width: 767px) {
+            font-size: 2.7em;
+        }
+        letter-spacing: 0.4rem;
+        word-spacing: 1rem;
+        text-transform: uppercase;
+    }
+    h2 {
+        font-family: 'Monoton', cursive;
+        word-spacing: 1.5rem;
+        @media(max-width: 767px) {
+            font-size: 1.5em;
+        }
+        @media(min-width: 768px) {
+            font-size: 2.5em;
+        }
+    }
+    min-height: 95vh;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../../assets/images/sponsers-logo/bg-sponsors.jpg");
+    background-attachment: fixed;
+}
+.contianer {
+    position: relative;
+  }
+  
+  .hexagon {
+      overflow: hidden;
+      visibility: hidden;
+      -webkit-transform: rotate(120deg);
+         -moz-transform: rotate(120deg);
+           -o-transform: rotate(120deg);
+              transform: rotate(120deg);
+      cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 0;
+      }
+  
+  .hexagon-in1 {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: rotate(-60deg);
+    -moz-transform: rotate(-60deg);
+    -o-transform: rotate(-60deg);
+    transform: rotate(-60deg);
+  }
+  
+  .hexagon-in2 {
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-image: url(http://pipsum.com/240x240.jpg);
+      visibility: visible;
+      -webkit-transform: rotate(-60deg);
+         -moz-transform: rotate(-60deg);
+           -o-transform: rotate(-60deg);
+              transform: rotate(-60deg);
+      }
+  .hexagon-in2:hover {
+      background-image: url(http://pipsum.com/241x241.jpg);
+      }
+  
+  .hexagon1 {
+      width: 400px;
+      height: 200px;
+      margin: 0 0 0 -80px;
+      }
+  .hexagon2 {
+      width: 200px;
+      height: 400px;
+      /*margin: -80px 0 0 20px;*/
+      }
+  .dodecagon {
+      width: 200px;
+      height: 200px;
+      margin: -80px 0 0 20px;
+      }
+  

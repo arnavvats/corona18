@@ -1,5 +1,4 @@
 main {
-  width: 100vw;
 
   .top-area {
     background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../../../assets/images/maxresdefault.jpg");
@@ -36,8 +35,20 @@ main {
     }
   }
 }
+.middle-area {
+  .middle-area-inner {
+      @media(max-width: 767px) {
+        padding: 0;
+        margin: 0;
+    }
+  }
+}
 
 .leaderboard,.prizes {
+ @media(max-width: 767px) {
+   border-radius: 0;
+   padding-bottom: 8em;
+ }
   background: white;;
   * {
     color: black;
@@ -48,13 +59,14 @@ main {
   }
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   top: -5rem;
   color: black;
   background: white;
   border: 1px solid white;
   padding: 5rem 1rem 1rem 1rem;
   @media(min-width: 768px) {
+    height: 26em;
+    left: 5%;
     position: absolute;
     width: 45%;
 
@@ -65,11 +77,20 @@ main {
   border-radius: 2rem;
 }
 .trophy,.gift {
+  @media(max-width: 576px) {
+    left: 0;
+  }
   position: absolute;
   top: -2rem;
   width: 100%;
   text-align: center;
-
+}
+.gift {
+   border-radius: 0;
+    @media(max-width: 767px) {
+      top: -0.5em;
+       margin: 0;
+    }
 }
 .trophy:before,.gift:before {
   color: white;
@@ -78,7 +99,15 @@ main {
   background: #6565ca;
 }
 .prizes {
-  left: 50%;
+  @media(min-width: 768px) {
+    left: 53%;
+  }
+  @media(max-width: 767px) {
+    position: relative;
+    padding-top: 6em;
+    border-top: 1px solid;
+  }
+
 }
 .purple {
   color: #6565ca;
