@@ -1,5 +1,8 @@
 main {
     height: 100%;
+    .top {
+      animation-duration: 1.5s;
+    }
     h1 {
         font-family: 'Pacifico', cursive;
         font-size: 5em;
@@ -41,6 +44,8 @@ main {
   .hexagon {
       overflow: hidden;
       visibility: hidden;
+      animation-delay: 1s;
+      animation-duration: 3s;
       -webkit-transform: rotate(120deg);
          -moz-transform: rotate(120deg);
            -o-transform: rotate(120deg);
