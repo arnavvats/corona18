@@ -1,59 +1,29 @@
-<main class="pt-2 text-center" #main>
-  <h1 class="mb-sm-5 mb-4">
-    Corona &amp; Melange'19
-  </h1>
-  <h2>SPONSORED BY</h2>
+<main class="pt-2 text-center position-relative" #main>
+  <div #top>
+      <h1 class="mb-sm-5 mb-4">
+          Corona &amp; Melange'19
+        </h1>
+        <h2>SPONSORED BY</h2>
+  </div>
   <div class="position-relative">
   <div class="container">
       <!--[if IE 8]><div class="ie"><![endif]-->
-        <app-list-item>
-          <div class="hexagon hexagon2"><div class="hexagon-in1"><div class="hexagon-in2"></div></div></div>
-        </app-list-item>
-      
-        <app-list-item>
-          <div class="hexagon hexagon2"><div class="hexagon-in1"><div class="hexagon-in2"></div></div></div>
-        </app-list-item>      
-        <app-list-item>
-          <div class="hexagon hexagon2"><div class="hexagon-in1"><div class="hexagon-in2"></div></div></div>
-        </app-list-item>        
 
-        <app-list-item>
-          <div class="hexagon hexagon2"><div class="hexagon-in1"><div class="hexagon-in2"></div></div></div>
-        </app-list-item>      
-        <app-list-item>
-          <div class="hexagon hexagon2"><div class="hexagon-in1"><div class="hexagon-in2"></div></div></div>
-        </app-list-item>
-        <app-list-item>
-          <div class="hexagon hexagon2"><div class="hexagon-in1"><div class="hexagon-in2"></div></div></div>
-        </app-list-item>
-        <app-list-item>
-          <div class="hexagon hexagon2"><div class="hexagon-in1"><div class="hexagon-in2"></div></div></div>
-        </app-list-item>
-        <app-list-item>
-          <div class="hexagon hexagon2"><div class="hexagon-in1"><div class="hexagon-in2"></div></div></div>
-        </app-list-item>
-        <app-list-item>
-          <div class="hexagon hexagon2"><div class="hexagon-in1"><div class="hexagon-in2"></div></div></div>
-        </app-list-item>
-        <app-list-item>
-          <div class="hexagon hexagon2"><div class="hexagon-in1"><div class="hexagon-in2"></div></div></div>
-        </app-list-item>
-        <app-list-item>
-          <div class="hexagon hexagon2"><div class="hexagon-in1"><div class="hexagon-in2"></div></div></div>
-        </app-list-item>
-        <app-list-item>
-          <div class="hexagon hexagon2"><div class="hexagon-in1"><div class="hexagon-in2"></div></div></div>
-        </app-list-item>
-        <app-list-item>
-          <div class="hexagon hexagon2"><div class="hexagon-in1"><div class="hexagon-in2"></div></div></div>
-        </app-list-item>
-        <app-list-item>
-          <div class="hexagon hexagon2"><div class="hexagon-in1"><div class="hexagon-in2"></div></div></div>
-        </app-list-item>
-        <app-list-item>
-          <div class="hexagon hexagon2"><div class="hexagon-in1"><div class="hexagon-in2"></div></div></div>
+        <app-list-item *ngFor="let sponsor of sponsors; let i = index"
+        (mouseenter)="setBackgroundHover(i)"
+        (mouseleave)="setBackgroundGeneral(i)"
+        >
+          <div class="hexagon hexagon2"><div class="hexagon-in1"><a class="hexagon-in2 d-block"
+            [href]="sponsor.link"
+            target="blank">
+            <h3 class="animated bounceIn">{{sponsor.name}}</h3>
+            <p class="animated fadeIn">{{sponsor.description}}</p>
+          </a></div></div>
         </app-list-item>
       </div>
       </div>
-      
+      <div class="position-absolute sponsor-link w-100 pb-5">
+        <p class="d-inline">Want to sponsor Corona &amp; Melange'19?&nbsp;</p><a href="https://google.com" class="d-inline-block animated infinite bounce pt-2 pb-2">Click here!</a>
+      </div>
+
 </main>
