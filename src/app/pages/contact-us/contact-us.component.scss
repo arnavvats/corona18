@@ -1,0 +1,50 @@
+* {
+  background: transparent !important;
+}
+.main {
+  font-family: 'Josefin Sans', sans-serif;
+  background-size: cover;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../../assets/images/contactus.jpg") no-repeat fixed center !important;
+}
+.fa-2x {
+  font-size: 1.8rem;
+}
+.bordered-span {
+  display: block;
+  width: 5em;
+  height: 1px !important;
+  border-top: 1px solid white;
+  transition: width 1s cubic-bezier(0.2,0.5,0.3,1);
+}
+.contact-info div:hover i {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-name: tada;
+}
+.offset-lg-1:hover .bordered-span{
+  width: 10em;
+  }
+.form-control {
+  background: black;
+  border-radius: 0;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9em;
+  ::placeholder {
+    color: rgba(255,255,255,0.2);
+    font-size: 0.8em;
+  }
+}
+.btn-block {
+  color: rgba(255,255,255,0.6);
+  border-radius: 0;
+  border: 1px solid white;
+  transition: border 0.5s ease-in-out, color 0.5s ease-in-out, background 0.5s ease-in-out;
+}
+.btn-block:hover {
+  color: black;
+  background: white !important;
+  border-color: black;
+}
+iframe {
+  width: 100%;
+}

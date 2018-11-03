@@ -12,6 +12,9 @@ import { SigninComponent } from './pages/signin/signin.component';
 import { AmbassadorComponent } from './pages/ambassador/ambassador.component';
 import { SponsorsComponent } from './pages/sponsors/sponsors.component';
 import { ListItemDirective } from './shared/directives/list-item.directive';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { GalleryComponent } from './pages/gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { ListItemDirective } from './shared/directives/list-item.directive';
     SigninComponent,
     AmbassadorComponent,
     SponsorsComponent,
-    ListItemDirective
+    ListItemDirective,
+    ContactUsComponent,
+    AboutUsComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,

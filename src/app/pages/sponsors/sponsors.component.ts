@@ -87,9 +87,7 @@ export class SponsorsComponent implements OnInit, AfterViewInit {
   }
   ngAfterViewInit() {
     this.alignItems();
-    this.sponsors.forEach((sponsor, i) => {
-      this.setBackgroundGeneral(i);
-    });
+    this.sponsors.forEach((sponsor, i) => this.setBackgroundGeneral(i));
   }
   alignItems() {
     console.log('called');
@@ -119,7 +117,7 @@ export class SponsorsComponent implements OnInit, AfterViewInit {
       const offSet = (x * 205) + leftOffSet;
       this.renderer.setStyle(el, 'left', offSet + 'px' );
     });
-     const increaseHeight = Math.floor(this.top.nativeElement.offsetHeight + 400 + (this.items.length / (imagesInEach - 0.5)) * 178));
+     const increaseHeight = Math.floor(this.top.nativeElement.offsetHeight + 400 + (this.items.length / (imagesInEach - 0.5)) * 178);
      this.renderer.setStyle(this.main.nativeElement, 'height', increaseHeight + 'px');
   }
   setBackgroundHover(index) {
