@@ -18,6 +18,10 @@ export class AmbassadorComponent implements OnInit {
   get userDetail() {
     return this.userService.userDetail;
   }
+   getShareMessage(name) {
+    return `Hello, this is ${name}, ambassador for TCF\'19
+    National Institute of Technology, Patna, Please register with my link`;
+  }
   constructor(private userService: UserService) {
    }
 
