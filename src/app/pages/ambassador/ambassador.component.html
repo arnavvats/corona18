@@ -11,11 +11,14 @@
         </div>
         <div class="col-md-10 col-12 text-center">
           <h3>Here is your personalized share message!</h3>
-          <p class="share-message"> {{userDetail.name}}</p>
+          <p class="share-message"> Hello, this is {{userDetail.name}}, ambassador for TCF'19
+            National Institute of Technology, Patna, Please register with my link
+          </p>
           <div class="d-flex justify-content-center mt-2">
             <p class="mr-4">Share now!</p>
             <div class="social-icons">
-              <i class="fa fa-whatsapp mr-3"></i>
+              <a [href]="'whatsapp://send?text=Hello, this is '+userDetail.name+' , ambassador for TCF\'19
+              National Institute of Technology, Patna, Please register with my link'" data-action="share/whatsapp/share"><i class="fa fa-whatsapp mr-3"></i></a>
               <i class="fa fa-envelope-o mr-3"></i>
               <i class="fa fa-facebook"></i>
 
@@ -26,15 +29,15 @@
       <div class="col-12 row mt-4 p-2 dashboard text-center animated slideInLeft">
           <div class="col-4">
             <h3>Your Rank</h3>
-            <h1 class="dark">{{rank}}</h1>
+            <h1 class="dark">{{userDetail.ambassador.rank}}</h1>
           </div>
           <div class="col-4">
             <h3>Your Points</h3>
-            <h1 class="dark">{{points}}</h1>
+            <h1 class="dark">{{userDetail.ambassador.points}}</h1>
           </div>
           <div class="col-4">
             <h3>Referral Count</h3>
-            <h1 class="dark">{{referrals}}</h1>
+            <h1 class="dark">{{userDetail.ambassador.count}}</h1>
           </div>
       </div>
     </div>
