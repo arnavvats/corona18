@@ -74,6 +74,7 @@ main {
       .sign-button:hover {
         width: 80% !important;
         left: 10% !important;
+        
       }
     }
       .sign-button {
@@ -83,12 +84,14 @@ main {
         color: black;
         width: 50%;
         transition: width 0.4s;
+        pointer-events: all !important;
+
+        
       }
-      .sign-button:hover {
-        cursor: pointer;
-        background: black;
-        color: white;
-        width: 80%;
+      
+      .sign-button.disabled:hover{
+        cursor: not-allowed;
+        pointer-events: all !important;
       }
     }
   }
