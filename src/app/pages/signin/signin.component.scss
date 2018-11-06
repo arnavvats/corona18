@@ -13,9 +13,12 @@ main {
     color: black;
 
     .laptop {
-      background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("../../../assets/images/laptop.jpg");
-      background-size: cover;
-      color: white;
+      background: #f51616ba url("../../../assets/images/Corona.png");
+      background-size: 400px;
+      background-position:center;
+      background-repeat: no-repeat;
+      
+      color: black;
     }
     .sign-up-block {
       //border: 1px solid white;
