@@ -5,8 +5,10 @@ main {
   background-position: center;
   font-family: 'Architects Daughter', cursive;
   min-height: 95vh;
+
   .yellow {
     color: #ccbd8f;
+
   }
   .logo-container {
     width: 160px;
@@ -38,12 +40,12 @@ main {
       font-size: 3.5rem;
     }
     .right-info {
-      background:url('../../../assets/images/assembly.png');
-      background-size: 150px;
-    background-position-x: center;
-    background-position-y: center;
-    background-repeat: no-repeat;
-    }
+      background:linear-gradient(to right,rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('../../../assets/images/aboutus-ourexpertise.png');
+      background-size: 200px 200px; 
+      background-position-x: center;
+      background-position-y: center;
+      background-repeat: no-repeat; 
+      }
     .curved-arrow-bottom-left {
       position: absolute;
     bottom: -16px;
@@ -75,10 +77,10 @@ main {
       transform: rotateY(180deg) rotate(45deg);
     }
   .advertising {
-    background: url('../../../assets/images/megaphone.png');
-    background-size: 100px;
+    background: linear-gradient(to right,rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url('../../../assets/images/welcome3.png');
+    background-size: 150px 150px;
   background-position-x: center;
-  background-position-y: center;
+  background-position-y: bottom-4px;
   background-repeat: no-repeat;
   }
 }
