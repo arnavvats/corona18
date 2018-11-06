@@ -1,9 +1,11 @@
-<main class="position-relative">
-    <img class="logo" src="assets/images/xx.png">
+<div class="bg-img"></div>
+<particles [style]="myStyle" [width]="width" [height]="height" [params]="myParams"></particles>
+<main class="position-relative animated fadeIn">
+    <img class="logo animated" src="assets/images/Corona.png">
     <div>
             <app-event-button [left]="true" [imageURL]="events[0].image" [text]="events[0].name">
                 </app-event-button>
                 <app-event-button [left]="false" [imageURL]="events[1].image" [text]="events[1].name"></app-event-button>
     </div>
-  
+
 </main>

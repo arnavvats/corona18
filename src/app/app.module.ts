@@ -15,6 +15,18 @@ import { ListItemDirective } from './shared/directives/list-item.directive';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
+import { NgxGalleryModule } from 'ngx-gallery';
+import { ParticlesModule } from 'angular-particle';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireFunctionsModule } from '@angular/fire/functions';
+import { AngularFireMessagingModule } from '@angular/fire/messaging';
+import { ModalComponent } from './shared/components/modal/modal.component';
+import { NgxTrimDirectiveModule } from 'ngx-trim-directive';
 
 @NgModule({
   declarations: [
@@ -29,15 +41,27 @@ import { GalleryComponent } from './pages/gallery/gallery.component';
     ListItemDirective,
     ContactUsComponent,
     AboutUsComponent,
-    GalleryComponent
+    GalleryComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxGalleryModule,
+    ParticlesModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    AngularFirestoreModule,
+    AngularFireDatabaseModule,
+    AngularFireFunctionsModule,
+    AngularFireMessagingModule,
+    NgxTrimDirectiveModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ModalComponent]
 })
 export class AppModule { }

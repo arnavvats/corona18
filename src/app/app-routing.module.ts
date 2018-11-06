@@ -7,6 +7,7 @@ import { AmbassadorComponent } from './pages/ambassador/ambassador.component';
 import { SponsorsComponent } from './pages/sponsors/sponsors.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { GalleryComponent } from './pages/gallery/gallery.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path: 'campus-ambassador', component: AmbassadorComponent},
   {path: 'sponsors', component: SponsorsComponent},
   {path: 'contact-us', component: ContactUsComponent},
-  {path: 'about-us', component: AboutUsComponent}
+  {path: 'about-us', component: AboutUsComponent},
+  {path: 'gallery', component: GalleryComponent}
 ];
 
 @NgModule({

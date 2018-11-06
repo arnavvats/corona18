@@ -23,29 +23,48 @@
             [class.justify-content-around]="!signInOnly">
         <p class="dark">We will need...</p>
         <div class="input-group p-2" [hidden]="signInOnly">
-          <input type="text" placeholder="Your name" class="form-control" [formControl]="signUpForm.get('name')">
+          <input type="text" placeholder="Your name" class="form-control" [formControl]="signUpForm.get('name')" trim>
           <i class="fa fa-lg fa-smile-o"></i>
+          <p class="error w-100 mb-0 text-center" *ngIf="signUpForm.get('name').invalid && signUpForm.get('name').touched">Name must be atleast 3 letters.</p>
         </div>
         <div class="input-group p-2">
           <input type="text" placeholder="Your email address" class="form-control" [formControl]="loginForm.get('email')">
           <i class="fa fa-lg fa-envelope-o"></i>
+          <p class="error w-100 mb-0 text-center" *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched">Email is invalid.</p>
+        </div>
+        <div class="input-group p-2" [hidden]="signInOnly">
+            <select class="form-control" [formControl]="signUpForm.get('collegeId')">
+              <option value="">Select a college</option>
+              <option value="custom">Custom</option>
+              <option *ngFor="let college of collegeList" [value]="college.id">{{college.name}}</option>
+            </select>
+            <i class="fa fa-lg fa-building"></i>
+        </div>
+        <div class="input-group p-2" [hidden]="signInOnly || (signUpForm.get('collegeId').value !== 'custom')">
+            <input class="form-control" placeholder="College name" [formControl]="signUpForm.get('collegeName')" trim>
+            <i class="fa fa-lg fa-university"></i>
+            <p class="error w-100 mb-0 text-center" *ngIf="signUpForm.get('collegeName').touched && signUpForm.errors && signUpForm.errors['collegeNameShort']">College name must be at least 3 letters.</p>
         </div>
         <div class="input-group p-2">
           <input type="password" placeholder="Your password" class="form-control" [formControl]="loginForm.get('password')">
           <i class="fa fa-lg fa-lock"></i>
+          <p class="error w-100 mb-0 text-center" *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">Passwords must be at least 6 characters.</p>
         </div>
         <div class="input-group p-2" [hidden]="signInOnly">
           <input type="password" placeholder="One more time?" class="form-control" [formControl]="signUpForm.get('confirmPassword')">
           <i class="fa fa-lg fa-lock"></i>
+          <p class="error w-100 mb-0 text-center"
+          *ngIf="signUpForm.get('confirmPassword').touched && signInForms.errors && signInForms.errors['passwordMismatch']">Passwords do not match.</p>
         </div>
         <div class="input-group p-2 d-flex flex-column">
-          <a class="m-auto sign-button" (click)="submit()">Sign {{ signInOnly ? 'In':'Up' }}</a>
-          <p class="dark text-center mt-1 mb-0 d-block d-lg-none">or &nbsp;</p><a href="#" class="sign-in-link d-block d-lg-none">Sign {{signInOnly ? 'Up':'In'}}</a>
+          <p *ngIf="backendError" class="error animated flash"> &#9785;&nbsp;{{backendError}}</p>
+          <a class="m-auto sign-button btn" (click)="signInOnly ? signIn() : signUp()" [class.disabled]="loading || loginForm.invalid || (!signInOnly && signUpForm.invalid)">Sign {{ signInOnly ? 'In':'Up' }}</a>
+          <p class="dark text-center mt-1 mb-0 d-block d-lg-none">or &nbsp;</p><a (click)="(signInOnly = !signInOnly) && (backendError = '')" class="sign-in-link d-block d-lg-none">Sign {{signInOnly ? 'Up':'In'}}</a>
         </div>
       </div>
       <div class="col-6 right d-none d-lg-block pl-4">
         <p class="position-absolute mt-auto ml-0 or dark">OR</p>
-        <a class="m-auto sign-button text-center" (click)="signInOnly = !signInOnly">Sign {{signInOnly ? 'Up':'In'}}</a>
+        <a class="m-auto sign-button text-center" (click)="(signInOnly = !signInOnly) && (backendError = '')">Sign {{signInOnly ? 'Up':'In'}}</a>
       </div>
       </div>
 

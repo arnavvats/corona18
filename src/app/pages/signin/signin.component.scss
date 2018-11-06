@@ -29,17 +29,24 @@ main {
         @media(min-width: 992px) {
           border-right: 0.5px solid #495057;
         }
-        input {
+        input, select {
           border-radius: 25px;
           font-size: 0.8rem;
           z-index: 0;
+          width: 100%;
+        }
+        select {
+          appearance: none;
         }
         i {
           position: absolute;
           right: 0.9em;
-          bottom: 0.9em;
+          top: 0.9em;
           color: #495057;
           z-index: 1;
+        }
+        p.error {
+          font-size:0.7em;
         }
       }
     .right {
@@ -80,8 +87,11 @@ main {
   }
 }
 .sign-in-link {
-  color: #ca626c;
+  color: #ca626c !important;
   font-size: 1.3em;
+}
+.sign-in-link:hover {
+  cursor: pointer;
 }
 
 

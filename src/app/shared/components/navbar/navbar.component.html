@@ -1,25 +1,28 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" #navbar>
-  <a class="navbar-brand" routerLink="home">Corona'18</a>
+  <a class="navbar-brand" routerLink="">Corona'18</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link" routerLink="sponsors" routerLinkActive="active">Sponsors<span class="sr-only">(current)</span></a>
+     </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">About <span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink="about-us" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">About <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="about-us" routerLinkActive="active">Gallery <span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink="contact-us" routerLinkActive="active">Contact Us <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link" routerLink="contact-us" routerLinkActive="active">Sponsors <span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink="gallery" routerLinkActive="active">Gallery <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="team" routerLinkActive="active">Events <span class="sr-only">(current)</span></a>
+      <li class="nav-item dropdown">
+        <a class="nav-link" routerLink="campus-ambassador" routerLinkActive="active">Campus Ambassador <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="team" routerLinkActive="active">Workshops <span class="sr-only">(current)</span></a>
+      <li class="nav-item dropdown">
+        <a class="nav-link" routerLink="sign-in" routerLinkActive="active">Sign in <span class="sr-only">(current)</span></a>
       </li>
     </ul>
   </div>
