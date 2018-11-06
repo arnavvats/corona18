@@ -8,11 +8,13 @@ import { SponsorsComponent } from './pages/sponsors/sponsors.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
+import { AuthGuard } from './shared/guards/auth.guard';
+import { UnAuthGuard } from './shared/guards/un-auth.guard';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'events/:id', component: EventComponent},
-  {path: 'sign-in', component: SigninComponent},
+  {path: 'sign-in', component: SigninComponent, canActivate: [UnAuthGuard]},
   {path: 'campus-ambassador', component: AmbassadorComponent},
   {path: 'sponsors', component: SponsorsComponent},
   {path: 'contact-us', component: ContactUsComponent},

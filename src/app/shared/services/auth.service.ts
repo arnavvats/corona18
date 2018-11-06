@@ -6,8 +6,11 @@ import { AngularFirestore } from '@angular/fire/firestore';
   providedIn: 'root'
 })
 export class AuthService {
-
+  public user;
   constructor(private afAuth: AngularFireAuth, private afStore: AngularFirestore) {
+    afAuth.authState.subscribe(res => {
+      this.user = res;
+    });
   }
 
   async signUp(data) {
@@ -20,7 +23,7 @@ export class AuthService {
     }
     const uid = this.afAuth.auth.currentUser.uid;
     await this.afStore.collection('users').doc(uid).set({name: data.name, collegeId: data.collegeId, email: data.email});
-    await this.afAuth.auth.signOut();
+    await this.logOut();
     } catch (e) {
       throw new Error(e && e.message);
     }
@@ -30,11 +33,19 @@ export class AuthService {
     try {
     await this.afAuth.auth.signInWithEmailAndPassword(data.email, data.password);
       if (!this.afAuth.auth.currentUser.emailVerified) {
-       await this.afAuth.auth.signOut();
+        await this.logOut();
        throw new Error('Please verify your email first!');
      }
     } catch (e) {
       throw new Error(e && e.message);
+    }
+  }
+
+  async logOut() {
+    try {
+      await this.afAuth.auth.signOut();
+    } catch (e) {
+      throw new Error('Sorry, an error occurred');
     }
   }
 

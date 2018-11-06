@@ -16,4 +16,12 @@ nav {
 .bg-dark {
   background-color: black !important;
 }
-
+.logout-link {
+  @media(min-width: 992px) {
+    position: absolute;
+    right: 1em;
+  }
+}
+.logout-link:hover {
+  cursor: pointer;
+}

@@ -21,8 +21,11 @@
       <li class="nav-item dropdown">
         <a class="nav-link" routerLink="campus-ambassador" routerLinkActive="active">Campus Ambassador <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link" routerLink="sign-in" routerLinkActive="active">Sign in <span class="sr-only">(current)</span></a>
+      <li class="nav-item dropdown logout-link" *ngIf="user">
+        <a class="nav-link" (click)="logOut()" routerLinkActive="active">Logout({{user.displayName}})<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown" *ngIf="!user">
+          <a class="nav-link" routerLink="sign-in" routerLinkActive="active">Sign in <span class="sr-only">(current)</span></a>
       </li>
     </ul>
   </div>

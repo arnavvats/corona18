@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
   selector: 'app-ambassador',
@@ -12,9 +13,12 @@ export class AmbassadorComponent implements OnInit {
   rank_ = 300;
   points_ = 800;
   referrals_ = 200;
-  constructor() {
+  get userDetail() {
+    return this.userService.userDetail;
+  }
+  constructor(private userService: UserService) {
    }
-  
+
   ngOnInit() {
     let min = Math.min(this.rank_,this.points_,this.referrals_);
     let rankIncVal = Math.floor(this.rank_ / min);
@@ -49,5 +53,9 @@ export class AmbassadorComponent implements OnInit {
         clearInterval(interval);
       }
     }, 20);
+  }
+
+  joinAP() {
+    this.userService.joinAmbassadorProgram();
   }
 }
