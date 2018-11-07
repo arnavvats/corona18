@@ -6,7 +6,7 @@ export const eventData =
 	id: "technical-events",
 	startsAt: 1540832488663,
 	endsAt: 1540832488663,     
-	description: "fggdg dr g",
+	description: "TECHNICAL EVENTS",
 	children:
 	 [
 		{
@@ -15,8 +15,8 @@ export const eventData =
 			id: "bytleworld",
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
-			description:"Are you creative enough to bring your dreams to life, to visualise your ideas and give them a shape? Yes! Then this the right place for you to unveil your talent.Creativity is a wild mind and a disciplined eye. It is an art to explore your ideas to extraordinary way from the ordinary work.Dare to expand your imagination to visualize a landscape to blend man’s technology into nature’s surroundings or design a building that could idealize your thoughts. Have an eye to catch the amazing moments and a mind to turn a waste free world with the following events.",
-			imageURL:"",
+			description:"BYTEWORLD",
+			imageURL:"smart-tv-2.png",
 			children: 
 			[
 				{ 
@@ -25,22 +25,22 @@ export const eventData =
 					id: "algo-z-ripper",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"Do you belong to the crazy world of gamers, coders and developers ?  If coding is your cardio, gaming is your passion and designing websites is your dream, then gear up for this exhilarating event of TCF’17.Explore your mind, code your thoughts, compile your ideas and give your passion a run !A true gamer knows that the secret of getting ahead is to get started. So what to wait for, shout out your passion to the world  with these exciting events.",
-					imageURL:"", 
+					description:"ALGO-Z-RIPPER",
+					imageURL:"smart-tv-2.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Conducted on 26th october'I6.Teams have been shortlisted based on their performance in Round I.",
+							description: "ROUND 1",
 							type: "pen and paper"
 						},
                         {
 							name:"round 2",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Conducted on 26th october'I6.Teams have been shortlisted based on their performance in Round I.",
+							description: "ROUND 2",
 							type: "online test"
 						}
 					]
@@ -52,22 +52,22 @@ export const eventData =
 					id: "web-weaver",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"The web is the new grand coliseum. Web Weaver is an event to showcase your skills in the field of basic development of web pages. Create your own visual style… let it be unique for yourself and yet identifiable for others.",
-					imageURL:"", 
+					description:"WEB WEAVER",
+					imageURL:"smart-tv-2.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Conducted on 25th october'16.Teams have been shortlisted based on their performance in Round I.",
+							description: "ROUND 1",
 							type: "pen and paper"
 						},
                         {
 							name:"round 2",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Teams have been shortlisted for the final round based on their performance in the first round,comprising of 3 members from each each academic year. This will be an on-site round. You will be given a problem statement for which you have to design a website. Your work will be judged against various criteria e.g. design, responsiveness, effectiveness etc. All other info regarding second round will be provided at the time of contest. This round will be held on 24th of January 2017 at Computer Centre (NIT Patna) from 10:30am to 1:30pm.",
+							description: "ROUND 2",
 							type: "online test"
 						}
 					]
@@ -79,29 +79,29 @@ export const eventData =
 					id: "panorma",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"For good ideas and true innovation, you need human interaction, conflict, argument and debate. - Margaret Heffernan Come up with a spark of innovation to improve the lives around you by fuelling your brain to ideate the ideas that never existed!!",
-					imageURL:"", 
+					description:"PANORMA",
+					imageURL:"smart-tv-2.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "This is the ‘Abstract Submission’ round. The teams are required to submit a brief summary of their chosen topic in pdf or doc format, not exceeding 250 words. A limited number of abstracts will be selected for presentation in the final round. A fixed number of teams from the first year will be selected for the grooming round. Teams have to mail the abstract to byteworld2k17@gmail.com latest by 20th January 2017.",
+							description: "PANORMA",
 							type: "pen and paper"
 						},
                         {
 							name:"round 2",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "This is the ‘Abstract Submission’ round. The teams are required to submit a brief summary of their chosen topic in pdf or doc format, not exceeding 250 words. A limited number of abstracts will be selected for presentation in the final round. A fixed number of teams from the first year will be selected for the grooming round. Teams have to mail the abstract to byteworld2k17@gmail.com latest by 20th January 2017.",
+							description: "PANORMA",
 							type: "presentation test"
 						},
 						{
 							name:"round 3",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "This is the ‘Presentation Round’. The selected teams will be given a maximum of 7 minutes to present their paper to the jury and the audience. You will be judged on various criteria such as the content, presentation, body-language and your answers to questions, which will be put up by the jury as well as the audience. The team with the maximum points will be the winner. This round will be held on 25th January 2017 from 10:30am to 1:30pm. ",
+							description: "PANORMA",
 							type: "presentation test"
 						}
 					]
@@ -113,8 +113,8 @@ export const eventData =
 					id: "hackerzilla",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"For good ideas and true innovation, you need human interaction, conflict, argument and debate. - Margaret Heffernan Come up with a spark of innovation to improve the lives around you by fuelling your brain to ideate the ideas that never existed!!",
-					imageURL:"", 
+					description:"Hackerzilla is one of the most interesting event of Byte World. This is a online fun event going throughout the Tech-Fest (Will be ongoing for 5-7 days).There will be 15-20 levels. Some clues for each level will be given , you have to clear the levels based on clues provided. One can participate in this contest sitting anywhere round the globe by solving the online puzzles on the basis of of hints provided and submitting it from their laptops or PCs. The site will be online from 22nd January 2017.",					
+					imageURL:"smart-tv-2.png", 
 					rounds: 
 					[
 						{
@@ -134,21 +134,21 @@ export const eventData =
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
 					description:"THE NEWEST AND THE GRANDEST EVENT OF TCF'19",
-					imageURL:"", 
+					imageURL:"smart-tv-2.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Conducted on 25th october'16.Teams have been shortlisted based on their performance in Round I.",
+							description: "ROUND 1",
 							type: "idea Submission"
 						},
                         {
 							name:"round 2",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Teams have been shortlisted for the final round based on their performance in the first round,comprising of 3 members from each each academic year. This will be an on-site round. You will be given a problem statement for which you have to design a website. Your work will be judged against various criteria e.g. design, responsiveness, effectiveness etc. All other info regarding second round will be provided at the time of contest. This round will be held on 24th of January 2017 at Computer Centre (NIT Patna) from 10:30am to 1:30pm.",
+							description: "ROUND 2",
 							type: "development and presentation"
 						}
 					]
@@ -163,33 +163,26 @@ export const eventData =
 			id: "aayam",
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
-			description:"Are you creative enough to bring your dreams to life, to visualise your ideas and give them a shape? Yes! Then this the right place for you to unveil your talent. “Creativity is a wild mind and a disciplined eye. It is an art to explore your ideas to extraordinary way from the ordinary work.” Dare to expand your imagination to visualize a landscape to blend man’s technology into nature’s surroundings or design a building that could idealize your thoughts. Have an eye to catch the amazing moments and a mind to turn a waste free world with the following events.",
-			imageURL:"",
+			description:"AAYAM",
+			imageURL:"microphone.png",
 			children: 
 			[
 				{ 
 					// LANDSCAPE DESIGN
-					name: "Landscape Design",
-					id: "landscape-design",
+					name: "Architectural Modelling",
+					id: "architectural-modelling",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"LOREM IPSUM LANDSCAPE DESIGN",
-					imageURL:"", 
+					description:"Main Modelling event of Architecture.",
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Conducted on 26th october'I6.Teams have been shortlisted based on their performance in Round I.",
+							description: "Main Modelling event of Architecture.",
 							type: "pen and paper"
-						},
-                        {
-							name:"round 2",
-							startsAt: 1540832488663,
-			                endsAt: 1540832488663,
-							description: "Conducted on 26th october'I6.Teams have been shortlisted based on their performance in Round I.",
-							type: "online test"
 						}
 					]
 				},
@@ -200,77 +193,56 @@ export const eventData =
 					id: "main-design",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"LOREM IPSUM MAIN DESIGN",
-					imageURL:"", 
+					description:"Main design competition of Architecture Department.",
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Conducted on 25th october'16.Teams have been shortlisted based on their performance in Round I.",
+							description: "Main design competition of Architecture Department.",
 							type: "pen and paper"
-						},
-                        {
-							name:"round 2",
-							startsAt: 1540832488663,
-			                endsAt: 1540832488663,
-							description: "Teams have been shortlisted for the final round based on their performance in the first round,comprising of 3 members from each each academic year. This will be an on-site round. You will be given a problem statement for which you have to design a website. Your work will be judged against various criteria e.g. design, responsiveness, effectiveness etc. All other info regarding second round will be provided at the time of contest. This round will be held on 24th of January 2017 at Computer Centre (NIT Patna) from 10:30am to 1:30pm.",
-							type: "online test"
 						}
 					]
 				},	
 
 				{ 
-					// photography
-					name: "Photography",
-					id: "photography",
+					// design your apparel
+					name: "Design Your apparel",
+					id: "design-your-apparel",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"lorem ipsum photography",
-					imageURL:"", 
+					description:"Open event for apparel making competition.",
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "This is the ‘Abstract Submission’ round. The teams are required to submit a brief summary of their chosen topic in pdf or doc format, not exceeding 250 words. A limited number of abstracts will be selected for presentation in the final round. A fixed number of teams from the first year will be selected for the grooming round. Teams have to mail the abstract to byteworld2k17@gmail.com latest by 20th January 2017.",
-							type: "pen and paper"
-						},
-                        {
-							name:"round 2",
-							startsAt: 1540832488663,
-			                endsAt: 1540832488663,
-							description: "This is the ‘Abstract Submission’ round. The teams are required to submit a brief summary of their chosen topic in pdf or doc format, not exceeding 250 words. A limited number of abstracts will be selected for presentation in the final round. A fixed number of teams from the first year will be selected for the grooming round. Teams have to mail the abstract to byteworld2k17@gmail.com latest by 20th January 2017.",
-							type: "presentation test"
-						},
-						{
-							name:"round 3",
-							startsAt: 1540832488663,
-			                endsAt: 1540832488663,
-							description: "This is the ‘Presentation Round’. The selected teams will be given a maximum of 7 minutes to present their paper to the jury and the audience. You will be judged on various criteria such as the content, presentation, body-language and your answers to questions, which will be put up by the jury as well as the audience. The team with the maximum points will be the winner. This round will be held on 25th January 2017 from 10:30am to 1:30pm. ",
-							type: "presentation test"
+							description: "Open event for apparel making competition.",
+							type: "competition"
 						}
 					]
 				},	
 
 				{ 
-					// Best out of waste
-					name: "Best Out Of Waste",
-					id: "best-out-of-waste",
+					// rethink the structure
+					name: "Rethink The Structure",
+					id: "rethink-the-structure",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"LOREM IPSUM BEST OUT OF WASTE",
-					imageURL:"", 
+					description:"Redesign any previously built structure in your own way.",
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Hackerzilla is one of the most interesting event of Byte World. This is a online fun event going throughout the Tech-Fest (Will be ongoing for 5-7 days).There will be 15-20 levels. Some clues for each level will be given , you have to clear the levels based on clues provided. One can participate in this contest sitting anywhere round the globe by solving the online puzzles on the basis of of hints provided and submitting it from their laptops or PCs. The site will be online from 22nd January 2017.",
-							type: "online"
+							description: "Redesign any previously built structure in your own way.",
+							type: "designing"
 						}
 					]
 				},	
@@ -281,23 +253,16 @@ export const eventData =
 					id: "art-expo",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"LOREM IPSUM ART EXPO",
-					imageURL:"", 
+					description:"Art Gallery showcase and Competition.",
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Conducted on 25th october'16.Teams have been shortlisted based on their performance in Round I.",
-							type: "idea Submission"
-						},
-                        {
-							name:"round 2",
-							startsAt: 1540832488663,
-			                endsAt: 1540832488663,
-							description: "Teams have been shortlisted for the final round based on their performance in the first round,comprising of 3 members from each each academic year. This will be an on-site round. You will be given a problem statement for which you have to design a website. Your work will be judged against various criteria e.g. design, responsiveness, effectiveness etc. All other info regarding second round will be provided at the time of contest. This round will be held on 24th of January 2017 at Computer Centre (NIT Patna) from 10:30am to 1:30pm.",
-							type: "development and presentation"
+							description: "Art expo",
+							type: "show case"
 						}
 					]
 				}	
@@ -311,59 +276,59 @@ export const eventData =
 			id: "concrete",
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
-			description:"LOREM IPSUM CONCRETE",
-			imageURL:"",
+			description:"CONCRETE",
+			imageURL:"brick-wall-2.png",
 			children: 
 			[
 				{ 
-					// cerebro
-					name: "Cerebro",
-					id: "cerebro",
+					// Cryptic
+					name: "Cryptic",
+					id: "cryptic",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"LOREM IPSUM CEREBRO",
-					imageURL:"", 
+					description:"There will be 2 round: 1.) Pen and paper round. 2.) Mega Quiz",
+					imageURL:"brick-wall-2.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "LOREM IPSUM ROUND1 CEREBRO",
+							description: "ROUND1",
 							type: "pen and paper"
 						},
                         {
 							name:"round 2",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Conducted on 26th october'I6.Teams have been shortlisted based on their performance in Round I.",
-							type: "online test"
+							description: "Round2",
+							type: "Mega Quiz"
 						}
 					]
 				},
       		 		
       		 	{ 
-					// ILLUBRICO
-					name: "Illubrico",
-					id: "illubrico",
+					// NOVAS
+					name: "Novas",
+					id: "novas",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"LOREM IPSUM illubrico",
-					imageURL:"", 
+					description:"Enhancement of technical knowledge in the field of Innovation on Civil Engineering.In this you have to prepare either a model or ppt. There will be 2 round : 1). Submission of model or ppt. 2). Presentation on your model or ppt.",
+					imageURL:"brick-wall-2.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Conducted on 25th october'16.Teams have been shortlisted based on their performance in Round I.",
+							description: "round 1",
 							type: "pen and paper"
 						},
                         {
 							name:"round 2",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Teams have been shortlisted for the final round based on their performance in the first round,comprising of 3 members from each each academic year. This will be an on-site round. You will be given a problem statement for which you have to design a website. Your work will be judged against various criteria e.g. design, responsiveness, effectiveness etc. All other info regarding second round will be provided at the time of contest. This round will be held on 24th of January 2017 at Computer Centre (NIT Patna) from 10:30am to 1:30pm.",
+							description: "ROUND 1",
 							type: "online test"
 						}
 					]
@@ -375,8 +340,8 @@ export const eventData =
 					id: "real-estate",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"lorem ipsum photography",
-					imageURL:"", 
+					description:"It's a real world Civil Engineer's  hand on event.It consists of 3 round: 1.)Tender round. ( 2.)Submission of tender plan.( 3.) Presentation in front of Judges.",
+					imageURL:"brick-wall-2.png", 
 					rounds: 
 					[
 						{
@@ -404,24 +369,45 @@ export const eventData =
 				},	
 
 				{ 
-					// cantilego
-					name: "Cantilego",
-					id: "cantilego",
+					// frame design
+					name: "Frame Design",
+					id: "frame-design",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"LOREM IPSUM BEST OUT OF WASTE",
-					imageURL:"", 
+					description:"Team event consists of 3-5 member for each team.In students have to build the 4 storeyed building out of ice cream sticks with the help of thread and glue on the spot.",
+					imageURL:"brick-wall-2.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Hackerzilla is one of the most interesting event of Byte World. This is a online fun event going throughout the Tech-Fest (Will be ongoing for 5-7 days).There will be 15-20 levels. Some clues for each level will be given , you have to clear the levels based on clues provided. One can participate in this contest sitting anywhere round the globe by solving the online puzzles on the basis of of hints provided and submitting it from their laptops or PCs. The site will be online from 22nd January 2017.",
-							type: "online"
+							description: "students have to build the 4 storeyed building out of ice cream sticks with the help of thread and glue on the spot.",
+							type: "construction"
 						}
 					]
-				}	
+				},	
+
+
+				{ 
+					// Autocad Design
+					name: "Autocadd Design",
+					id: "autocadd-design",
+					startsAt: 1540832488663,
+			        endsAt: 1540832488663,
+					description:"Competition on designing of Live project on the AutoCadd",
+					imageURL:"brick-wall-2.png", 
+					rounds: 
+					[
+						{
+							name:"round 1",
+							startsAt: 1540832488663,
+			                endsAt: 1540832488663,
+							description: "Competition on designing of Live project on the AutoCadd",
+							type: "competition of design"
+						}
+					]
+				}
 
 			]
 		},
@@ -432,8 +418,8 @@ export const eventData =
 			id: "yantriki",
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
-			description:"LOREM IPSUM yantriki",
-			imageURL:"",
+			description:"2 Rounds of Designing (Part modelling,Assembly,Surface and wireframe) of different Machine components on Creo/Revit/AutoCAD/CATIA/SOLID-WORKS.Difficulty level of both rounds will differ. Final round: Prepare the 3-d model of the task given in final round in limited time frame.",
+			imageURL:"gears-2.png",
 			children: 
 			[
 				{ 
@@ -442,30 +428,49 @@ export const eventData =
 					id: "machinist",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"LOREM IPSUM Machinist",
-					imageURL:"", 
+					description:"Machinist",
+					imageURL:"gears-2.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "LOREM IPSUM ROUND1 CEREBRO",
-							type: "pen and paper"
+							description: "Designing test",
+							type: "designing test"
 						},
                         {
 							name:"round 2",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Conducted on 26th october'I6.Teams have been shortlisted based on their performance in Round I.",
-							type: "online test"
-						},
-						 {
-							name:"round 3",
+							description: "Prepare the 3-d model of the task given in final round in limited time frame",
+							type: "presentation round"
+						}
+					]
+				},{
+
+				     // Trivia D Moto
+					name: "Trivia D Moto",
+					id: "trivia-d-moto",
+					startsAt: 1540832488663,
+			        endsAt: 1540832488663,
+					description:"Round 1: Pen and paper round consisting of brain storming MCQ based questions open to all branches.Final round: Incquisitive Audio-Visual Quiz in which 6 teams will participate qualified in first round. Questions in both rounds will be from different fields: Current affairs (Business affairs,sports affairs, political affairs etc).",
+					imageURL:"gears-2.png", 
+					rounds: 
+					[
+						{
+							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Conducted on 26th october'I6.Teams have been shortlisted based on their performance in Round I.",
-							type: "online test"
+							description:"Pen and paper round consisting of brain storming MCQ based questions open to all branches.",
+							type: "Pen and paper"
+						},
+                        {
+							name:"round 2",
+							startsAt: 1540832488663,
+			                endsAt: 1540832488663,
+							description: "Final round: Incquisitive Audio-Visual Quiz in which 6 teams will participate qualified in first round. Questions in both rounds will be from different fields: Current affairs (Business affairs,sports affairs, political affairs etc).",
+							type: "Audio-visual round"
 						}
 					]
 				},
@@ -476,22 +481,22 @@ export const eventData =
 					id: "mech-a-rush",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"LOREM IPSUM mech-a-rush",
-					imageURL:"", 
+					description:"Pen and paper round consisting of Engineering based Technical questions open to all branches. 6 teams qualified in first round will compete in Treasure Hunt exclusively based on Technical Hints.",
+					imageURL:"gears-2.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Conducted on 25th october'16.Teams have been shortlisted based on their performance in Round I.",
+							description: "Pen and paper round consisting of Engineering based Technical questions open to all branches.",
 							type: "pen and paper"
 						},
                         {
 							name:"round 2",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Teams have been shortlisted for the final round based on their performance in the first round,comprising of 3 members from each each academic year. This will be an on-site round. You will be given a problem statement for which you have to design a website. Your work will be judged against various criteria e.g. design, responsiveness, effectiveness etc. All other info regarding second round will be provided at the time of contest. This round will be held on 24th of January 2017 at Computer Centre (NIT Patna) from 10:30am to 1:30pm.",
+							description: "6 teams qualified in first round will compete in Treasure Hunt exclusively based on Technical Hints.",
 							type: "Treasure Hunt"
 						}
 					]
@@ -503,16 +508,16 @@ export const eventData =
 					id: "Innovative-exempler",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"lorem ipsum Innovative-exempler",
-					imageURL:"", 
+					description:"INDUS VALLEY: Chance to develop and present the concept of your virtual industry through PowerPoint presentation. We are providing you an opportunity to think out of the box and develop your own industry based on your creativity and intelligence.",
+					imageURL:"gears-2.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "This is the ‘Abstract Submission’ round. The teams are required to submit a brief summary of their chosen topic in pdf or doc format, not exceeding 250 words. A limited number of abstracts will be selected for presentation in the final round. A fixed number of teams from the first year will be selected for the grooming round. Teams have to mail the abstract to byteworld2k17@gmail.com latest by 20th January 2017.",
-							type: "pen and paper"
+							description: "presentation round in limited words",
+							type: "presentation"
 						}
 					]
 				}
@@ -527,69 +532,44 @@ export const eventData =
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
 			description:"LOREM IPSUM ohm",
-			imageURL:"",
+			imageURL:"machinery-2.png",
 			children: 
 			[
 				{ 
-					// Virtual Circuitrix
-					name: "Virtual Circuitrix",
-					id: "virtual-circuitrix",
+					// Inceptra
+					name: "Inceptra",
+					id: "inceptra",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"LOREM IPSUM Circuitrix",
-					imageURL:"", 
+					description:"  R1-pen n paper test  R2 technical Dumb Charades; R3-Rapid fire round on Tech.",
+					imageURL:"machinery-2.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "LOREM IPSUM ROUND1 CEREBRO",
+							description: "pen n paper test",
 							type: "pen and paper"
 						},
                         {
 							name:"round 2",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Conducted on 26th october'I6.Teams have been shortlisted based on their performance in Round I.",
-							type: "Design test"
-						}
-					]
-				},
-      		 		
-      		 	{ 
-					// ELECTROMAZE
-					name: "Electromaze",
-					id: "electromaze",
-					startsAt: 1540832488663,
-			        endsAt: 1540832488663,
-					description:"LOREM IPSUM electromaze",
-					imageURL:"", 
-					rounds: 
-					[
-						{
-							name:"round 1",
-							startsAt: 1540832488663,
-			                endsAt: 1540832488663,
-							description: "Conducted on 25th october'16.Teams have been shortlisted based on their performance in Round I.",
-							type: "pen and paper"
-						},
-                        {
-							name:"round 2",
-							startsAt: 1540832488663,
-			                endsAt: 1540832488663,
-							description: "Teams have been shortlisted for the final round based on their performance in the first round,comprising of 3 members from each each academic year. This will be an on-site round. You will be given a problem statement for which you have to design a website. Your work will be judged against various criteria e.g. design, responsiveness, effectiveness etc. All other info regarding second round will be provided at the time of contest. This round will be held on 24th of January 2017 at Computer Centre (NIT Patna) from 10:30am to 1:30pm.",
-							type: "Treasure Hunt"
+							description: "technical Dumb Charades",
+							type: "representation"
 						},
 						{
 							name:"round 3",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Teams have been shortlisted for the final round based on their performance in the first round,comprising of 3 members from each each academic year. This will be an on-site round. You will be given a problem statement for which you have to design a website. Your work will be judged against various criteria e.g. design, responsiveness, effectiveness etc. All other info regarding second round will be provided at the time of contest. This round will be held on 24th of January 2017 at Computer Centre (NIT Patna) from 10:30am to 1:30pm.",
-							type: "circuit implementation test"
+							description: "Rapid fire round on Tech.",
+							type: "quiz"
 						}
+
 					]
-				},	
+				},
+      		 		
 
 				{ 
 					// SMASH D BUG
@@ -597,60 +577,101 @@ export const eventData =
 					id: "smash-d-bug",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"lorem ipsum smash-d-bug",
-					imageURL:"", 
+					description:"R1-pen and paper test; R2-Audio visual Round; R3-debugging the circuit ",
+					imageURL:"machinery-2.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "This is the ‘Abstract Submission’ round. The teams are required to submit a brief summary of their chosen topic in pdf or doc format, not exceeding 250 words. A limited number of abstracts will be selected for presentation in the final round. A fixed number of teams from the first year will be selected for the grooming round. Teams have to mail the abstract to byteworld2k17@gmail.com latest by 20th January 2017.",
+							description: "pen and paper test",
 							type: "pen and paper"
 						},
                         {
 							name:"round 2",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "This is the ‘Abstract Submission’ round. The teams are required to submit a brief summary of their chosen topic in pdf or doc format, not exceeding 250 words. A limited number of abstracts will be selected for presentation in the final round. A fixed number of teams from the first year will be selected for the grooming round. Teams have to mail the abstract to byteworld2k17@gmail.com latest by 20th January 2017.",
+							description: "Audio visual Round",
 							type: "Audio visual test"
 						},
 						{
 							name:"round 3",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "This is the ‘Presentation Round’. The selected teams will be given a maximum of 7 minutes to present their paper to the jury and the audience. You will be judged on various criteria such as the content, presentation, body-language and your answers to questions, which will be put up by the jury as well as the audience. The team with the maximum points will be the winner. This round will be held on 25th January 2017 from 10:30am to 1:30pm. ",
+							description: "debugging the circuit ",
 							type: "Bug finder"
 						}
 					]
 				},	
 
 				{ 
-					// OPEN HARDWARE
-					name: "Open Hardware",
-					id: "open-hardware",
+					// Mazamia
+					name: "Mazamia",
+					id: "mazamia",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"LOREM IPSUM OPEN HARDWARE",
-					imageURL:"", 
+					description:"R1-pen and paper test; R2-treasure hunt and buying the components from virtual money; R3-circuit implementation round ",
+					imageURL:"machinery-2.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Hackerzilla is one of the most interesting event of Byte World. This is a online fun event going throughout the Tech-Fest (Will be ongoing for 5-7 days).There will be 15-20 levels. Some clues for each level will be given , you have to clear the levels based on clues provided. One can participate in this contest sitting anywhere round the globe by solving the online puzzles on the basis of of hints provided and submitting it from their laptops or PCs. The site will be online from 22nd January 2017.",
-							type: "presentation test"
+							description: "pen and paper test",
+							type: "pen and paper"
 						},
 						{
 							name:"round 2",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Teams have been shortlisted for the final round based on their performance in the first round,comprising of 3 members from each each academic year. This will be an on-site round. You will be given a problem statement for which you have to design a website. Your work will be judged against various criteria e.g. design, responsiveness, effectiveness etc. All other info regarding second round will be provided at the time of contest. This round will be held on 24th of January 2017 at Computer Centre (NIT Patna) from 10:30am to 1:30pm.",
-							type: "idea submission"
+							description: "treasure hunt and buying the components from virtual money",
+							type: "treasure hunt"
+						},
+						{
+							name:"round 3",
+							startsAt: 1540832488663,
+			                endsAt: 1540832488663,
+							description: "circuit implementation round ",
+							type: "circuit implementation test"
 						}
 					]
-				}	
+				},
+
+				{ 
+					// Pratiroth
+					name: "Pratiroth",
+					id: "pratiroth",
+					startsAt: 1540832488663,
+			        endsAt: 1540832488663,
+					description:"R1-synopsis submission (open topic) R2- interview round; R3-ppt presentation round  {group event with 2-3 memebers}",
+					imageURL:"machinery-2.png", 
+					rounds: 
+					[
+						{
+							name:"round 1",
+							startsAt: 1540832488663,
+			                endsAt: 1540832488663,
+							description: "synopsis submission (open topic)",
+							type: "synopsis submission round"
+						},
+						{
+							name:"round 2",
+							startsAt: 1540832488663,
+			                endsAt: 1540832488663,
+							description: "interview round",
+							type: "Interview round"
+						},
+						{
+							name:"round 3",
+							startsAt: 1540832488663,
+			                endsAt: 1540832488663,
+							description: "ppt presentation round  {group event with 2-3 memebers}",
+							type: "presentation round"
+						}
+					]
+				}		
 
 			]
 		},
@@ -661,60 +682,66 @@ export const eventData =
 			id: "robotrix",
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
-			description:"LOREM IPSUM robotrix",
-			imageURL:"",
+			description:"ROBOTRIX",
+			imageURL:"machinery-2.png",
 			children: 
 			[
 				{ 
 					// WARRIORS RAMPAGE
-					name: "Warriors Rampage",
-					id: "warriors-rampage",
+					name: "Robowars",
+					id: "robowars",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"LOREM IPSUM warriors-rampage",
-					imageURL:"", 
+					description:"Students have to design a bot that will fight with the opponent and that one which lasts upto the end in the arena will win.Team will rewarded points on the basis of their bot performance, bot designing skills and controlling.",
+					imageURL:"machinery-2.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "LOREM IPSUM Qualifying round",
-							type: "pen and paper"
-						},
-                        {
-							name:"round 2",
-							startsAt: 1540832488663,
-			                endsAt: 1540832488663,
-							description: "Conducted on 26th october'I6.Teams have been shortlisted based on their performance in Round I.",
-							type: "ROBOWARS"
+							description: "bot designing and fight",
+							type: "bot wars"
 						}
 					]
 				},
 
 				{ 
-					// ROBO DEMINEUR
-					name: "Robo Demineur",
-					id: "robo-demineur",
+					// e-logistics
+					name: "E logistics",
+					id: "e-logistics",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"LOREM IPSUM robo-demineur",
-					imageURL:"", 
+					description:"Students have to design a semi autonomous pathfollower that will traverse the path given to it and identify the parcels present on their sides and place them on their respective locations and also have to stay away from obstacles.This event is designed by taking inspiration from modern robotics industrial application in logistic industries.Team will rewarded points on the basis of their bot performance.",
+					imageURL:"machinery-2.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Hackerzilla is one of the most interesting event of Byte World. This is a online fun event going throughout the Tech-Fest (Will be ongoing for 5-7 days).There will be 15-20 levels. Some clues for each level will be given , you have to clear the levels based on clues provided. One can participate in this contest sitting anywhere round the globe by solving the online puzzles on the basis of of hints provided and submitting it from their laptops or PCs. The site will be online from 22nd January 2017.",
-							type: "bot race"
-						},
+							description: "designing of semi autonomous bots that can pick up objects and stay away from obstacles",
+							type: "Pick and Place bots"
+						}
+					]
+				},
+
+				{ 
+					// Tiger's nest
+					name: "Tiger's Nest",
+					id: "tiger's-nest",
+					startsAt: 1540832488663,
+			        endsAt: 1540832488663,
+					description:"Students have to fabricate a bot that can traverse the given arena by over coming various hurdles across the arena and also by placing ball on rotating disc and boxes in the notch .Hurdles can be in the form of Wedge, U-turns, Rotating Rods, Hanging Bridge ,Wheel-wide Pit, Banked Path.Team will rewarded points on the basis of difficulties of hurdles and on the basis of time consuming.",
+					imageURL:"machinery-2.png", 
+					rounds: 
+					[
 						{
-							name:"round 2",
+							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Teams have been shortlisted for the final round based on their performance in the first round,comprising of 3 members from each each academic year. This will be an on-site round. You will be given a problem statement for which you have to design a website. Your work will be judged against various criteria e.g. design, responsiveness, effectiveness etc. All other info regarding second round will be provided at the time of contest. This round will be held on 24th of January 2017 at Computer Centre (NIT Patna) from 10:30am to 1:30pm.",
-							type: "finals"
+							description: "Students have to fabricate a bot that can traverse the given arena by over coming various hurdles across the arena and also by placing ball on rotating disc and boxes in the notch .Hurdles can be in the form of Wedge, U-turns, Rotating Rods, Hanging Bridge ,Wheel-wide Pit, Banked Path.Team will rewarded points on the basis of difficulties of hurdles and on the basis of time consuming.",
+							type: "bot fabrication"
 						}
 					]
 				}	
@@ -731,7 +758,7 @@ export const eventData =
 	id: "cultural-events",
 	startsAt: 1540832488663,
 	endsAt: 1540832488663,
-	description: "LOREM IPSUM cultural-events",
+	description: "CULTURAL EVENTS",
 	children:
 	 [
 		{
@@ -740,33 +767,26 @@ export const eventData =
 			id: "abhinay",
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
-			description:"Are you creative enough to bring your dreams to life, to visualise your ideas and give them a shape? Yes! Then this the right place for you to unveil your talent.Creativity is a wild mind and a disciplined eye. It is an art to explore your ideas to extraordinary way from the ordinary work.Dare to expand your imagination to visualize a landscape to blend man’s technology into nature’s surroundings or design a building that could idealize your thoughts. Have an eye to catch the amazing moments and a mind to turn a waste free world with the following events.",
-			imageURL:"",
+			description:"ABHINAY",
+			imageURL:"microphone.png",
 			children: 
 			[
 				{ 
 					// Rangmach
-					name: "Rangmach",
-					id: "rangmach",
+					name: "Film Ignito",
+					id: "film-ignito",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"Do you belong to the crazy world of gamers, coders and developers ?  If coding is your cardio, gaming is your passion and designing websites is your dream, then gear up for this exhilarating event of TCF’17.Explore your mind, code your thoughts, compile your ideas and give your passion a run !A true gamer knows that the secret of getting ahead is to get started. So what to wait for, shout out your passion to the world  with these exciting events.",
-					imageURL:"", 
+					description:"You will shoot we will release. Subevents 1) Short films  2) Prank videos 3)Dubsmash ",
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Conducted on 26th october'I6.Teams have been shortlisted based on their performance in Round I.",
+							description: "Subevents 1) Short films  2) Prank videos 3)Dubsmash",
 							type: "skit and play"
-						},
-                        {
-							name:"round 2",
-							startsAt: 1540832488663,
-			                endsAt: 1540832488663,
-							description: "Conducted on 26th october'I6.Teams have been shortlisted based on their performance in Round I.",
-							type: "andaaz"
 						}
 					]
 				},
@@ -777,42 +797,42 @@ export const eventData =
 					id: "poezia",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"The web is the new grand coliseum. Web Weaver is an event to showcase your skills in the field of basic development of web pages. Create your own visual style… let it be unique for yourself and yet identifiable for others.",
-					imageURL:"", 
+					description:"Swing your sword as you please... poem writing and reciting compitition",
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Conducted on 25th october'16.Teams have been shortlisted based on their performance in Round I.",
-							type: "performance"
+							description: "Swing your sword as you please... poem writing and reciting compitition",
+							type: "competition"
 						}
 					]
 				},	
 
 				{ 
 					// Vidsmash
-					name: "Vidsmash",
-					id: "vidsmash",
+					name: "Cine Satrangi",
+					id: "cine-satrangi",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"For good ideas and true innovation, you need human interaction, conflict, argument and debate. - Margaret Heffernan Come up with a spark of innovation to improve the lives around you by fuelling your brain to ideate the ideas that never existed!!",
-					imageURL:"", 
+					description:"In the quest of a Cinephile... R1) Pen & Paper R2) Audio-Visua & Dumb Charades",							
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "This is the ‘Abstract Submission’ round. The teams are required to submit a brief summary of their chosen topic in pdf or doc format, not exceeding 250 words. A limited number of abstracts will be selected for presentation in the final round. A fixed number of teams from the first year will be selected for the grooming round. Teams have to mail the abstract to byteworld2k17@gmail.com latest by 20th January 2017.",
-							type: "Documentary"
+							description: "pen and paper round",
+							type: "pen and paper"
 						},
                         {
 							name:"round 2",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "This is the ‘Abstract Submission’ round. The teams are required to submit a brief summary of their chosen topic in pdf or doc format, not exceeding 250 words. A limited number of abstracts will be selected for presentation in the final round. A fixed number of teams from the first year will be selected for the grooming round. Teams have to mail the abstract to byteworld2k17@gmail.com latest by 20th January 2017.",
+							description: "Audio-Visua & Dumb Charades",
 							type: "DUBSMASH"
 						}
 					]
@@ -820,23 +840,50 @@ export const eventData =
 
 				{ 
 					// Cine Satrangi
-					name: "Cine Satrangi",
-					id: "cine-satrangi",
+					name: "Rangmach",
+					id: "rangmanch",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"For good ideas and true innovation, you need human interaction, conflict, argument and debate. - Margaret Heffernan Come up with a spark of innovation to improve the lives around you by fuelling your brain to ideate the ideas that never existed!!",
-					imageURL:"", 
+					description:"Take the campus as your STAGE... subevents  1)  Skit/Play/Drama 2) Nukkad/Street Play",
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Hackerzilla is one of the most interesting event of Byte World. This is a online fun event going throughout the Tech-Fest (Will be ongoing for 5-7 days).There will be 15-20 levels. Some clues for each level will be given , you have to clear the levels based on clues provided. One can participate in this contest sitting anywhere round the globe by solving the online puzzles on the basis of of hints provided and submitting it from their laptops or PCs. The site will be online from 22nd January 2017.",
-							type: "QUIZ"
+							description: " Skit/Play/Drama ",
+							type: "play"
+						},
+						{
+							name:"round 2",
+							startsAt: 1540832488663,
+			                endsAt: 1540832488663,
+							description: "Nukkad/Street Play",
+							type: "Drama"
 						}
 					]
-				}
+				},
+
+				{ 
+					// Cine Satrangi
+					name: "Andaaz e Adakaari",
+					id: "Andaaz-e-adakaari",
+					startsAt: 1540832488663,
+			        endsAt: 1540832488663,
+					description:"Unleash the inner YOU... Subevents   1) Mono act 2)Stand-up  3) Mimicry 4)Mimes  ",
+					imageURL:"microphone.png", 
+					rounds: 
+					[
+						{
+							name:"round 1",
+							startsAt: 1540832488663,
+			                endsAt: 1540832488663,
+							description: " 1) Mono act 2)Stand-up  3) Mimicry 4) Memes",
+							type: "play"
+						}
+					]
+				}	
 
 			]
 		},
@@ -847,8 +894,8 @@ export const eventData =
 			id: "sanhita",
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
-			description:"Are you creative enough to bring your dreams to life, to visualise your ideas and give them a shape? Yes! Then this the right place for you to unveil your talent. “Creativity is a wild mind and a disciplined eye. It is an art to explore your ideas to extraordinary way from the ordinary work.” Dare to expand your imagination to visualize a landscape to blend man’s technology into nature’s surroundings or design a building that could idealize your thoughts. Have an eye to catch the amazing moments and a mind to turn a waste free world with the following events.",
-			imageURL:"",
+			description:"SANHITA",
+			imageURL:"microphone.png",
 			children: 
 			[
 				{ 
@@ -857,168 +904,140 @@ export const eventData =
 					id: "parliamentary-debate",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"LOREM IPSUM LANDSCAPE DESIGN",
-					imageURL:"", 
+					description:"Kicking off another season of parliamentry debate, with heated points and counters,with the feel of real parliamentthis year.",
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Conducted on 26th october'I6.Teams have been shortlisted based on their performance in Round I.",
+							description: "Kicking off another season of parliamentry debate, with heated points and counters,with the feel of real parliamentthis year.",
 							type: "Orientation"
-						},
-                        {
-							name:"round 2",
+						}
+					]
+				},
+
+				{ 
+					// English Debate
+					name: "English Debate",
+					id: "enlish-debate",
+					startsAt: 1540832488663,
+			        endsAt: 1540832488663,
+					description:"Its not the voice but the argument which will win the debate. Compete with the best.",
+					imageURL:"microphone.png", 
+					rounds: 
+					[
+						{
+							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Conducted on 26th october'I6.Teams have been shortlisted based on their performance in Round I.",
-							type: "Prelims"
-						},
-						 {
-							name:"round 3",
-							startsAt: 1540832488663,
-			                endsAt: 1540832488663,
-							description: "Conducted on 26th october'I6.Teams have been shortlisted based on their performance in Round I.",
-							type: "Finals"
+							description: "Its not the voice but the argument which will win the debate. Compete with the best.",
+							type: "Orientation"
 						}
 					]
 				},
       		 		
-      		 	{ 
-					// Word Wars
-					name: "Word Wars",
-					id: "word-wars",
+                { 
+					// Hindi Debate
+					name: "Hindi Debate",
+					id: "hindi-debate",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"LOREM IPSUM Word Wars",
-					imageURL:"", 
+					description:"Its not the voice but the argument which will win the debate. Compete with the best.",
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Conducted on 25th october'16.Teams have been shortlisted based on their performance in Round I.",
-							type: "English Debate"
-						},
-                        {
-							name:"round 2",
+							description: "Its not the voice but the argument which will win the debate. Compete with the best.",
+							type: "Orientation"
+						}
+					]
+				},
+
+				{ 
+					// Tell a tale
+					name: "Tell A Tale",
+					id: "tell-a-tale",
+					startsAt: 1540832488663,
+			        endsAt: 1540832488663,
+					description:"An exciting event wherein the teams required to weave a story within a given time frame.",
+					imageURL:"microphone.png", 
+					rounds: 
+					[
+						{
+							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Teams have been shortlisted for the final round based on their performance in the first round,comprising of 3 members from each each academic year. This will be an on-site round. You will be given a problem statement for which you have to design a website. Your work will be judged against various criteria e.g. design, responsiveness, effectiveness etc. All other info regarding second round will be provided at the time of contest. This round will be held on 24th of January 2017 at Computer Centre (NIT Patna) from 10:30am to 1:30pm.",
-							type: "Hindi Debate"
-						},
-						 {
-							name:"round 3",
-							startsAt: 1540832488663,
-			                endsAt: 1540832488663,
-							description: "Conducted on 26th october'I6.Teams have been shortlisted based on their performance in Round I.",
-							type: "Finals"
+							description: "An exciting event wherein the teams required to weave a story within a given time frame.",
+							type: "tell-a-tale"
 						}
 					]
 				},	
 
 				{ 
-					// A Minute To Win It
-					name: "A Minute To Win It",
-					id: "a-minute-to-win-it",
+					// pick a story
+					name: "Pick A story",
+					id: "pick-a-story",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"lorem ipsum photography",
-					imageURL:"", 
+					description:"Describing emotions and stories through pictures.For the story teller in you.",
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "This is the ‘Abstract Submission’ round. The teams are required to submit a brief summary of their chosen topic in pdf or doc format, not exceeding 250 words. A limited number of abstracts will be selected for presentation in the final round. A fixed number of teams from the first year will be selected for the grooming round. Teams have to mail the abstract to byteworld2k17@gmail.com latest by 20th January 2017.",
-							type: "CONTINUE THE LETTER"
-						},
-                        {
-							name:"round 2",
-							startsAt: 1540832488663,
-			                endsAt: 1540832488663,
-							description: "This is the ‘Abstract Submission’ round. The teams are required to submit a brief summary of their chosen topic in pdf or doc format, not exceeding 250 words. A limited number of abstracts will be selected for presentation in the final round. A fixed number of teams from the first year will be selected for the grooming round. Teams have to mail the abstract to byteworld2k17@gmail.com latest by 20th January 2017.",
-							type: "EXTEMPORE"
-						},
-						{
-							name:"round 3",
-							startsAt: 1540832488663,
-			                endsAt: 1540832488663,
-							description: "This is the ‘Presentation Round’. The selected teams will be given a maximum of 7 minutes to present their paper to the jury and the audience. You will be judged on various criteria such as the content, presentation, body-language and your answers to questions, which will be put up by the jury as well as the audience. The team with the maximum points will be the winner. This round will be held on 25th January 2017 from 10:30am to 1:30pm. ",
-							type: "PASSWORD"
-						}, {
-							name:"round 4",
-							startsAt: 1540832488663,
-			                endsAt: 1540832488663,
-							description: "Conducted on 26th october'I6.Teams have been shortlisted based on their performance in Round I.",
-							type: "ALTER EGO"
-						}
-					]
-				},	
-
-				{ 
-					// Poetastic
-					name: "Poetastic",
-					id: "poetastic",
-					startsAt: 1540832488663,
-			        endsAt: 1540832488663,
-					description:"LOREM IPSUM BEST OUT OF WASTE",
-					imageURL:"", 
-					rounds: 
-					[
-						{
-							name:"round 1",
-							startsAt: 1540832488663,
-			                endsAt: 1540832488663,
-							description: "Hackerzilla is one of the most interesting event of Byte World. This is a online fun event going throughout the Tech-Fest (Will be ongoing for 5-7 days).There will be 15-20 levels. Some clues for each level will be given , you have to clear the levels based on clues provided. One can participate in this contest sitting anywhere round the globe by solving the online puzzles on the basis of of hints provided and submitting it from their laptops or PCs. The site will be online from 22nd January 2017.",
-							type: "Online Poem Writting"
+							description: "Describing emotions and stories through pictures.For the story teller in you.",
+							type: "story telling"
 						}
 					]
 				},	
 
                 { 
-					// Pick A Story
-					name: "Pick A Story",
-					id: "pick-a-story",
+					//say-less express-more 
+					name: "Say Less Express More",
+					id: "say-less-express-more",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"LOREM IPSUM ART EXPO",
-					imageURL:"", 
+					description:"Wonderfulful words having everlasting paragraphs. this is the event its all about",
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Conducted on 25th october'16.Teams have been shortlisted based on their performance in Round I.",
-							type: "Creativity"
+							description: "Wonderfulful words having everlasting paragraphs. this is the event its all about",
+							type: "short story telling"
 						}
 					]
-				},
+				},	
 
 				{ 
-					// Say Less Express More
-					name: "Art Expo",
-					id: "art-expo",
+					// OPEN MIC
+					name: "Open Mic",
+					id: "open-mic",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"LOREM IPSUM ART EXPO",
-					imageURL:"", 
+					description:"An awesome oppurtunity to bring out the inner talent. A battle of words and stage for budding writers and speakers.",
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Conducted on 25th october'16.Teams have been shortlisted based on their performance in Round I.",
-							type: "Online two line story telling."
+							description: "An awesome oppurtunity to bring out the inner talent. A battle of words and stage for budding writers and speakers.",
+							type: "word battle"
 						}
 					]
-				}		
-
+				}	
+                
 			]
 		},
 
@@ -1028,8 +1047,8 @@ export const eventData =
 			id: "raaga",
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
-			description:"LOREM IPSUM CONCRETE",
-			imageURL:"",
+			description:"RAAGA",
+			imageURL:"microphone.png",
 			children: 
 			[
 				{ 
@@ -1038,15 +1057,15 @@ export const eventData =
 					id: "solo-singing",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"LOREM IPSUM CEREBRO",
-					imageURL:"", 
+					description:"solo singing",
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "LOREM IPSUM ROUND1 CEREBRO",
+							description: "SOLO SINGING ROUND",
 							type: "only round"
 						}
 					]
@@ -1054,47 +1073,60 @@ export const eventData =
       		 		
       		 	{ 
 					// Non Filmy Singing
-					name: "Non Filmy Singing",
-					id: "non-solo-singing",
+					name: "Duet Singing",
+					id: "duet-singing",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"LOREM IPSUM illubrico",
-					imageURL:"", 
+					description:"DUET SINGING",
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Conducted on 25th october'16.Teams have been shortlisted based on their performance in Round I.",
+							description: "DUET SINGING ROUND",
 							type: "only round"
 						}
 					]
 				},	
 
 				{ 
-					// Clash O Mania
-					name: "Clash O Mania",
-					id: "clash-o-mania",
+					// Non Filmy Singing
+					name: "Road To Raaga",
+					id: "road-to-raaga",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"lorem ipsum photography",
-					imageURL:"", 
+					description:"ONLINE MUSIC SINGING",
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "This is the ‘Abstract Submission’ round. The teams are required to submit a brief summary of their chosen topic in pdf or doc format, not exceeding 250 words. A limited number of abstracts will be selected for presentation in the final round. A fixed number of teams from the first year will be selected for the grooming round. Teams have to mail the abstract to byteworld2k17@gmail.com latest by 20th January 2017.",
-							type: "first round"
-						},
-                        {
-							name:"round 2",
+							description: "ONLINE MUSIC SINGING",
+							type: "only round"
+						}
+					]
+				},	
+
+				{ 
+					// Non Filmy Singing
+					name: "Qawwali Singing",
+					id: "qawwali-singing",
+					startsAt: 1540832488663,
+			        endsAt: 1540832488663,
+					description:"Qawwali Singing",
+					imageURL:"microphone.png", 
+					rounds: 
+					[
+						{
+							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "This is the ‘Abstract Submission’ round. The teams are required to submit a brief summary of their chosen topic in pdf or doc format, not exceeding 250 words. A limited number of abstracts will be selected for presentation in the final round. A fixed number of teams from the first year will be selected for the grooming round. Teams have to mail the abstract to byteworld2k17@gmail.com latest by 20th January 2017.",
-							type: "second round"
+							description: "Qawwali Singing",
+							type: "only round"
 						}
 					]
 				},	
@@ -1105,23 +1137,16 @@ export const eventData =
 					id: "antakshari",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"LOREM IPSUM BEST OUT OF WASTE",
-					imageURL:"", 
+					description:"ANTAKSHARI",
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Hackerzilla is one of the most interesting event of Byte World. This is a online fun event going throughout the Tech-Fest (Will be ongoing for 5-7 days).There will be 15-20 levels. Some clues for each level will be given , you have to clear the levels based on clues provided. One can participate in this contest sitting anywhere round the globe by solving the online puzzles on the basis of of hints provided and submitting it from their laptops or PCs. The site will be online from 22nd January 2017.",
+							description: "ANTAKSHARI ROUND",
 							type: "prelims"
-						},
-						{
-							name:"round 2",
-							startsAt: 1540832488663,
-			                endsAt: 1540832488663,
-							description: "Hackerzilla is one of the most interesting event of Byte World. This is a online fun event going throughout the Tech-Fest (Will be ongoing for 5-7 days).There will be 15-20 levels. Some clues for each level will be given , you have to clear the levels based on clues provided. One can participate in this contest sitting anywhere round the globe by solving the online puzzles on the basis of of hints provided and submitting it from their laptops or PCs. The site will be online from 22nd January 2017.",
-							type: "finals"
 						}
 					]
 				}	
@@ -1136,7 +1161,7 @@ export const eventData =
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
 			description:"LOREM IPSUM yantriki",
-			imageURL:"",
+			imageURL:"microphone.png",
 			children: 
 			[
 				{ 
@@ -1145,15 +1170,15 @@ export const eventData =
 					id: "solo-dance",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"LOREM IPSUM Machinist",
-					imageURL:"", 
+					description:"Groove in your style.Groove in your style.",
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "LOREM IPSUM ROUND1 CEREBRO",
+							description: "Groove in your style.",
 							type: "solo dancing"
 						}
 					]
@@ -1165,15 +1190,15 @@ export const eventData =
 					id: "group-dance",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"LOREM IPSUM mech-a-rush",
-					imageURL:"", 
+					description:"Concur to the beats with your team.",
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Conducted on 25th october'16.Teams have been shortlisted based on their performance in Round I.",
+							description: "Concur to the beats with your team.",
 							type: "group-dance"
 						}
 					]
@@ -1185,40 +1210,51 @@ export const eventData =
 					id: "couple-dance",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"lorem ipsum Innovative-exempler",
-					imageURL:"", 
+					description:"With the duo of your dancing shoes,sync your peppy moves.",
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "This is the ‘Abstract Submission’ round. The teams are required to submit a brief summary of their chosen topic in pdf or doc format, not exceeding 250 words. A limited number of abstracts will be selected for presentation in the final round. A fixed number of teams from the first year will be selected for the grooming round. Teams have to mail the abstract to byteworld2k17@gmail.com latest by 20th January 2017.",
+							description: "With the duo of your dancing shoes,sync your peppy moves.",
 							type: "couple-dance"
 						}
 					]
 				},
 
 				{ 
-					// Impromptu
-					name: "Impromptu",
-					id: "impromptu",
+					// couple-dance
+					name: "Feet On Fire",
+					id: "feet-on-fire",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"lorem ipsum Innovative-exempler",
-					imageURL:"", 
+					description:"Get ready to burst out your best dance moves.",
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "This is the ‘Abstract Submission’ round. The teams are required to submit a brief summary of their chosen topic in pdf or doc format, not exceeding 250 words. A limited number of abstracts will be selected for presentation in the final round. A fixed number of teams from the first year will be selected for the grooming round. Teams have to mail the abstract to byteworld2k17@gmail.com latest by 20th January 2017.",
-							type: "street-dance"
+							description: "Get ready to burst out your best dance moves.",
+							type: "couple-dance"
 						}
 					]
-				}
+				},
 
+
+				{ 
+					// Impromptu
+					name: "Flashmob",
+					id: "flashmob",
+					startsAt: 1540832488663,
+			        endsAt: 1540832488663,
+					description:"RANDOM BREAKOUT INTO DANCE AND MUSIC",
+					imageURL:"microphone.png", 
+					
+				}
 
 			]
 		},
@@ -1229,186 +1265,186 @@ export const eventData =
 			id: "Kalakriti",
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
-			description:"LOREM IPSUM ohm",
-			imageURL:"",
+			description:"Kalakriti",
+			imageURL:"microphone.png",
 			children: 
-			[
+			[					
 				{ 
-					// Rang Barse
-					name: "Rang Barse",
-					id: "rang barse",
+					//Rangoli Art
+					name: "Rangoli Art",
+					id: "rangoli art",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"LOREM IPSUM Machinist",
-					imageURL:"", 
+					description:"Design a rangoli based on a theme. ",
+					imageURL:"designing", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "LOREM IPSUM ROUND1 CEREBRO",
-							type: "solo dancing"
-						}
-					]
-				},
-      		 		
-      		 	{ 
-					// Pehchan Kaun
-					name: "Pehchan Kaun",
-					id: "pehchan-kaun",
-					startsAt: 1540832488663,
-			        endsAt: 1540832488663,
-					description:"LOREM IPSUM mech-a-rush",
-					imageURL:"", 
-					rounds: 
-					[
-						{
-							name:"round 1",
-							startsAt: 1540832488663,
-			                endsAt: 1540832488663,
-							description: "Conducted on 25th october'16.Teams have been shortlisted based on their performance in Round I.",
-							type: "group-dance"
-						}
-					]
-				},	
-
-				{ 
-					// Kai Po Che
-					name: "Kai Po Che",
-					id: "kai-po-che",
-					startsAt: 1540832488663,
-			        endsAt: 1540832488663,
-					description:"lorem ipsum Innovative-exempler",
-					imageURL:"", 
-					rounds: 
-					[
-						{
-							name:"round 1",
-							startsAt: 1540832488663,
-			                endsAt: 1540832488663,
-							description: "This is the ‘Abstract Submission’ round. The teams are required to submit a brief summary of their chosen topic in pdf or doc format, not exceeding 250 words. A limited number of abstracts will be selected for presentation in the final round. A fixed number of teams from the first year will be selected for the grooming round. Teams have to mail the abstract to byteworld2k17@gmail.com latest by 20th January 2017.",
-							type: "couple-dance"
+							description: "Design a rangoli based on a theme. ",
+							type: "designing"
 						}
 					]
 				},
 
 				{ 
-					// Stick The Sticks
-					name: "Stick The Sticks",
-					id: "stick-the-sticks",
+					// Fantasy Faces
+					name: "Fantasy Faces",
+					id: "fantasy-faces",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"lorem ipsum Innovative-exempler",
-					imageURL:"", 
+					description:"Color your teammates face on a given theme.",
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "This is the ‘Abstract Submission’ round. The teams are required to submit a brief summary of their chosen topic in pdf or doc format, not exceeding 250 words. A limited number of abstracts will be selected for presentation in the final round. A fixed number of teams from the first year will be selected for the grooming round. Teams have to mail the abstract to byteworld2k17@gmail.com latest by 20th January 2017.",
-							type: "street-dance"
+							description: "Color your teammates face on a given theme.",
+							type: "face paint"
 						}
 					]
 				},
 
 				{ 
-					// Get Inked
-					name: "Get Inked",
-					id: "get-inked",
+					// Dream Bag
+					name: "Dream Bag",
+					id: "dream-bag",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"lorem ipsum Innovative-exempler",
-					imageURL:"", 
+					description:"Team need to paint on a bag on a given theme.",
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "This is the ‘Abstract Submission’ round. The teams are required to submit a brief summary of their chosen topic in pdf or doc format, not exceeding 250 words. A limited number of abstracts will be selected for presentation in the final round. A fixed number of teams from the first year will be selected for the grooming round. Teams have to mail the abstract to byteworld2k17@gmail.com latest by 20th January 2017.",
-							type: "street-dance"
+							description: "Team need to paint on a bag on a given theme.",
+							type: "Bag Paintting"
 						}
 					]
 				},
 
 				{ 
-					// Desert Safari
-					name: "Desert Safari",
-					id: "desert-safari",
+					//Craft your mask 
+					name: "Craft Your Mask",
+					id: "craft-your-mask",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"lorem ipsum Innovative-exempler",
-					imageURL:"", 
+					description:"Mask design based on a theme.",
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "This is the ‘Abstract Submission’ round. The teams are required to submit a brief summary of their chosen topic in pdf or doc format, not exceeding 250 words. A limited number of abstracts will be selected for presentation in the final round. A fixed number of teams from the first year will be selected for the grooming round. Teams have to mail the abstract to byteworld2k17@gmail.com latest by 20th January 2017.",
-							type: "street-dance"
+							description: "Mask design based on a theme.",
+							type: "mask designing"
 						}
 					]
 				},
 
 				{ 
-					// Make Your Own T
-					name: "Make Your Own T",
-					id: "make-your-own-t",
+					// Diya Designing 
+					name: "Diya Design",
+					id: "diya-design",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"lorem ipsum Innovative-exempler",
-					imageURL:"", 
+					description:"Design a diya based on a theme.",
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "This is the ‘Abstract Submission’ round. The teams are required to submit a brief summary of their chosen topic in pdf or doc format, not exceeding 250 words. A limited number of abstracts will be selected for presentation in the final round. A fixed number of teams from the first year will be selected for the grooming round. Teams have to mail the abstract to byteworld2k17@gmail.com latest by 20th January 2017.",
-							type: "street-dance"
+							description: "Design a diya based on a theme.",
+							type: "diya designing"
 						}
 					]
 				},
 
 				{ 
-					// Chehre Pe Chehra
-					name: "Chehre Pe Chehra",
-					id: "chehre-pe-chehra",
+					// Doodling
+					name: "Doodling",
+					id: "doodling",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"lorem ipsum Innovative-exempler",
-					imageURL:"", 
+					description:"Doodling on a given theme.",
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "This is the ‘Abstract Submission’ round. The teams are required to submit a brief summary of their chosen topic in pdf or doc format, not exceeding 250 words. A limited number of abstracts will be selected for presentation in the final round. A fixed number of teams from the first year will be selected for the grooming round. Teams have to mail the abstract to byteworld2k17@gmail.com latest by 20th January 2017.",
-							type: "street-dance"
+							description: "Doodling on a given theme.",
+							type: "doodle designing"
 						}
 					]
 				},
 
 				{ 
-					// Funtoosh
-					name: "Funtoosh",
-					id: "funtoosh",
+					// Clay ART
+					name: "Clay Art",
+					id: "clay-art",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"lorem ipsum Innovative-exempler",
-					imageURL:"", 
+					description:"With the help of clay sculpture something on a theme.",
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "This is the ‘Abstract Submission’ round. The teams are required to submit a brief summary of their chosen topic in pdf or doc format, not exceeding 250 words. A limited number of abstracts will be selected for presentation in the final round. A fixed number of teams from the first year will be selected for the grooming round. Teams have to mail the abstract to byteworld2k17@gmail.com latest by 20th January 2017.",
-							type: "street-dance"
+							description: "With the help of clay sculpture something on a theme.",
+							type: "clay Sculpture"
+						}
+					]
+				},
+
+				{ 
+					// Make your tattoo
+					name: "Make Your Tatoo",
+					id: "make-your-tatoo",
+					startsAt: 1540832488663,
+			        endsAt: 1540832488663,
+					description:"Tatoo design with the help on pens and markers based on a theme.",
+					imageURL:"microphone.png", 
+					rounds: 
+					[
+						{
+							name:"round 1",
+							startsAt: 1540832488663,
+			                endsAt: 1540832488663,
+							description: "Tatoo design with the help on pens and markers based on a theme.",
+							type: "tattoo design"
+						}
+					]
+				},
+
+				{ 
+					// Meme Creation
+					name: "Meme Creation",
+					id: "meme-creation",
+					startsAt: 1540832488663,
+			        endsAt: 1540832488663,
+					description:"Design a poster of meme based on a theme.",
+					imageURL:"microphone.png", 
+					rounds: 
+					[
+						{
+							name:"round 1",
+							startsAt: 1540832488663,
+			                endsAt: 1540832488663,
+							description: "Design a poster of meme based on a theme.",
+							type: "meme creation"
 						}
 					]
 				}
@@ -1421,54 +1457,63 @@ export const eventData =
 			id: "avlokan",
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
-			description:"LOREM IPSUM avlokan",
-			imageURL:"",
+			description:"AVLOKAN",
+			imageURL:"microphone.png",
 			children: 
 			[
 				{ 
-					// Word Rush
-					name: "Word Rush",
-					id: "word-rush",
+					// word-o-mort
+					name: "Word O Mort",
+					id: "word-o-mort",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"LOREM IPSUM word-rush",
-					imageURL:"", 
+					description:"Show the power of your vocabulary. Round (1) -- MCQ on vocab  power. Round(2) - Analysing a passage.",
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "LOREM IPSUM Qualifying round",
-							type: "grammer test"
+							description: " MCQ on vocab  power",
+							type: "pen and paper"
 						},
-                        {
+
+						{
 							name:"round 2",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Conducted on 26th october'I6.Teams have been shortlisted based on their performance in Round I.",
-							type: "grammer Test"
+							description: "Analysing a passage.",
+							type: "Vocal"
 						}
 					]
 				},
 
 				{ 
-					// Apti-Taste
-					name: "Apti Taste",
-					id: "apti-taste",
+					// Enigma Expert
+					name: "Enigma Expert",
+					id: "enigma-expert",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"LOREM IPSUM apti-taste",
-					imageURL:"", 
+					description:"Crack the twist in the meaning of words by solving riddles and Questions of higher order thinking skills.Round (1)- MCQ on questions of HOTS.  Round (2)- Case solving through clues. ",
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Hackerzilla is one of the most interesting event of Byte World. This is a online fun event going throughout the Tech-Fest (Will be ongoing for 5-7 days).There will be 15-20 levels. Some clues for each level will be given , you have to clear the levels based on clues provided. One can participate in this contest sitting anywhere round the globe by solving the online puzzles on the basis of of hints provided and submitting it from their laptops or PCs. The site will be online from 22nd January 2017.",
-							type: "Aptitude test"
+							description: "MCQ on questions of HOTS.",
+							type: "pen and paper"
+						},
+						{
+							name:"round 2",
+							startsAt: 1540832488663,
+			                endsAt: 1540832488663,
+							description: "Case solving through clues.",
+							type: "puzzle solve"
 						}
+
 					]
 				},
 
@@ -1478,59 +1523,187 @@ export const eventData =
 					id: "geek-o-brain",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"LOREM IPSUM geek-o-brain",
-					imageURL:"", 
+					description:"Test of the general knowledge and the current affairs of the day to day world. Round (1) -- MCQ on Gk.  round (2) -- AV Quiz",
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Hackerzilla is one of the most interesting event of Byte World. This is a online fun event going throughout the Tech-Fest (Will be ongoing for 5-7 days).There will be 15-20 levels. Some clues for each level will be given , you have to clear the levels based on clues provided. One can participate in this contest sitting anywhere round the globe by solving the online puzzles on the basis of of hints provided and submitting it from their laptops or PCs. The site will be online from 22nd January 2017.",
-							type: "pen paper test"
+							description: "MCQ on Gk",
+							type: "pen and paper"
 						},
 						{
 							name:"round 2",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Teams have been shortlisted for the final round based on their performance in the first round,comprising of 3 members from each each academic year. This will be an on-site round. You will be given a problem statement for which you have to design a website. Your work will be judged against various criteria e.g. design, responsiveness, effectiveness etc. All other info regarding second round will be provided at the time of contest. This round will be held on 24th of January 2017 at Computer Centre (NIT Patna) from 10:30am to 1:30pm.",
-							type: "QUIZ"
+							description: "AV Quiz",
+							type: "Audio visual"
 						},
 						
 					]
 				},
 
 				{ 
-					// Game Of Riddles
-					name: "Game Of Riddles",
-					id: "game-of-riddles",
+					// Virtual placement
+					name: "Virtual Placement",
+					id: "virtual-placement",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description:"LOREM IPSUM game-of-riddles",
-					imageURL:"", 
+					description:"This placement season, compete with the other students in mock placements.  Round (1) -- MCQ Aptitude test.  Round (2) -- GD.  Round (3)- Face 2 Face interview. ",
+					imageURL:"microphone.png", 
 					rounds: 
 					[
 						{
 							name:"round 1",
 							startsAt: 1540832488663,
 			                endsAt: 1540832488663,
-							description: "Hackerzilla is one of the most interesting event of Byte World. This is a online fun event going throughout the Tech-Fest (Will be ongoing for 5-7 days).There will be 15-20 levels. Some clues for each level will be given , you have to clear the levels based on clues provided. One can participate in this contest sitting anywhere round the globe by solving the online puzzles on the basis of of hints provided and submitting it from their laptops or PCs. The site will be online from 22nd January 2017.",
-							type: "Treasure Hunt Using puzzles"
+							description: " MCQ Aptitude test.",
+							type: "pen and paper"
+						},
+						{
+							name:"round 2",
+							startsAt: 1540832488663,
+			                endsAt: 1540832488663,
+							description: "Group Discussion",
+							type: "GD"
+						},
+						{
+							name:"round 3",
+							startsAt: 1540832488663,
+			                endsAt: 1540832488663,
+							description: "Face 2 Face interview",
+							type: "PI"
 						}
+
 					]
-				}		
+				},	
+
+				{ 
+					//Clash-o-mania
+					name: "Clash O Mania",
+					id: "clash-o-mania",
+					startsAt: 1540832488663,
+			        endsAt: 1540832488663,
+					description:"Clash of the winners of the above events",
+					imageURL:"microphone.png", 
+					rounds: 
+					[
+						{
+							name:"round 1",
+							startsAt: 1540832488663,
+			                endsAt: 1540832488663,
+							description: "Clash of the winners of the other avlokan events",
+							type: "pen and paper"
+						}
+
+					]
+				}			
 
 			]
 		},
 
-		 {
+		{
+            // NAVYAKALAM
+			name: "Navyakalam",
+			id: "navyakalam",
+			startsAt: 1540832488663,
+			endsAt: 1540832488663,
+			description:"Navyakalam",
+			imageURL:"microphone.png",
+			children: 
+			[
+				{ 
+					// 1)INTELLOPITHECUS
+					name: "Intellopithecus",
+					id: "intellopithecus",
+					startsAt: 1540832488663,
+			        endsAt: 1540832488663,
+					description:"INTELLOPITHECUS",
+					imageURL:"microphone.png", 
+					children: 
+					[
+						{
+						    // Movie Mania
+							name:"Movie Mania" ,
+							id:"movie-mania",
+							startsAt: 1540832488663,
+			                endsAt: 1540832488663,
+							description: "An open-for-all event, this will be an online round using smartphones/laptops of participants. Basically an audio-visual quiz, it consists of science related questions from the subject of Movies",
+							
+						},
+						{
+						    // Puzzle Solving
+							name:"Puzzle Solving" ,
+							id:"puzzle-solving",
+							startsAt: 1540832488663,
+			                endsAt: 1540832488663,
+							description: "Qualifiers of Movie Mania enter the puzzle solving round. This deeply checks the aptitude of the student. Various tasks including solving a jigsaw puzzle, Rubik’s cube, analytical reasoning, geometric trivia, and many more surprises shall be given to participants in groups. Time taken to solve is also a major factor. Fastest brain wins.",							
+						}
+					]
+				}, 
+
+				{ 
+					// Waste Waste
+					name: "Waste Wizard",
+					id: "waste-wizard",
+					startsAt: 1540832488663,
+			        endsAt: 1540832488663,
+					description:"Waste management or waste disposal is all the activities and actions required to manage waste from its inception to its final disposal. Waste wizard is a team activity.Teams will be given a set of scraps or will be allowed to choose from a given pile of junk. They are expected to use them to make any sensible object out of them.",
+					imageURL:"microphone.png", 
+					rounds:
+					{
+                      name: "round1",
+                      startsAt: 1540832488663,
+			          endsAt: 1540832488663,
+					  description:"Waste management or waste disposal is all the activities and actions required to manage waste from its inception to its final disposal. Waste wizard is a team activity.Teams will be given a set of scraps or will be allowed to choose from a given pile of junk. They are expected to use them to make any sensible object out of them.",
+                      type: "waste management"
+				    }
+					
+				}, 
+
+				{ 
+					// 2)SCIENTASTIC
+					name: "Scientastic",
+					id: "scientastic",
+					startsAt: 1540832488663,
+			        endsAt: 1540832488663,
+					description:"SCIENTASTIC",
+					imageURL:"microphone.png", 
+					children: 
+					[
+						{
+						    // PPT PRESENTATION
+							name:"Ppt Presentathon",
+							id:"ppt-presentathon",
+							startsAt: 1540832488663,
+			                endsAt: 1540832488663,
+							description: "Participants are required to make PowerPoint presentations as a team or an individual, explaining the topic and how they plan to overcome it. Evaluation shall be based on the idea and presentation style.",
+							
+						},
+						{
+						    // MODEL MAKING
+							name:"Model Making",
+							id:"model-making",
+							startsAt: 1540832488663,
+			                endsAt: 1540832488663,
+							description: " Selected teams/individuals qualify to this one-of-a-kind model making round.Based on the idea of round 1, the students shall make the required working model (Eg: air filter) of a given topic.All necessary materials shall be provided. These projects can also be used in real life in the future for their obvious purposes.",							
+						}
+					]
+				}
+				
+			]
+		},
+
+		 { 
             // PRATIBIMB
 			name: "Pratibimb",
 			id: "pratibimb",
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
-			description:"LOREM IPSUM pratibimb",
-			imageURL:"",		
+			description:"PRATIBIMB",
+			imageURL:"microphone.png",		
 		}
 
 	]
@@ -1543,6 +1716,7 @@ export const eventData =
 	startsAt: 1542667434564,
 	endsAt: 1540832488663,
 	description: "LOREM IPSUM Fun Events",
+	imageURL:"bowling.png" ,
 	children:
 	 [
 		{
@@ -1551,36 +1725,36 @@ export const eventData =
 			id: "inferno",
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
-			description:"Are you creative enough to bring your dreams to life, to visualise your ideas and give them a shape? Yes! Then this the right place for you to unveil your talent.Creativity is a wild mind and a disciplined eye. It is an art to explore your ideas to extraordinary way from the ordinary work.Dare to expand your imagination to visualize a landscape to blend man’s technology into nature’s surroundings or design a building that could idealize your thoughts. Have an eye to catch the amazing moments and a mind to turn a waste free world with the following events.",
-			imageURL:"bowling-2.png",
+			description:"ROADIES TYPE EVENT",
+			imageURL:"bowling.png",
 			children: 
 			[
 				{
 					name:"round 1",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description: "Conducted on 25th october'16.Teams have been shortlisted based on their performance in Round I.",
+					description: "INFERNO",
 					type: "mr or miss inferno"
 				}
 			]
 		},
         
         {
-			// STREET DANCE
-			name: "Street Dance",
-			id: "street-dance",
+			// Virtual junkie
+			name: "Virtual junkie",
+			id: "virtual-junkie",
 			startsAt: 1542667434564,
 			endsAt: 1540832488663,
-			description:"Are you creative enough to bring your dreams to life, to visualise your ideas and give them a shape? Yes! Then this the right place for you to unveil your talent.Creativity is a wild mind and a disciplined eye. It is an art to explore your ideas to extraordinary way from the ordinary work.Dare to expand your imagination to visualize a landscape to blend man’s technology into nature’s surroundings or design a building that could idealize your thoughts. Have an eye to catch the amazing moments and a mind to turn a waste free world with the following events.",
-			imageURL:"bowling-2.png",
+			description:"NOT YET DECLARED",
+			imageURL:"bowling.png",
 			children: 
 			[
 				{
 					name:"round 1",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description: "Conducted on 25th october'16.Teams have been shortlisted based on their performance in Round I.",
-					type: "street dance"
+					description: "NOT YET DECLARED",
+					type: "fun"
 				}
 			]
 		},
@@ -1591,15 +1765,15 @@ export const eventData =
 			id: "gully-cricket",
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
-			description:"Are you creative enough to bring your dreams to life, to visualise your ideas and give them a shape? Yes! Then this the right place for you to unveil your talent.Creativity is a wild mind and a disciplined eye. It is an art to explore your ideas to extraordinary way from the ordinary work.Dare to expand your imagination to visualize a landscape to blend man’s technology into nature’s surroundings or design a building that could idealize your thoughts. Have an eye to catch the amazing moments and a mind to turn a waste free world with the following events.",
-			imageURL:"bowling-2.png",
+			description:"Gully CRICKET",
+			imageURL:"bowling.png",
 			children: 
 			[
 				{
 					name:"round 1",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description: "Conducted on 25th october'16.Teams have been shortlisted based on their performance in Round I.",
+					description: "GULLY CRICKET",
 					type: "gully cricket"
 				}
 			]
@@ -1611,19 +1785,40 @@ export const eventData =
 			id: "paper-dance",
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
-			description:"Are you creative enough to bring your dreams to life, to visualise your ideas and give them a shape? Yes! Then this the right place for you to unveil your talent.Creativity is a wild mind and a disciplined eye. It is an art to explore your ideas to extraordinary way from the ordinary work.Dare to expand your imagination to visualize a landscape to blend man’s technology into nature’s surroundings or design a building that could idealize your thoughts. Have an eye to catch the amazing moments and a mind to turn a waste free world with the following events.",
-			imageURL:"bowling-2.png",
+			description:"PAPER DANCE",
+			imageURL:"bowling.png",
 			children: 
 			[
 				{
 					name:"round 1",
 					startsAt: 1540832488663,
 			        endsAt: 1540832488663,
-					description: "Conducted on 25th october'16.Teams have been shortlisted based on their performance in Round I.",
+					description: "PAPER DANCE",
+					type: "paper dance"
+				}
+			]
+		},
+
+		{
+			// MODERN PHYSIQUE
+			name: "Modern Physique",
+			id: "modern-physique",
+			startsAt: 1540832488663,
+			endsAt: 1540832488663,
+			description:"MODERN PHYSIQUE",
+			imageURL:"bowling.png",
+			children: 
+			[
+				{
+					name:"round 1",
+					startsAt: 1540832488663,
+			        endsAt: 1540832488663,
+					description: "MODERN PHYSIQUE",
 					type: "paper dance"
 				}
 			]
 		}
+        
         
 	]
 },
@@ -1634,7 +1829,8 @@ export const eventData =
 	id: "workshops",
 	startsAt: 1540832488663,
 	endsAt: 1540832488663,
-	description: "fggdg dr g",
+	description: "WORKSHOPS",
+	imageURL:"microphone.png",
 	children:
 	 [
 		{
@@ -1644,7 +1840,7 @@ export const eventData =
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
 			description:"THE WORKSHOP IS CONDUCTED BY GOOGLE",
-			imageURL:"",	
+			imageURL:"microphone.png",	
 		},	
 
 		{
@@ -1654,7 +1850,7 @@ export const eventData =
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
 			description:"THE WORKSHOP IS CONDUCTED BY MICROSOFT",
-			imageURL:"",	
+			imageURL:"microphone.png",	
 		},	
 
 		{
@@ -1664,7 +1860,7 @@ export const eventData =
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
 			description:"THE WORKSHOP IS CONDUCTED BY FACEBOOK",
-			imageURL:"",	
+			imageURL:"microphone.png",	
 		},	
 
 		{
@@ -1674,7 +1870,7 @@ export const eventData =
 			startsAt: 1540832488663,
 			endsAt: 1540832488663,
 			description:"THE WORKSHOP IS CONDUCTED BY AMAZON",
-			imageURL:"",	
+			imageURL:"microphone.png",	
 		}	
 	]
 }
