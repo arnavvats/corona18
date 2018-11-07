@@ -23,9 +23,9 @@
             [class.justify-content-around]="!signInOnly">
         <p class="dark">We will need...</p>
         <div class="input-group p-2" [hidden]="signInOnly">
-          <input type="text" placeholder="Your name" class="form-control" [formControl]="signUpForm.get('name')" trim>
+          <input type="text" placeholder="Your name" class="form-control" [formControl]="signUpForm.get('name')">
           <i class="fa fa-lg fa-smile-o"></i>
-          <p class="error w-100 mb-0 text-center" *ngIf="signUpForm.get('name').invalid && signUpForm.get('name').touched">Name must be atleast 3 letters.</p>
+          <p class="error w-100 mb-0 text-center" *ngIf="signUpForm.get('name').invalid && signUpForm.get('name').touched">Name must be atleast 3 letters. Double spaces are not allowed.</p>
         </div>
         <div class="input-group p-2">
           <input type="text" placeholder="Your email address" class="form-control" [formControl]="loginForm.get('email')">

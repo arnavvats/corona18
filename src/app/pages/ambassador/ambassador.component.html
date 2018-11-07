@@ -1,7 +1,7 @@
 <main class="animated fadeIn">
   <div class="top-area pt-2">
     <div class="container">
-    <h1 class="text-center animated zoomIn">Welcome to your ambassador dashboard, &nbsp;
+    <h1 class="text-center animated zoomIn">Welcome to the ambassador dashboard &nbsp;
         {{userDetail && userDetail.name ? userDetail.name : ' '}}</h1>
 
     <div *ngIf="userDetail && userDetail.ambassador" class="row">
@@ -13,14 +13,19 @@
           <h3>Here is your personalized share message!</h3>
           <p class="share-message"> Hello, this is {{userDetail.name}}, ambassador for TCF'19
             National Institute of Technology, Patna, Please register with my link
+            {{link}}
           </p>
           <div class="d-flex justify-content-center mt-2">
             <p class="mr-4">Share now!</p>
             <div class="social-icons">
-              <a [href]="'whatsapp://send?text=Hello, this is '+userDetail.name+' , ambassador for TCF\'19
-              National Institute of Technology, Patna, Please register with my link'" data-action="share/whatsapp/share"><i class="fa fa-whatsapp mr-3"></i></a>
-              <i class="fa fa-envelope-o mr-3"></i>
-              <i class="fa fa-facebook"></i>
+                <a [href]="('whatsapp://send?text=' + shareMessage) | safe" data-action="share/whatsapp/share">
+                   <i class="fa fa-whatsapp mr-3"></i>
+                </a>
+                <a [href]="('mailto:?subject=Invitation to TCF\'19&body=' + shareMessage) | safe"><i class="fa fa-envelope-o mr-3"></i></a>
+
+              <a [href]="('https://www.facebook.com/sharer/sharer.php?u=google.com&quote=' + shareMessage) | safe">
+                <i class="fa fa-facebook"></i>
+              </a>
 
             </div>
           </div>
@@ -28,15 +33,15 @@
       </div>
       <div class="col-12 row mt-4 p-2 dashboard text-center animated slideInLeft">
           <div class="col-4">
-            <h3>Your Rank</h3>
+            <h3>Rank</h3>
             <h1 class="dark">{{userDetail.ambassador.rank}}</h1>
           </div>
           <div class="col-4">
-            <h3>Your Points</h3>
+            <h3>Points</h3>
             <h1 class="dark">{{userDetail.ambassador.points}}</h1>
           </div>
           <div class="col-4">
-            <h3>Referral Count</h3>
+            <h3>Referrals</h3>
             <h1 class="dark">{{userDetail.ambassador.count}}</h1>
           </div>
       </div>
@@ -48,6 +53,12 @@
               <a class="btn btn-danger animated pulse infinite" (click)="joinAP()">Click Here To Join</a>
           </div>
       </div>
+      <div class="row" *ngIf="!userDetail">
+        <div class="col-12 mt-4 p-2 dashboard text-center animated slideInRight">
+            <p class="w-100">Please login with your account to join the Ambassador Program</p>
+            <a class="btn btn-danger animated pulse infinite" (click)="navigateToLogin()">Click Here To Login</a>
+        </div>
+    </div>
   </div>
   </div>
   <div class="middle-area">
@@ -55,40 +66,24 @@
         <div class="leaderboard animated slideInUp">
           <i class="fa fa-5x fa-trophy trophy"></i>
           <h3 class="text-center mb-2">Ambassador LeaderBoard</h3>
+          <div class="table-holder">
           <table class="table table-striped">
             <thead>
               <th>#</th>
               <th>Name</th>
               <th>Points</th>
-              <th>Referrals</th>
+              <th>College</th>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>XYZ</td>
-                <td>XYZ</td>
-                <td>XYZ</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>XYZ</td>
-                <td>XYZ</td>
-                <td>XYZ</td>
-              </tr>
-              <tr>
-                  <td>1</td>
-                  <td>XYZ</td>
-                  <td>XYZ</td>
-                  <td>XYZ</td>
-              </tr>
-                <tr>
-                    <td>1</td>
-                    <td>XYZ</td>
-                    <td>XYZ</td>
-                    <td>XYZ</td>
-                  </tr>
+             <tr *ngFor="let ambassadorLeader of ambassadorLeaders">
+               <td>{{ambassadorLeader.ambassador.rank}}</td>
+               <td>{{ambassadorLeader.name}}</td>
+               <td>{{ambassadorLeader.ambassador.points}}</td>
+               <td>{{ambassadorLeader.collegeName }}</td>
+             </tr>
             </tbody>
           </table>
+          </div>
         </div>
         <div class="prizes animated slideInUp">
           <i class="fa fa-5x fa-gift gift"></i>

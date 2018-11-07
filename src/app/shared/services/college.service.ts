@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { map } from 'rxjs/operators';
+import { map, flatMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +18,16 @@ export class CollegeService {
   }
   comparator(a , b) {
     return a.name.localeCompare(b.name);
+  }
+  getAmbassadorLeaderboard() {
+    return this.afStore.collection('leaderboard').doc('ambassadors')
+    .get().pipe(map(res => {
+      return res.data().leaders;
+    }));
+  }
+  getCollegeNameFromId(id) {
+    return this.afStore.doc('colleges/' + id).get().pipe(map(res => {
+      return res.data().name;
+    }));
   }
 }

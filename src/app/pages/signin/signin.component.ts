@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { ModalService } from 'src/app/shared/services/modal.service';
 import { CollegeService } from 'src/app/shared/services/college.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -18,17 +18,19 @@ export class SigninComponent implements OnInit {
   loading: Boolean;
   collegeList: Array<any>;
   signInForms: FormArray;
+  private referrer: string;
   constructor(private auth: AuthService,
      private modalService: ModalService,
      private collegeService: CollegeService,
-     private router: Router
+     private router: Router,
+     private activatedRoute: ActivatedRoute
      ) {
     this.loginForm = new FormGroup({
       'email': new FormControl('', [Validators.required, Validators.email]),
       'password': new FormControl('', [Validators.required, Validators.minLength(6)])
     });
   this.signUpForm = new FormGroup({
-    'name': new FormControl('', [Validators.required, Validators.minLength(3)]),
+    'name': new FormControl('', [Validators.required, Validators.minLength(3), Validators.pattern('^(?!.*  ).+')]),
     'collegeId': new FormControl('', [Validators.required, Validators.minLength(3)]),
     'collegeName': new FormControl('', [Validators.minLength(3)]),
     'confirmPassword': new FormControl('', [Validators.required, Validators.minLength(6)])
@@ -41,6 +43,9 @@ export class SigninComponent implements OnInit {
   ngOnInit() {
     this.collegeService.getAllCollegeList().toPromise().then(res => {
       this.collegeList = res;
+    });
+    this.activatedRoute.queryParams.subscribe(params => {
+      this.referrer = (params && params['ref']) || null;
     });
   }
   confirmPassword() {
@@ -61,7 +66,7 @@ export class SigninComponent implements OnInit {
   async signUp() {
     this.loading = true;
     try {
-     await this.auth.signUp({...this.loginForm.value, ...this.signUpForm.value});
+     await this.auth.signUp({...this.loginForm.value, ...this.signUpForm.value, referrer: this.referrer});
      this.modalService.createNewModalWithData.next('success, please verify your email...a link has been sent to you!');
     } catch (e) {
       this.backendError = e;

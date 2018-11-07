@@ -26,7 +26,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { AngularFireMessagingModule } from '@angular/fire/messaging';
 import { ModalComponent } from './shared/components/modal/modal.component';
-import { NgxTrimDirectiveModule } from 'ngx-trim-directive';
+import { SafePipe } from './shared/pipes/safe.pipe';
 
 @NgModule({
   declarations: [
@@ -42,7 +42,8 @@ import { NgxTrimDirectiveModule } from 'ngx-trim-directive';
     ContactUsComponent,
     AboutUsComponent,
     GalleryComponent,
-    ModalComponent
+    ModalComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
@@ -58,7 +59,6 @@ import { NgxTrimDirectiveModule } from 'ngx-trim-directive';
     AngularFireDatabaseModule,
     AngularFireFunctionsModule,
     AngularFireMessagingModule,
-    NgxTrimDirectiveModule
   ],
   providers: [],
   bootstrap: [AppComponent],
