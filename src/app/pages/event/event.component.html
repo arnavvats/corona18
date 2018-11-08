@@ -25,14 +25,14 @@
           <p>SEC</p>
       </div>
     </div>
-    <button class="btn mt-5 p-2">REGISTER</button>
+    <button class="btn mt-5 p-2 position-relative">REGISTER</button>
 
   </div>
 
-    <div *ngIf="event && event.children">
-            <app-event-button 
+    <div *ngIf="event && event.children" class="position-absolute w-100">
+            <app-event-button
             *ngFor="let child of event.children; let i = index"
-             [left]="!(i % 2)" [imageURL]="child.imageURL" 
+             [left]="!(i % 2)" [imageURL]="child.imageURL"
              [text]="child.name"
              [route]="child.id"
              >

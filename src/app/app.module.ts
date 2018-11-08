@@ -18,7 +18,6 @@ import { GalleryComponent } from './pages/gallery/gallery.component';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { ParticlesModule } from 'angular-particle';
 import { AngularFireModule } from '@angular/fire';
-import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -27,6 +26,8 @@ import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { AngularFireMessagingModule } from '@angular/fire/messaging';
 import { ModalComponent } from './shared/components/modal/modal.component';
 import { SafePipe } from './shared/pipes/safe.pipe';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { SafePipe } from './shared/pipes/safe.pipe';
     AngularFireDatabaseModule,
     AngularFireFunctionsModule,
     AngularFireMessagingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent],
