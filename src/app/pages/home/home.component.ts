@@ -6,19 +6,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  events=[{
-    name:"Technical", image:"gears.png",children:[
-        {name:"byteWorld", image:"smart-tv.png", children:[
-        ]}
-    ]
+  events = [{
+    text: 'Technical Events',
+    imageURL: 'gears.png',
+    route: 'technical-events'
   }, {
-    name: "Creative",
-    image: "smart-tv-2.png"
-  }];
+    text: 'Cultural Events',
+    imageURL: 'microphone-2.png',
+    route: 'cultural-events'
+  }, {
+    text: 'Fun Events',
+    imageURL: 'bowling-2.png',
+    route: 'fun-events'
+  }, {
+    text: 'Workshops',
+    imageURL: 'packs-2.png',
+    route: 'workshops'
+  }
+  ];
   myStyle: object = {};
-	myParams: object = {};
-	width: number = 100;
-	height: number = 100;
+  myParams: object = {};
+  width = 100;
+  height = 100;
 
   constructor() { }
 

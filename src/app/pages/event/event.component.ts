@@ -7,15 +7,6 @@ import { eventData } from '../../shared/models/event-data.model';
   styleUrls: ['./event.component.scss']
 })
 export class EventComponent implements OnInit {
-  events=[{
-    name:"Technical", image:"gears.png",children:[
-        {name:"byteWorld", image:"smart-tv.png", children:[
-        ]}
-    ]
-  }, {
-    name: "Creative",
-    image: "smart-tv-2.png"
-  }];
   timer = {
     days: 0,
     hours: 0,
@@ -23,20 +14,23 @@ export class EventComponent implements OnInit {
     seconds: 0
   };
   event;
+  interval;
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.route.params.subscribe((res) => {
       const eventID = res["id"];
       this.event = this.checkArray(eventData, eventID);
-      if(this.event === undefined) {
-        this.router.navigateByUrl('');
+      if (this.interval) {
+        clearInterval(this.interval);
       }
-      else {
+      if (this.event === undefined) {
+        this.router.navigateByUrl('');
+      } else {
         console.log(this.event);
         const finalTimeStamp = this.event.startsAt;
         const selfTimer = this.timer;
-        setInterval(() => {
+        this.interval = setInterval(() => {
           const distance = (finalTimeStamp - Date.now()) / 1000;
           selfTimer.days = Math.floor(distance / (60 * 60 * 24));
           selfTimer.hours = Math.floor((distance % ( 60 * 60 * 24)) / (60 * 60));
@@ -45,7 +39,7 @@ export class EventComponent implements OnInit {
         }, 1000);
       }
     });
-   
+
   }
 
   checkArray(array, id) {
