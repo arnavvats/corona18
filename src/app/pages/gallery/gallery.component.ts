@@ -15,43 +15,47 @@ export class GalleryComponent implements OnInit {
     this.galleryOptions = [
       {
           width: '100%',
+          height: '120vh',
           thumbnailsColumns: 6,
-          thumbnailsRows: 2,
+          thumbnailsRows: 5,
           imageAnimation: NgxGalleryAnimation.Zoom,
           image: false
       },
       {
         breakpoint: 768,
         width: '100%',
-        height: '100vh',
+        height: '150vh',
         thumbnailsColumns: 4,
-        thumbnailsRows: 3,
+        thumbnailsRows: 8,
         imageAnimation: NgxGalleryAnimation.Zoom
       },
       {
         breakpoint: 576,
         width: '100%',
-        height: '100vh',
+        height: '180vh',
         thumbnailsColumns: 3,
-        thumbnailsRows: 4,
+        thumbnailsRows: 10,
         imageAnimation: NgxGalleryAnimation.Zoom,
       }
   ];
-  this.galleryImages = [
-    this.generateObject('1.jpeg'),
-    this.generateObject('2.jpeg'),
-    this.generateObject('3.jpeg'),
-    this.generateObject('4.jpeg'),
-    this.generateObject('5.jpeg'),
-    this.generateObject('6.jpeg'),
-    this.generateObject('7.jpeg'),
-    this.generateObject('8.jpeg'),
-    this.generateObject('9.jpeg'),
-    this.generateObject('10.jpeg'),
-    this.generateObject('10.jpeg')
+  // this.galleryImages = [
+  //   this.generateObject('1.jpg'),
+  //   this.generateObject('2.jpg'),
+  //   this.generateObject('3.jpg'),
+  //   this.generateObject('4.jpg'),
+  //   this.generateObject('5.jpg'),
+  //   this.generateObject('6.jpg'),
+  //   this.generateObject('7.jpg'),
+  //   this.generateObject('8.jpg'),
+  //   this.generateObject('9.jpg'),
+  //   this.generateObject('10.jpg'),
+  //   this.generateObject('11.jpg'),
 
-
-];
+   this.galleryImages=[];
+   for(let i=1;i<=29;i++)
+   {
+     this.galleryImages.push(this.generateObject(i+".jpg"));
+   };
   }
   generateObject(base) {
     base = 'assets/images/gallery/' + base;
