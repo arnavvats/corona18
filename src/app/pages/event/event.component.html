@@ -1,10 +1,10 @@
 <main class="position-relative">
   <div class="about">
     <h1 class="heading">
-      {{event.name ? event.name : ''}}
+      {{ event && event.name ? event.name : ''}}
     </h1>
     <div class="description">
-      {{event.description ? event.description : ''}}
+      {{event && event.description ? event.description : ''}}
     </div>
     <div class="text-center pt-5 mb-1 timer-header">- &nbsp;STARTS &nbsp;IN &nbsp;-</div>
     <div class="timer row mb-3">
@@ -25,7 +25,8 @@
           <p>SEC</p>
       </div>
     </div>
-    <button class="btn mt-5 p-2 position-relative">REGISTER</button>
+    <button class="btn mt-5 p-2 position-relative" *ngIf="event && event.rounds && (event.startsAt > Date.now())"
+      (click)="register()" [disabled]="!canRegister">REGISTER{{canRegister ? '' : "ED"}}</button>
 
   </div>
 

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Route, ActivatedRoute, Router } from '@angular/router';
 import { eventData } from '../../shared/models/event-data.model';
+import { CollegeService } from 'src/app/shared/services/college.service';
+import { UserService } from 'src/app/shared/services/user.service';
+import { ModalService } from 'src/app/shared/services/modal.service';
 @Component({
   selector: 'app-event',
   templateUrl: './event.component.html',
@@ -15,44 +18,65 @@ export class EventComponent implements OnInit {
   };
   event;
   interval;
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  user;
+  eventID;
+  Date = Date;
+  canRegister = true;
+  constructor(private route: ActivatedRoute, private router: Router,
+    private collegeService: CollegeService, private userSerivce: UserService, private modalService: ModalService) { }
 
   ngOnInit() {
     this.route.params.subscribe((res) => {
-      const eventID = res["id"];
-      this.event = this.checkArray(eventData, eventID);
+      this.event = null;
       if (this.interval) {
         clearInterval(this.interval);
       }
-      if (this.event === undefined) {
-        this.router.navigateByUrl('');
-      } else {
-        console.log(this.event);
-        const finalTimeStamp = this.event.startsAt;
-        const selfTimer = this.timer;
-        this.interval = setInterval(() => {
-          const distance = (finalTimeStamp - Date.now()) / 1000;
-          selfTimer.days = Math.floor(distance / (60 * 60 * 24));
-          selfTimer.hours = Math.floor((distance % ( 60 * 60 * 24)) / (60 * 60));
-          selfTimer.minutes = Math.floor((distance % (60 * 60)) / (60));
-          selfTimer.seconds = Math.floor((distance % (60)));
-        }, 1000);
-      }
-    });
-
-  }
-
-  checkArray(array, id) {
-    for(let i = 0 ; i < array.length ; i++) {
-      if(array[i].id === id) {
-        return array[i];
-      }
-      else if(array[i].children !== undefined) {
-        const res = this.checkArray(array[i].children, id);
-        if(res !== undefined) {
-          return res;
+      this.userSerivce.user$.subscribe(user => {
+        if (user) {
+          this.checkIfRegistered();
         }
+      });
+       this.eventID = res['id'];
+      this.collegeService.getEventDataFromId(this.eventID).then( eventData => {
+        this.event = eventData.data();
+        this.setEventTimer();
+      });
+    });
+  }
+  setEventTimer() {
+
+    if (!this.event) {
+      this.router.navigateByUrl('');
+    } else {
+      console.log(this.event);
+      const finalTimeStamp = this.event.startsAt;
+      const selfTimer = this.timer;
+      this.interval = setInterval(() => {
+        const distance = (finalTimeStamp - Date.now()) / 1000;
+        selfTimer.days = Math.floor(distance / (60 * 60 * 24));
+        selfTimer.hours = Math.floor((distance % ( 60 * 60 * 24)) / (60 * 60));
+        selfTimer.minutes = Math.floor((distance % (60 * 60)) / (60));
+        selfTimer.seconds = Math.floor((distance % (60)));
+      }, 1000);
+    }
+  }
+  async register() {
+    if (!this.userSerivce.uid) {
+      this.modalService.createNewSnackbarWithData.next('Please Login first');
+    } else {
+      try {
+      await this.collegeService.registUserForEvent(this.userSerivce.uid, this.eventID);
+      this.canRegister = false;
+      } catch (e) {
+        this.modalService.createNewSnackbarWithData.next(e && e.message);
       }
+    }
+  }
+  checkIfRegistered() {
+    if (this.userSerivce.uid) {
+       this.collegeService.checkIfRegistered(this.userSerivce.uid, this.eventID).then((res) => {
+        this.canRegister = !res;
+       });
     }
   }
 }

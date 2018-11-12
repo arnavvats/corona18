@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CollegeService } from 'src/app/shared/services/college.service';
 
 @Component({
   selector: 'app-home',
@@ -6,30 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  events = [{
-    text: 'Technical Events',
-    imageURL: 'gears.png',
-    route: 'technical-events'
-  }, {
-    text: 'Cultural Events',
-    imageURL: 'microphone-2.png',
-    route: 'cultural-events'
-  }, {
-    text: 'Fun Events',
-    imageURL: 'bowling-2.png',
-    route: 'fun-events'
-  }, {
-    text: 'Workshops',
-    imageURL: 'packs-2.png',
-    route: 'workshops'
-  }
-  ];
+  events;
   myStyle: object = {};
   myParams: object = {};
   width = 100;
   height = 100;
 
-  constructor() { }
+  constructor(private collegeService: CollegeService) {
+    collegeService.getEventDataFromId('fest').then(res => {
+      this.events = res.data();
+    });
+   }
 
   ngOnInit() {
     this.myStyle = {

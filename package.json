@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ngw serve",
-    "build": "ngw build --prod",
-    "test": "ngw test",
-    "lint": "ngw lint",
-    "e2e": "ngw e2e"
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {

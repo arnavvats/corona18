@@ -10,10 +10,16 @@ import { Router, NavigationEnd } from '@angular/router';
 export class AppComponent {
   title = 'corona18';
   @ViewChild('appModalHolder', { read: ViewContainerRef }) modalHolder;
+  @ViewChild('appSnackbarHolder', { read: ViewContainerRef }) snackbarHolder;
   constructor(private modalService: ModalService, private router: Router) {
     modalService.createNewModalWithData.subscribe(data => {
       if (data) {
         modalService.createModal(this.modalHolder, data);
+      }
+    });
+    modalService.createNewSnackbarWithData.subscribe(data => {
+      if (data) {
+        modalService.createSnackBar(this.snackbarHolder, data);
       }
     });
     this.router.events.subscribe((evt) => {

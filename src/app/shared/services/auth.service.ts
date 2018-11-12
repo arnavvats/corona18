@@ -39,7 +39,6 @@ export class AuthService {
        throw new Error('Please verify your email first!');
      }
      const userRef = await this.afStore.doc('users/' + this.user.uid).get().toPromise();
-     debugger;
      console.log(userRef.data());
      if (!userRef.data().verified) {
         await this.afStore.doc('users/' + this.user.uid).update({verified: true});

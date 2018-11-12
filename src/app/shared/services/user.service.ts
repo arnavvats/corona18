@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   public userDetail;
+  public user$: Observable<firebase.User>;
   get uid()  {
     return this.afAuth.auth.currentUser && this.afAuth.auth.currentUser.uid;
   }
@@ -14,6 +16,7 @@ export class UserService {
     if (this.uid) {
       this.getUserDetail(this.uid);
     }
+    this.user$ = this.afAuth.authState;
     this.afAuth.authState.subscribe(user => {
       if (user) {
         this.getUserDetail(user.uid);
