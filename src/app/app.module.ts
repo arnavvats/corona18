@@ -29,6 +29,7 @@ import { SafePipe } from './shared/pipes/safe.pipe';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SnackbarComponent } from './shared/components/snackbar/snackbar.component';
+import { SponsorFormComponent } from './pages/sponsor-form/sponsor-form.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { SnackbarComponent } from './shared/components/snackbar/snackbar.compone
     GalleryComponent,
     ModalComponent,
     SafePipe,
-    SnackbarComponent
+    SnackbarComponent,
+    SponsorFormComponent
   ],
   imports: [
     BrowserModule,

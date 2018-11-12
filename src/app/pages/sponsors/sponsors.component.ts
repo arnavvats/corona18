@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChildren, AfterViewInit, Renderer2, ViewChild, HostListener } from '@angular/core';
 import { ListItemDirective } from 'src/app/shared/directives/list-item.directive';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-sponsors',
@@ -13,31 +14,31 @@ export class SponsorsComponent implements OnInit, AfterViewInit {
   resizeTimeout ;
   sponsors = [
     {
-      name: 'Linux',
+      name: 'ntpc',
       image: '1.png',
       description: 'Main Sponsor',
       link: 'https://google.com'
     },
     {
-      name: 'Reebok',
+      name: 'acc',
       image: '2.png',
       description: 'Second Sponsor',
       link: 'https://google.com'
     },
     {
-      name: 'Nike',
+      name: 'Al-Chef',
       image: '3.png',
       description: 'Second Sponsor',
       link: 'https://google.com'
     },
     {
-      name: 'Adidas',
+      name: 'Career-Launcher',
       image: '4.png',
       description: 'Second Sponsor',
       link: 'https://google.com'
     },
     {
-      name: 'Levis',
+      name: 'Dominoes',
       image: '5.png',
       description: 'Second Sponsor',
       link: 'https://google.com'
@@ -49,13 +50,13 @@ export class SponsorsComponent implements OnInit, AfterViewInit {
       link: 'https://google.com'
     },
     {
-      name: 'Gucci',
+      name: 'Honda',
       image: '7.png',
       description: 'Second Sponsor',
       link: 'https://google.com'
     },
     {
-      name: 'Burger King',
+      name: 'LIC',
       image: '8.png',
       description: 'Second Sponsor',
       link: 'https://google.com'
@@ -67,8 +68,26 @@ export class SponsorsComponent implements OnInit, AfterViewInit {
       link: 'https://google.com'
     },
     {
-      name: 'Jaguar',
+      name: 'Power Grid',
       image: '10.png',
+      description: 'Second Sponsor',
+      link: 'https://google.com'
+    },
+    {
+      name: 'SBI',
+      image: '11.png',
+      description: 'Second Sponsor',
+      link: 'https://google.com'
+    },
+    {
+      name: 'Techno Herald',
+      image: '12.png',
+      description: 'Second Sponsor',
+      link: 'https://google.com'
+    },
+    {
+      name: 'VLCC',
+      image: '13.png',
       description: 'Second Sponsor',
       link: 'https://google.com'
     }
