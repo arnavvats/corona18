@@ -24,14 +24,14 @@ main {
         }
     }
     min-height: 95vh;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../../assets/images/corona-new.png");
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../../assets/images/Corona.png");
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     .sponsor-link {
       font-size: 1.2em;
       bottom:0;
-      a {
+      .cl {
         color: orange;
       }
       a:hover {
@@ -119,3 +119,9 @@ main {
           }
         }
         }
+    .brocher{
+        font-weight: bold;
+        color: pink;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-decoration: blueviolet;
+    }

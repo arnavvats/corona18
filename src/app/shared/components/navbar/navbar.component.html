@@ -9,21 +9,28 @@
 
   <div class="collapse navbar-collapse" #dropDown>
     <ul class="navbar-nav ml-auto">
+
+    <li class="nav-item">
+        <a class="nav-link" routerLink="about-us" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">About Us<span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item dropdown">
+          <a class="nav-link" routerLink="gallery" routerLinkActive="active">Gallery <span class="sr-only">(current)</span></a>
+        </li>
+
       <li class="nav-item dropdown">
         <a class="nav-link" routerLink="sponsors" routerLinkActive="active">Sponsors<span class="sr-only">(current)</span></a>
      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="about-us" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">About <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="contact-us" routerLinkActive="active">Contact Us <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link" routerLink="gallery" routerLinkActive="active">Gallery <span class="sr-only">(current)</span></a>
-      </li>
+      
+    
       <li class="nav-item dropdown">
         <a class="nav-link" routerLink="campus-ambassador" routerLinkActive="active">Campus Ambassador <span class="sr-only">(current)</span></a>
       </li>
+      
+      <li class="nav-item">
+          <a class="nav-link" routerLink="contact-us" routerLinkActive="active">Contact Us <span class="sr-only">(current)</span></a>
+        </li>
+        
       <li class="nav-item dropdown " *ngIf="user">
         <a class="nav-link" (click)="logOut()" routerLinkActive="active">Logout({{user.displayName}})<span class="sr-only">(current)</span></a>
       </li>
