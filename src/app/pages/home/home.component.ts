@@ -30,10 +30,12 @@ export class HomeComponent implements OnInit {
       'bottom': 0,
   };
 
+  
+
   this.myParams = {
       particles: {
           number: {
-              value: 200,
+              value: 140,
           },
           color: {
               value: '#ff0000'

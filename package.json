@@ -31,6 +31,7 @@
     "font-awesome": "^4.7.0",
     "ngx-gallery": "^5.8.1",
     "ngx-trim-directive": "^1.0.2",
+    "particle.js": "^1.0.7",
     "rxjs": "~6.2.0",
     "zone.js": "~0.8.26"
   },
