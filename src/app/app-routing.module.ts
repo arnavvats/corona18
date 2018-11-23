@@ -10,7 +10,6 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { UnAuthGuard } from './shared/guards/un-auth.guard';
-import { SponsorFormComponent } from './pages/sponsor-form/sponsor-form.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -20,8 +19,7 @@ const routes: Routes = [
   {path: 'sponsors', component: SponsorsComponent},
   {path: 'contact-us', component: ContactUsComponent},
   {path: 'about-us', component: AboutUsComponent},
-  {path: 'gallery', component: GalleryComponent},
-  {path: 'sponsor-form', component: SponsorFormComponent}
+  {path: 'gallery', component: GalleryComponent}
 ];
 
 @NgModule({

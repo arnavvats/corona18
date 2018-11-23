@@ -63,8 +63,8 @@ export class GalleryComponent implements OnInit {
       small: base,
       medium: base,
       big: base,
-      description: 'dd',
-      label: 'dfd'
+      description: '',
+      label: ''
     };
   }
 
