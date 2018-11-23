@@ -1,8 +1,7 @@
 <div class="bg-img"></div>
-<script src="particles.js"></script>
 <particles [style]="myStyle" [width]="width" [height]="height" [params]="myParams"></particles>
 <main class="position-relative animated fadeIn">
-    <img class="logo animated" src="assets/images/Corona.png">
+    <img class="logo" src="assets/images/Corona.png" style="filter: invert(1);">
     <div *ngIf="events && events.children">
             <app-event-button  *ngFor="let child of events.children; let i = index"
             [left]="!(i % 2)" [imageURL]="child.imageURL"

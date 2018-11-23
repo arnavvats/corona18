@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
       'top': 0,
       'left': 0,
       'right': 0,
-      'bottom': 0,
+      'bottom': 0
   };
 
   
@@ -38,11 +38,15 @@ export class HomeComponent implements OnInit {
               value: 140,
           },
           color: {
-              value: '#ff0000'
+              value: '#000000'
           },
           shape: {
-              type: 'triangle',
+              type: 'circle',
           },
+          line_linked: {
+            color: '#5c4747',
+            width: 2
+          }
       }
     };
   }
