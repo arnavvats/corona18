@@ -14,82 +14,82 @@ export class SponsorsComponent implements OnInit, AfterViewInit {
   resizeTimeout ;
   sponsors = [
     {
-      name: 'ntpc',
+      name: 'NTPC',
       image: '1.png',
-      description: 'Main Sponsor',
-      link: 'https://google.com'
+      description: 'TITLE SPONSOR',
+      link: 'https://www.ntpc.co.in/'
     },
     {
-      name: 'acc',
+      name: 'ACC',
       image: '2.png',
-      description: 'Second Sponsor',
-      link: 'https://google.com'
+      description: 'ASSOCIATE SPONSOR',
+      link: 'http://www.acclimited.com/'
     },
     {
-      name: 'Al-Chef',
+      name: 'AL-CHEF',
       image: '3.png',
-      description: 'Second Sponsor',
-      link: 'https://google.com'
+      description: 'FOOD AND BEVERAGE SPONSOR',
+      link: 'https://www.zomato.com/patna/al-chef-bakerganj'
     },
     {
-      name: 'Career-Launcher',
+      name: 'CAREER-LAUNCHER',
       image: '4.png',
-      description: 'Second Sponsor',
-      link: 'https://google.com'
+      description: 'EDUCATIONAL PARTNER',
+      link: 'https://www.careerlauncher.com/patna/'
     },
     {
-      name: 'Dominoes',
+      name: 'DOMINOES',
       image: '5.png',
-      description: 'Second Sponsor',
-      link: 'https://google.com'
+      description: 'FOOD SPONSOR',
+      link: 'https://www.dominos.co.in/'
     },
     {
-      name: 'Hero',
+      name: 'HERO',
       image: '6.png',
-      description: 'Second Sponsor',
-      link: 'https://google.com'
+      description: 'ASSOCIATE SPONSOR',
+      link: 'https://auto.ndtv.com/hero-bikes'
     },
     {
-      name: 'Honda',
+      name: 'HONDA',
       image: '7.png',
-      description: 'Second Sponsor',
-      link: 'https://google.com'
+      description: 'ASSOCIATE SPONSOR',
+      link: 'https://www.honda2wheelersindia.com/'
     },
     {
       name: 'LIC',
       image: '8.png',
-      description: 'Second Sponsor',
-      link: 'https://google.com'
+      description: 'ASSOCIATE SPONSOR',
+      link: 'https://www.licindia.in/'
     },
     {
-      name: 'Coca Cola',
+      name: 'COCA COLA',
       image: '9.png',
-      description: 'Second Sponsor',
-      link: 'https://google.com'
+      description: 'FOOD AND BEVERAGE SPONSOR',
+      link: 'http://www.coca-cola.com/global/'
     },
     {
-      name: 'Power Grid',
+      name: 'POWER GRID',
       image: '10.png',
-      description: 'Second Sponsor',
-      link: 'https://google.com'
+      description: 'ASSOCIATE SPONSOR',
+      link: 'https://www.powergridindia.com/'
     },
     {
       name: 'SBI',
       image: '11.png',
-      description: 'Second Sponsor',
-      link: 'https://google.com'
+      description: 'ASSOCIATE SPONSOR',
+      link: 'https://www.onlinesbi.com/'
     },
     {
-      name: 'Techno Herald',
+      name: 'TECHNO HERALD',
       image: '12.png',
-      description: 'Second Sponsor',
-      link: 'https://google.com'
+      description: 'EDUCATIONAL PARTNER',
+      link: 'https://www.technoherald.com/'
     },
     {
       name: 'VLCC',
       image: '13.png',
-      description: 'Second Sponsor',
-      link: 'https://google.com'
+      description: 'ASSOCIATE SPONSOR',
+      link: 'https://www.vlccpersonalcare.com/'
     }
   ];
   @HostListener('window:resize')
