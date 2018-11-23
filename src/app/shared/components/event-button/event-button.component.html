@@ -1,9 +1,9 @@
 <div class="d-flex position-relative parent mb-5 animated fadeIn ad-2" (click)="navigateToRoute()"
 [class.right-parent]="!left">
-    <div class="d-flex text">
+    <div class="d-flex text" [class.pr-5]="!left" [class.pl-5]="left">
         <p class="para d-none animated fadeIn">{{text}}</p>
     </div>
     <div class="img-container">
-      <img [src]="'assets/images/events-logo/' + imageURL">
+      <img [src]="'assets/images/events-logo/' + imageURL" class="animated rotateIn">
     </div>
 </div>

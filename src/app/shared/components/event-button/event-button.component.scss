@@ -7,8 +7,9 @@
     .para {
         vertical-align: middle;
         margin: auto;
-        padding-left: 2em;
+        padding-left: 0;
         padding-right: 5em;
+
     }
 }
 .img-container {
@@ -27,7 +28,9 @@ img {
     float: right;
     .text {
         margin-left: 41px;
-       .para { padding-left: 5em;
+       .para {
+         padding-left: 5em;
+         padding-right: 0;
        }
     }
     .img-container {
