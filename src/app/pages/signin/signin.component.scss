@@ -13,11 +13,11 @@ main {
     color: black;
 
     .laptop {
-      background: #f51616ba url("../../../assets/images/Corona.png");
+      background: #dad4b5ba url("../../../assets/images/Corona.png");
       background-size: 400px;
       background-position:center;
       background-repeat: no-repeat;
-      
+
       color: black;
     }
     .sign-up-block {
@@ -40,7 +40,7 @@ main {
         }
         select {
           appearance: none;
-         
+
         }
         option{
           color: black ;
@@ -74,7 +74,7 @@ main {
       .sign-button:hover {
         width: 80% !important;
         left: 10% !important;
-        
+
       }
     }
       .sign-button {
@@ -86,9 +86,9 @@ main {
         transition: width 0.4s;
         pointer-events: all !important;
 
-        
+
       }
-      
+
       .sign-button.disabled:hover{
         cursor: not-allowed;
         pointer-events: all !important;
