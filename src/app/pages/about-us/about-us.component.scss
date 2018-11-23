@@ -79,9 +79,13 @@ main {
   .advertising {
     background: linear-gradient(to right,rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url('../../../assets/images/welcome3.png');
     background-size: 150px 150px;
-  background-position-x: center;
-  background-position-y: bottom-4px;
-  background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+  }
+  .animated{
+      padding-bottom: 6em;
+      padding-top: 8em;
   }
 }
 
