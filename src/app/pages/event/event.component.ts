@@ -31,14 +31,14 @@ export class EventComponent implements OnInit {
       if (this.interval) {
         clearInterval(this.interval);
       }
-      this.userSerivce.user$.subscribe(user => {
-        if (user) {
-          this.checkIfRegistered();
-        }
-      });
+      // this.userSerivce.user$.subscribe(user => {
+      //   if (user) {
+      //     //this.checkIfRegistered();
+      //   }
+      // });
        this.eventID = res['id'];
       this.collegeService.getEventDataFromId(this.eventID).then( eventData => {
-        this.event = eventData.data();
+        this.event = eventData;
         this.setEventTimer();
       });
     });
@@ -78,5 +78,8 @@ export class EventComponent implements OnInit {
         this.canRegister = !res;
        });
     }
+  }
+  registerSoon() {
+    this.modalService.createNewSnackbarWithData.next('Registrations will start soon!!');
   }
 }

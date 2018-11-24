@@ -35,8 +35,9 @@
         <div class="input-group p-2" [hidden]="signInOnly">
             <select class="form-control" [formControl]="signUpForm.get('collegeId')">
               <option value="">Select a college</option>
-              <option value="custom">Custom</option>
+              <option value="wTtnzl2oRu6A1MrIf606">NIT Patna</option>
               <option *ngFor="let college of collegeList" [value]="college.id">{{college.name}}</option>
+              <option value="custom">--- Custom ---</option>
             </select>
             <i class="fa fa-lg fa-building"></i>
         </div>

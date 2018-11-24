@@ -41,7 +41,7 @@ export class SigninComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.collegeService.getAllCollegeList().toPromise().then(res => {
+    this.collegeService.getAllCollegeList().then(res => {
       this.collegeList = res;
     });
     this.activatedRoute.queryParams.subscribe(params => {

@@ -11,21 +11,32 @@ export class CollegeService {
   constructor(private afStore: AngularFirestore) {
   }
   getAllCollegeList() {
-    return this.afStore.collection('colleges').get()
-    .pipe(map(res => {
-      return res.docs.map(doc => {
+    if(!localStorage.getItem('collegeList')) {
+    return this.afStore.collection('colleges').get().toPromise().then(res => {
+      let collegeList = res.docs.map(doc => {
         return {id: doc.id, ...doc.data()};
       }).sort(this.comparator);
-    }));
+      collegeList = collegeList.filter(doc => {
+        return doc.id !== 'wTtnzl2oRu6A1MrIf606'
+      });
+      localStorage.setItem('collegeList', JSON.stringify(collegeList));
+      return collegeList;
+    });
+    }
+    return Promise.resolve(JSON.parse(localStorage.getItem('collegeList')));
   }
   comparator(a , b) {
     return a.name.localeCompare(b.name);
   }
   getAmbassadorLeaderboard() {
+    if(!localStorage.getItem('leaderboard')) {
     return this.afStore.collection('leaderboard').doc('ambassadors')
-    .get().pipe(map(res => {
+    .get().toPromise().then(res => {
+      localStorage.setItem('leaderboard',JSON.stringify(res.data().leaders))
       return res.data().leaders;
-    }));
+    });
+    }
+    return Promise.resolve(JSON.parse(localStorage.getItem('leaderboard')));
   }
   getCollegeNameFromId(id) {
     return this.afStore.doc('colleges/' + id).get().pipe(map(res => {
@@ -34,7 +45,24 @@ export class CollegeService {
   }
 
   getEventDataFromId(id) {
-    return this.afStore.doc('events/' + id).get().toPromise();
+    if(!localStorage.getItem('events') || JSON.parse(localStorage.getItem('events'))['fest'] === undefined) {
+    return this.setEventDataLocally().then(() => {
+      const dataFromCache = JSON.parse(localStorage.getItem('events'));
+      return dataFromCache[id];
+    });
+    }
+    const dataFromCache = JSON.parse(localStorage.getItem('events'));
+    return Promise.resolve(dataFromCache[id]);
+  }
+  setEventDataLocally() {
+    return this.afStore.collection('events').get().toPromise().then(res => {
+      let dataToStore = {};
+      res.docs.forEach(doc => {
+        dataToStore[doc.id] = doc.data();
+      });
+      console.log(dataToStore);
+      localStorage.setItem('events', JSON.stringify(dataToStore));
+        });
   }
 
   checkIfRegistered(uid, eventId) {
