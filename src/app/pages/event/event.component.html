@@ -26,7 +26,7 @@
       </div>
     </div>
     <button class="btn mt-5 p-2 position-relative" *ngIf="event && event.rounds && (event.startsAt > Date.now())"
-      (click)="register()" [disabled]="!canRegister">REGISTER{{canRegister ? '' : "ED"}}</button>
+      (click)="registerSoon()" [disabled]="!canRegister">REGISTER{{canRegister ? '' : "ED"}}</button>
 
   </div>
 

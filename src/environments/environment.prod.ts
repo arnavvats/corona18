@@ -1,11 +1,11 @@
 export const environment = {
   production: true,
   firebaseConfig: {
-      apiKey: 'AIzaSyCDThIspGv4BBDzBX7gRAS3UL-W7PdlD0s',
-      authDomain: 'corona-19.firebaseapp.com',
-      databaseURL: 'https://corona-19.firebaseio.com',
-      projectId: 'corona-19',
-      storageBucket: 'corona-19.appspot.com',
-      messagingSenderId: '986952975360'
+    apiKey: "AIzaSyD8JE28MnNfhdyTS5SosG5lDhXXP08k3do",
+    authDomain: "sac-nit-patna-69299.firebaseapp.com",
+    databaseURL: "https://sac-nit-patna-69299.firebaseio.com",
+    projectId: "sac-nit-patna-69299",
+    storageBucket: "sac-nit-patna-69299.appspot.com",
+    messagingSenderId: "1061210696578"
   }
 };

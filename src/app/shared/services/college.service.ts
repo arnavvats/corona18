@@ -22,10 +22,14 @@ export class CollegeService {
     return a.name.localeCompare(b.name);
   }
   getAmbassadorLeaderboard() {
+    if(!localStorage.getItem('leaderboard')) {
     return this.afStore.collection('leaderboard').doc('ambassadors')
-    .get().pipe(map(res => {
+    .get().toPromise().then(res => {
+      localStorage.setItem('leaderboard',JSON.stringify(res.data().leaders))
       return res.data().leaders;
-    }));
+    });
+    }
+    return Promise.resolve(JSON.parse(localStorage.getItem('leaderboard')));
   }
   getCollegeNameFromId(id) {
     return this.afStore.doc('colleges/' + id).get().pipe(map(res => {
@@ -34,7 +38,24 @@ export class CollegeService {
   }
 
   getEventDataFromId(id) {
-    return this.afStore.doc('events/' + id).get().toPromise();
+    if(!localStorage.getItem('events')) {
+    return this.setEventDataLocally().then(() => {
+      const dataFromCache = JSON.parse(localStorage.getItem('events'));
+      return dataFromCache[id];
+    });
+    }
+    const dataFromCache = JSON.parse(localStorage.getItem('events'));
+    return Promise.resolve(dataFromCache[id]);
+  }
+  setEventDataLocally() {
+    return this.afStore.collection('events').get().toPromise().then(res => {
+      let dataToStore = {};
+      res.docs.forEach(doc => {
+        dataToStore[doc.id] = doc.data();
+      });
+      console.log(dataToStore);
+      localStorage.setItem('events', JSON.stringify(dataToStore));
+        });
   }
 
   checkIfRegistered(uid, eventId) {

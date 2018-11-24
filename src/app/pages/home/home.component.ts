@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private collegeService: CollegeService) {
     collegeService.getEventDataFromId('fest').then(res => {
-      this.events = res.data();
+      this.events = res;
     });
    }
 

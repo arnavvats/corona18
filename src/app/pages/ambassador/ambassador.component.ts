@@ -35,7 +35,7 @@ export class AmbassadorComponent implements OnInit {
     this.userService.joinAmbassadorProgram();
   }
   getAmbassadorLeaderboard() {
-     this.collegeService.getAmbassadorLeaderboard().toPromise().then(res => {
+     this.collegeService.getAmbassadorLeaderboard().then(res => {
        this.ambassadorLeaders = res;
     });
   }
