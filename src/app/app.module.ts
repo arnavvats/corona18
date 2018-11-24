@@ -62,10 +62,20 @@ import { SnackbarComponent } from './shared/components/snackbar/snackbar.compone
     AngularFireDatabaseModule,
     AngularFireFunctionsModule,
     AngularFireMessagingModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: false }),
   ],
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [ModalComponent, SnackbarComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {
+    if (('serviceWorker' in navigator)) {
+      navigator.serviceWorker.getRegistrations().then(registrations => {
+        registrations.forEach(registration => {
+          registration.unregister();
+        });
+      });
+    }
+  }
+ }
