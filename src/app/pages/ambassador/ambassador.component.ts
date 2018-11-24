@@ -17,7 +17,7 @@ export class AmbassadorComponent implements OnInit {
     return this.userService.userDetail;
   }
   get link () {
-    return  location.host + 'sign-in?ref=' + this.userService.uid;
+    return  'http://' + location.host + '/sign-in?ref=' + this.userService.uid;
   }
   get shareMessage() {
     return `Hello, this is ${this.userDetail.name}, ambassador for TCF\'19

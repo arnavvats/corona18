@@ -11,12 +11,19 @@ export class CollegeService {
   constructor(private afStore: AngularFirestore) {
   }
   getAllCollegeList() {
-    return this.afStore.collection('colleges').get()
-    .pipe(map(res => {
-      return res.docs.map(doc => {
+    if(!localStorage.getItem('collegeList')) {
+    return this.afStore.collection('colleges').get().toPromise().then(res => {
+      let collegeList = res.docs.map(doc => {
         return {id: doc.id, ...doc.data()};
       }).sort(this.comparator);
-    }));
+      collegeList = collegeList.filter(doc => {
+        return doc.id !== 'wTtnzl2oRu6A1MrIf606'
+      });
+      localStorage.setItem('collegeList', JSON.stringify(collegeList));
+      return collegeList;
+    });
+    }
+    return Promise.resolve(JSON.parse(localStorage.getItem('collegeList')));
   }
   comparator(a , b) {
     return a.name.localeCompare(b.name);
@@ -38,7 +45,7 @@ export class CollegeService {
   }
 
   getEventDataFromId(id) {
-    if(!localStorage.getItem('events')) {
+    if(!localStorage.getItem('events') || JSON.parse(localStorage.getItem('events'))['fest'] === undefined) {
     return this.setEventDataLocally().then(() => {
       const dataFromCache = JSON.parse(localStorage.getItem('events'));
       return dataFromCache[id];
