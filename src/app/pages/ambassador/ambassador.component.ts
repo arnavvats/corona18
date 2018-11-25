@@ -22,10 +22,13 @@ export class AmbassadorComponent implements OnInit {
     return `Hello, this is ${this.userDetail.name}, ambassador for TCF\'19
     National Institute of Technology, Patna, Please register with my link ${this.link}`;
   }
-  constructor(private userService: UserService, private collegeService: CollegeService, private router: Router, private afAuth: AngularFireAuth) {
+  constructor(private userService: UserService,
+    private collegeService: CollegeService,
+    private router: Router, private afAuth: AngularFireAuth) {
     this.afAuth.authState.subscribe(user => {
-      if(user.uid)
-      this.setUserDetail(user.uid);
+      if (user && user.uid) {
+        this.setUserDetail(user.uid);
+      }
     });
    }
 

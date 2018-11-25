@@ -34,14 +34,13 @@ export class CollegeService {
     return a.name.localeCompare(b.name);
   }
   getAmbassadorLeaderboard() {
-    if(!localStorage.getItem('leaderboard')) {
-    return this.afStore.collection('leaderboard').doc('ambassadors')
-    .get().toPromise().then(res => {
-      localStorage.setItem('leaderboard',JSON.stringify(res.data().leaders))
-      return res.data().leaders;
+   // if (!localStorage.getItem('leaderboard')) {
+    return this.afdb.object('leaderboard/ambassadors').query.once('value').then(res => {
+      localStorage.setItem('leaderboard', JSON.stringify(res.val().leaders))
+      return res.val().leaders;
     });
-    }
-    return Promise.resolve(JSON.parse(localStorage.getItem('leaderboard')));
+   // }
+   // return Promise.resolve(JSON.parse(localStorage.getItem('leaderboard')));
   }
   getCollegeNameFromId(id) {
     return this.afStore.doc('colleges/' + id).get().pipe(map(res => {
@@ -50,7 +49,7 @@ export class CollegeService {
   }
 
   getEventDataFromId(id) {
-    if(!localStorage.getItem('events') || JSON.parse(localStorage.getItem('events'))['fest'] === undefined) {
+    if (!localStorage.getItem('events') || JSON.parse(localStorage.getItem('events'))['fest'] === undefined) {
     return this.setEventDataLocally().then(() => {
       const dataFromCache = JSON.parse(localStorage.getItem('events'));
       return dataFromCache[id];

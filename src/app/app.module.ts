@@ -26,7 +26,7 @@ import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { AngularFireMessagingModule } from '@angular/fire/messaging';
 import { ModalComponent } from './shared/components/modal/modal.component';
 import { SafePipe } from './shared/pipes/safe.pipe';
-// import { ServiceWorkerModule } from '@angular/service-worker';
+ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SnackbarComponent } from './shared/components/snackbar/snackbar.component';
 
@@ -62,7 +62,7 @@ import { SnackbarComponent } from './shared/components/snackbar/snackbar.compone
     AngularFireDatabaseModule,
     AngularFireFunctionsModule,
     AngularFireMessagingModule,
-   // ServiceWorkerModule.register('ngsw-worker.js', { enabled: false }),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -70,12 +70,5 @@ import { SnackbarComponent } from './shared/components/snackbar/snackbar.compone
 })
 export class AppModule {
   constructor() {
-    if (('serviceWorker' in navigator)) {
-      navigator.serviceWorker.getRegistrations().then(registrations => {
-        registrations.forEach(registration => {
-          registration.unregister();
-        });
-      });
-    }
   }
  }
