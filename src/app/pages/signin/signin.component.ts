@@ -41,8 +41,19 @@ export class SigninComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.collegeService.getAllCollegeList().then(res => {
+    this.collegeService.getAllCollegeList().subscribe(res => {
       this.collegeList = res;
+      this.collegeList = this.collegeList.filter(college => {
+        const x =  !(college.name.trim() === '' ||
+         (
+           (college.name.toLowerCase().indexOf('patna'))
+            !== -1 && (college.name.toLowerCase().indexOf('nit') !== -1 
+            || college.name.toLowerCase().indexOf('national') !== -1)
+          ) || 
+          (college.name.toLowerCase().indexOf('nitp') !== -1 || college.name.toLowerCase().indexOf('nit p') !== -1)
+        );
+         return x;
+      });
     });
     this.activatedRoute.queryParams.subscribe(params => {
       this.referrer = (params && params['ref']) || null;

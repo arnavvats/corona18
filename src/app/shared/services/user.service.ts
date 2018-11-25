@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class UserService {
   get uid()  {
     return this.afAuth.auth.currentUser && this.afAuth.auth.currentUser.uid;
   }
-  constructor(private afAuth: AngularFireAuth, private afStore: AngularFirestore) {
+  constructor(private afAuth: AngularFireAuth, private afStore: AngularFirestore, private afdb: AngularFireDatabase) {
     if (this.uid) {
       this.getUserDetail(this.uid);
     }
@@ -23,14 +24,18 @@ export class UserService {
       }
     });
   }
-  getUserDetail(uid) {
-    this.afStore.collection('users').doc(uid).valueChanges().subscribe(res => {
+   getUserDetail(uid) {
+    this.afdb.object('users/' + uid).valueChanges().subscribe(res => {
       this.userDetail = res;
     });
   }
+  getUserInfo(uid) {
+    return this.afdb.object('users/' + uid).query.once('value');
+  }
+
   joinAmbassadorProgram() {
     if (this.uid) {
-      return this.afStore.collection('users').doc(this.uid).update({
+      return this.afdb.object('users/' + this.uid).update({
         ambassador: {
           points: 0,
           rank: 0,
