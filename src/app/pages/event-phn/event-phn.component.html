@@ -3,10 +3,10 @@
     <h1 class="heading">
       {{ event && event.name ? event.name : ''}}
     </h1>
-    <div class="description">
+    <div class="description" style="padding:2em">
       {{event && event.description ? event.description : ''}}
     </div>
-    <img class="scroll" style="width:3em; padding-top: 2em"src="../../../assets/images/scrollW.png">
+    <img class="scroll" style="width:3em; padding-top: 2em "src="../../../assets/images/scrollW.png">
     <div class="text-center pt-5 mb-1 timer-header">- &nbsp;STARTS &nbsp;IN &nbsp;-</div>
     <div class="timer row mb-3">
       <div class="col-3">
@@ -26,7 +26,12 @@
           <p>SEC</p>
       </div>
     </div>
-    <button class="btn mt-5 p-2 position-relative" *ngIf="event && event.rounds && (event.startsAt > Date.now())"
+
+    <div>
+        <button class="rules">RULES</button>
+    </div>
+
+    <button class="btn mt-5 p-2 position-relative register" *ngIf="event && event.rounds && (event.startsAt > Date.now())"
       (click)="registerSoon()" [disabled]="!canRegister">REGISTER{{canRegister ? '' : "ED"}}</button>
 
   </div>
