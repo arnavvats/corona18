@@ -29,8 +29,8 @@ import { SafePipe } from './shared/pipes/safe.pipe';
 // import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SnackbarComponent } from './shared/components/snackbar/snackbar.component';
-import { EventButtonPhnComponent } from './event-button-phn/event-button-phn.component';
-import { EventPhnComponent } from './event-phn/event-phn.component';
+import { EventButtonPhnComponent } from './shared/components/event-button-phn/event-button-phn.component';
+import { EventPhnComponent } from './pages/event-phn/event-phn.component';
 
 @NgModule({
   declarations: [

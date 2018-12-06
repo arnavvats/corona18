@@ -1,3 +1,44 @@
-<p>
-  event-phn works!
-</p>
+<main class="position-relative pt-5">
+  <div class="about">
+    <h1 class="heading">
+      {{ event && event.name ? event.name : ''}}
+    </h1>
+    <div class="description">
+      {{event && event.description ? event.description : ''}}
+    </div>
+    <img class="scroll" style="width:3em; padding-top: 2em"src="../../../assets/images/scrollW.png">
+    <div class="text-center pt-5 mb-1 timer-header">- &nbsp;STARTS &nbsp;IN &nbsp;-</div>
+    <div class="timer row mb-3">
+      <div class="col-3">
+        <p>{{timer.days}}</p>
+        <p>DAYS</p>
+      </div>
+      <div class="col-3">
+          <p>{{timer.hours}}</p>
+          <p>HRS</p>
+      </div>
+      <div class="col-3">
+          <p>{{timer.minutes}}</p>
+          <p>MIN</p>
+      </div>
+      <div class="col-3">
+          <p>{{timer.seconds}}</p>
+          <p>SEC</p>
+      </div>
+    </div>
+    <button class="btn mt-5 p-2 position-relative" *ngIf="event && event.rounds && (event.startsAt > Date.now())"
+      (click)="registerSoon()" [disabled]="!canRegister">REGISTER{{canRegister ? '' : "ED"}}</button>
+
+  </div>
+
+    <div *ngIf="event && event.children" class="position-relative w-100">
+            <app-event-button-phn
+            *ngFor="let child of event.children; let i = index"
+             [left]="!(i % 2)" [imageURL]="child.imageURL"
+             [text]="child.name"
+             [route]="child.id"
+             >
+            </app-event-button-phn>
+    </div>
+
+</main>

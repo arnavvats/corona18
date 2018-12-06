@@ -8,8 +8,10 @@ import { SponsorsComponent } from './pages/sponsors/sponsors.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
+import { EventPhnComponent} from './pages/event-phn/event-phn.component'
 import { AuthGuard } from './shared/guards/auth.guard';
 import { UnAuthGuard } from './shared/guards/un-auth.guard';
+
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -19,7 +21,8 @@ const routes: Routes = [
   {path: 'sponsors', component: SponsorsComponent},
   {path: 'contact-us', component: ContactUsComponent},
   {path: 'about-us', component: AboutUsComponent},
-  {path: 'gallery', component: GalleryComponent}
+  {path: 'gallery', component: GalleryComponent},
+  {path: 'event-phn/:id', component: EventPhnComponent}
 ];
 
 @NgModule({
