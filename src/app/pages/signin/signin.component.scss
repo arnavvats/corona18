@@ -89,7 +89,7 @@ main {
 
       }
 
-      .sign-button.disabled:hover{
+      .sign-button:disabled:hover{
         cursor: not-allowed;
         pointer-events: all !important;
       }

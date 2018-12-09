@@ -26,6 +26,7 @@ export class EventComponent implements OnInit {
     private collegeService: CollegeService, private userSerivce: UserService, private modalService: ModalService) { }
 
   ngOnInit() {
+    this.modalService.activateLoader.next('Loading Event Info');
     this.route.params.subscribe((res) => {
       this.event = null;
       if (this.interval) {
@@ -39,6 +40,7 @@ export class EventComponent implements OnInit {
        this.eventID = res['id'];
       this.collegeService.getEventDataFromId(this.eventID).then( eventData => {
         this.event = eventData;
+        this.modalService.activateLoader.next(false);
         this.setEventTimer();
       });
     });

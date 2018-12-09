@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CollegeService } from 'src/app/shared/services/college.service';
+import { ModalService } from 'src/app/shared/services/modal.service';
 
 @Component({
   selector: 'app-home',
@@ -13,15 +14,11 @@ export class HomeComponent implements OnInit {
   width = 100;
   height = 100;
 
-  constructor(private collegeService: CollegeService) {
-    collegeService.getEventDataFromId('fest').then(res => {
-      this.events = res;
-    });
+  constructor(private collegeService: CollegeService, private modalService: ModalService) {
    }
 
   ngOnInit() {
     this.myStyle = {
-      'position': 'fixed',
       'width': '100%',
       'height': '100%',
       'top': 0,
@@ -30,7 +27,7 @@ export class HomeComponent implements OnInit {
       'bottom': 0
   };
 
-  
+
 
   this.myParams = {
       particles: {
@@ -49,6 +46,10 @@ export class HomeComponent implements OnInit {
           }
       }
     };
+
+    this.collegeService.getEventDataFromId('fest').then(res => {
+      this.events = res;
+    });
   }
 
 }

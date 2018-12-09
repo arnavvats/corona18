@@ -1,7 +1,13 @@
+<div class="video text-center" #video>
+  <video src="assets/video.mp4" muted autoplay preload></video>
+</div>
 <app-navbar></app-navbar>
-<div>
+<div #contentHolder class="holder">
   <router-outlet></router-outlet>
 </div>
 <ng-template #appModalHolder></ng-template>
 <ng-template #appSnackbarHolder></ng-template>
+<div #appLoaderHolder class="d-none" class="holder">
+    <app-loader></app-loader>
+</div>
 

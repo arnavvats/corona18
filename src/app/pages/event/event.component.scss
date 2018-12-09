@@ -1,13 +1,19 @@
 main{
-  min-height: 100vh;
+  min-height: 90vh;
   background: linear-gradient(to bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../../../assets/images/coronaBackground.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  .timer-header {
+    font-size: 2em;
+  }
   .heading,.timer-header {
     font-family: 'Orbitron', sans-serif;
+    @media (max-width: 500px) {
+      font-size: 1.2em;
+    }
 
   }
   .about{
@@ -27,19 +33,15 @@ main{
       }
       text-align: center;
   }
-  .timer-header {
-    font-size: 2em;
-    @media(max-width: 500px) {
-      font-size: 1.5em;
-    }
 
-  }
   .timer {
     display: flex;
     justify-content: space-between;
     .col-3 {
       border: 1px solid white;
-      padding-top: 1em;
+      @media(min-width: 500px) {
+        padding-top: 1em;
+      }
       border-radius: 10px;
       padding-left: 0;
       padding-right: 0;
@@ -52,15 +54,25 @@ main{
         }
         @media(max-width: 500px) {
           font-size: 2em;
+          padding: 0;
+          margin: 0;
         }
       }
       :nth-child(2) {
-        margin-bottom: 0;
-    padding-bottom: 1em;
-    border: 1px solid white;
-    border-radius: 10px;
-    background: rgba(80, 71, 121, 0.6);
-    padding-top: 1em;
+      margin-bottom: 0;
+      @media(min-width: 500px) {
+        padding-bottom: 1em;
+        padding-top: 1em;
+      }
+      @media(max-width: 499px) {
+        padding-bottom: 0.5em;
+        padding-top: 0.5em;
+      }
+
+
+      border: 1px solid white;
+      border-radius: 10px;
+      background: rgba(80, 71, 121, 0.6);
       }
     }
   }
@@ -72,10 +84,17 @@ main{
     background: transparent;
     border: 1px solid white;
     font-family: 'Press Start 2P', cursive;
-
+    @media(max-width: 500px) {
+      font-size: 1em;
+    }
   }
   button:hover {
     background: rgba(213, 0, 249, 0.52);
     border-color:rgba(213, 0, 249, 0.52);
+  }
+}
+.event-list {
+  @media(max-width: 500px) {
+    // top: 0;
   }
 }

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" #navbar>
   <a class="navbar-brand" routerLink="">
-    <img class="img-corona" src="../../../../assets/images/Corona.png" style="filter: invert(1);">
+    <img class="img-corona" src="../../../../assets/images/CoronaIcon.png">
   </a>
   <button class="navbar-toggler" type="button" aria-label="Toggle navigation" (click)="toggleDropDown()">
     <span class="navbar-toggler-icon"></span>
@@ -20,16 +20,16 @@
       <li class="nav-item dropdown">
         <a class="nav-link" routerLink="sponsors" routerLinkActive="active">Sponsors<span class="sr-only">(current)</span></a>
      </li>
-      
-    
+
+
       <li class="nav-item dropdown">
         <a class="nav-link" routerLink="campus-ambassador" routerLinkActive="active">Campus Ambassador <span class="sr-only">(current)</span></a>
       </li>
-      
+
       <li class="nav-item">
           <a class="nav-link" routerLink="contact-us" routerLinkActive="active">Contact Us <span class="sr-only">(current)</span></a>
         </li>
-        
+
       <li class="nav-item dropdown " *ngIf="user">
         <a class="nav-link" (click)="logOut()" routerLinkActive="active">Logout({{user.displayName}})<span class="sr-only">(current)</span></a>
       </li>

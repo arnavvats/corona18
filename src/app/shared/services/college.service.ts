@@ -13,16 +13,16 @@ export class CollegeService {
   constructor(private afStore: AngularFirestore, private afdb: AngularFireDatabase) {
   }
   getAllCollegeList() {
-    if(!localStorage.getItem('collegeList')) {
+    if (!localStorage.getItem('collegeList')) {
     return this.afdb.object('colleges').valueChanges().pipe(map((res: any) => {
       let collegeList = [];
       const keys = Object.keys(res);
       keys.forEach(key => {
-        collegeList.push({id: key,...res[key]});
+        collegeList.push({id: key, ...res[key]});
       });
       collegeList.sort(this.comparator);
       collegeList = collegeList.filter(doc => {
-        return doc.id !== 'wTtnzl2oRu6A1MrIf606'
+        return doc.id !== 'wTtnzl2oRu6A1MrIf606';
       });
       localStorage.setItem('collegeList', JSON.stringify(collegeList));
       return collegeList;
@@ -34,13 +34,9 @@ export class CollegeService {
     return a.name.localeCompare(b.name);
   }
   getAmbassadorLeaderboard() {
-   // if (!localStorage.getItem('leaderboard')) {
     return this.afdb.object('leaderboard/ambassadors').query.once('value').then(res => {
-      localStorage.setItem('leaderboard', JSON.stringify(res.val().leaders))
-      return res.val().leaders;
+      return res.val();
     });
-   // }
-   // return Promise.resolve(JSON.parse(localStorage.getItem('leaderboard')));
   }
   getCollegeNameFromId(id) {
     return this.afStore.doc('colleges/' + id).get().pipe(map(res => {
@@ -49,21 +45,8 @@ export class CollegeService {
   }
 
   getEventDataFromId(id) {
-    if (!localStorage.getItem('events') || JSON.parse(localStorage.getItem('events'))['fest'] === undefined) {
-    return this.setEventDataLocally().then(() => {
-      const dataFromCache = JSON.parse(localStorage.getItem('events'));
-      return dataFromCache[id];
-    });
-    }
-    const dataFromCache = JSON.parse(localStorage.getItem('events'));
-    return Promise.resolve(dataFromCache[id]);
+      return this.afdb.object('events/' + id).query.once('value').then((res) => res.val());
   }
-  setEventDataLocally() {
-    return this.afdb.object('events').query.once('value').then(res => {
-      localStorage.setItem('events', JSON.stringify(res.val()));
-        });
-  }
-
   checkIfRegistered(uid, eventId) {
     return this.afdb.object('users/' + uid).query.once('value').then((userData) => {
       const result = userData.val();

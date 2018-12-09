@@ -47,9 +47,9 @@ export class SigninComponent implements OnInit {
         const x =  !(college.name.trim() === '' ||
          (
            (college.name.toLowerCase().indexOf('patna'))
-            !== -1 && (college.name.toLowerCase().indexOf('nit') !== -1 
+            !== -1 && (college.name.toLowerCase().indexOf('nit') !== -1
             || college.name.toLowerCase().indexOf('national') !== -1)
-          ) || 
+          ) ||
           (college.name.toLowerCase().indexOf('nitp') !== -1 || college.name.toLowerCase().indexOf('nit p') !== -1)
         );
          return x;
@@ -76,6 +76,7 @@ export class SigninComponent implements OnInit {
 
   async signUp() {
     this.loading = true;
+    this.modalService.activateLoader.next('Just a second...signing you up');
     try {
      await this.auth.signUp({...this.loginForm.value, ...this.signUpForm.value, referrer: this.referrer});
      this.modalService.createNewModalWithData.next('success, please verify your email...a link has been sent to you!');
@@ -83,18 +84,22 @@ export class SigninComponent implements OnInit {
       this.backendError = e;
     } finally {
       this.loading = false;
+      this.modalService.activateLoader.next(false);
     }
   }
   async signIn() {
     if (this.loginForm.valid) {
         this.loading = true;
+        this.modalService.activateLoader.next('Just a second...signing you in');
         try {
           await this.auth.signIn(this.loginForm.value);
+          this.modalService.activateLoader.next(false);
           this.router.navigateByUrl('/');
       } catch (e) {
         this.backendError = e;
       } finally {
         this.loading = false;
+        this.modalService.activateLoader.next(false);
       }
     }
   }

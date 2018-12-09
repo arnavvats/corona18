@@ -1,7 +1,12 @@
 <div class="bg-img"></div>
 <particles [style]="myStyle" [width]="width" [height]="height" [params]="myParams"></particles>
 <main class="position-relative animated fadeIn">
-    <img class="logo" src="assets/images/Corona.png" style="filter: invert(1);">
+    <img class="logo d-none d-sm-block" src="assets/images/Corona.png" style="filter: invert(1);">
+    <div class="logo d-flex d-sm-none flex-column animated jackInTheBox">
+        <img class="" src="assets/images/CoronaIcon.png">
+        <img class="" src="assets/images/CoronaText.png">
+        <img class="year" src="assets/images/CoronaYear.png">
+    </div>
     <div *ngIf="events && events.children">
             <app-event-button  *ngFor="let child of events.children; let i = index"
             [left]="!(i % 2)" [imageURL]="child.imageURL"
@@ -9,5 +14,4 @@
              [route]="child.id"
             ></app-event-button>
     </div>
-
 </main>

@@ -1,7 +1,18 @@
-div{
-    min-height: 100vh;
+.holder{
     margin-top: 5.1em;
     background-color: black;
     width:100%;
     overflow-x: hidden;
+}
+app-loader, .video {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: black;
+}
+video {
+  height: 100vh;
 }

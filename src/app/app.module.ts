@@ -29,6 +29,7 @@ import { SafePipe } from './shared/pipes/safe.pipe';
  import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SnackbarComponent } from './shared/components/snackbar/snackbar.component';
+import { LoaderComponent } from './shared/components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { SnackbarComponent } from './shared/components/snackbar/snackbar.compone
     GalleryComponent,
     ModalComponent,
     SafePipe,
-    SnackbarComponent
+    SnackbarComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +64,7 @@ import { SnackbarComponent } from './shared/components/snackbar/snackbar.compone
     AngularFireDatabaseModule,
     AngularFireFunctionsModule,
     AngularFireMessagingModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: true }),
   ],
   providers: [],
   bootstrap: [AppComponent],

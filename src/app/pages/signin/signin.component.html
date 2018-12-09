@@ -37,7 +37,7 @@
               <option value="">Select a college</option>
               <option value="wTtnzl2oRu6A1MrIf606">NIT Patna</option>
               <option *ngFor="let college of collegeList" [value]="college.id">{{college.name}}</option>
-              <!-- <option value="custom">--- Custom ---</option> -->
+              <option value="other">--- Other ---</option>
             </select>
             <i class="fa fa-lg fa-building"></i>
         </div>
@@ -59,7 +59,7 @@
         </div>
         <div class="input-group p-2 d-flex flex-column">
           <p *ngIf="backendError" class="error animated flash"> &#9785;&nbsp;{{backendError}}</p>
-          <a class="m-auto sign-button btn" (click)="signInOnly ? signIn() : signUp()" [class.disabled]="loading || loginForm.invalid || (!signInOnly && signUpForm.invalid)">Sign {{ signInOnly ? 'In':'Up' }}</a>
+          <button class="m-auto sign-button btn" (click)="signInOnly ? signIn() : signUp()" [disabled]="loading || loginForm.invalid || (!signInOnly && signUpForm.invalid)" >Sign {{ signInOnly ? 'In':'Up' }}</button>
           <p class="dark text-center mt-1 mb-0 d-block d-lg-none">or &nbsp;</p><a (click)="(signInOnly = !signInOnly) && (backendError = '')" class="sign-in-link d-block d-lg-none">Sign {{signInOnly ? 'Up':'In'}}</a>
         </div>
       </div>
