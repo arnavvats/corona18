@@ -32,6 +32,8 @@ import { SnackbarComponent } from './shared/components/snackbar/snackbar.compone
 import { LoaderComponent } from './shared/components/loader/loader.component';
 import { NotificationComponent } from './shared/components/notification/notification.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { EventButtonPhnComponent } from './shared/components/event-button-phn/event-button-phn.component';
+import { EventPhnComponent } from './pages/event-phn/event-phn.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
     LoaderComponent,
     NotificationComponent,
     ProfileComponent
+    EventButtonPhnComponent,
+    EventPhnComponent
   ],
   imports: [
     BrowserModule,
