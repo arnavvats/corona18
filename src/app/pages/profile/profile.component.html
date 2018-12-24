@@ -1,0 +1,73 @@
+<main class="container-fluid" *ngIf="currentProfile">
+  <div class="completion-level position-relative mb-2">
+    <span class="completion-background d-block" [style.width]= "this.percentageComplete + '%'"></span>
+    <p class="m-0 position-relative text-center">Profile {{percentageComplete}} % Complete</p>
+  </div>
+  <form [formGroup]="detailsForm">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center mb-2">
+      <button (click)="file.click()" class="profile-image-button" *ngIf="percentageComplete !== 100"><i class="fa fa-camera"></i></button>
+      <input type="file" #file hidden accept="image/*" (change)="previewImage($event)">
+      <div #profileImageHolder class="profile-image"></div>
+    </div>
+    <div class="col-12">
+      <div class="row col-12 text-center">
+          <p class="w-100">{{
+            currentProfile.name + " | " + currentProfile.email }} {{currentProfile.collegeName ? ' | ' + currentProfile.collegeName : ''}}</p>
+      </div>
+      <div class="row-col-12 d-flex justify-content-center mb-2" *ngIf="currentProfile.admin">
+        <i class="fa fa-2x fa-user-o mr-1"></i>
+        <p class="d-flex flex-column justify-content-center m-0">You're an admin of {{currentProfile.adminAccess}}</p>
+      </div>
+      <div class="row-col-12 d-flex  justify-content-center mb-2" *ngIf="currentProfile.ambassador">
+          <i class="fa fa-2x fa-star-o mr-1"></i>
+          <p class="d-flex flex-column justify-content-center m-0">You're a Campus Ambassador</p>
+        </div>
+      <div class="row detailsform-main">
+        <div class="col-12 row">
+          <div class="col-sm-3 col-4">
+            Phone
+          </div>
+          <input tpye="text" class="col-sm-9 col-8" formControlName="phoneNumber" placeholder="10-digit-number">
+          <p *ngIf="detailsForm.get('phoneNumber').invalid" class="col-sm-9 offset-sm-3 col-8 offset-8 text-center" style="color:red;">Invalid phone number</p>
+        </div>
+        <div class="col-12 row" *ngIf="currentProfile.collegeId === 'other' && !currentProfile.collegeName">
+          <div class="col-sm-3 col-4">
+            College Name
+          </div>
+          <input type="text" class="col-sm-9 col-8" formControlName="collegeName"
+          placeholder="Enter your college name, you have registered as non-NITPian">
+        </div>
+        <div class="col-12 row">
+            <div class="col-sm-3 col-4">
+                Insitiute Roll No.
+              </div>
+              <input type="text" class="col-sm-9 col-8" formControlName="rollNo" placeholder="">
+        </div>
+        <div class="col-12 row">
+            <div class="col-sm-3 col-4">
+                Degree
+              </div>
+              <input type="text" class="col-sm-9 col-8" formControlName="degree" placeholder="Example - B.Tech, M.Tech, etc">
+        </div>
+        <div class="col-12 row">
+            <div class="col-sm-3 col-4">
+                Branch
+              </div>
+              <input type="text" class="col-sm-9 col-8" formControlName="branch" placeholder="Example - CS, ECE">
+        </div>
+        <div class="col-12 row">
+            <div class="col-sm-3 col-4">
+                Year of Completion
+              </div>
+              <input type="tel" class="col-sm-9 col-8" formControlName="yearOfCompletion" placeholder="">
+              <p *ngIf="detailsForm.get('yearOfCompletion').invalid" class="col-sm-9 offset-sm-3 col-8 offset-8 text-center" style="color:red;">Invalid year</p>
+        </div>
+      </div>
+      <div class="col-12 mb-2">
+          <button class="btn btn-block btn-primary submit-btn" (click)="updateProfile()" [disabled]="detailsForm.invalid" *ngIf="percentageComplete !== 100">Submit (Changes cannot be undone)</button>
+      </div>
+    </div>
+  </div>
+  </form>
+</main>

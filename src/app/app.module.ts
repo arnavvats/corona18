@@ -30,6 +30,8 @@ import { SafePipe } from './shared/pipes/safe.pipe';
 import { environment } from '../environments/environment';
 import { SnackbarComponent } from './shared/components/snackbar/snackbar.component';
 import { LoaderComponent } from './shared/components/loader/loader.component';
+import { NotificationComponent } from './shared/components/notification/notification.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import { LoaderComponent } from './shared/components/loader/loader.component';
     ModalComponent,
     SafePipe,
     SnackbarComponent,
-    LoaderComponent
+    LoaderComponent,
+    NotificationComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

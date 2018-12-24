@@ -27,3 +27,27 @@ nav {
 .img-corona{
     width: 42px;
 }
+app-notification {
+  position: fixed;
+  display: block;
+  width: 95vw;
+  z-index: 4;
+}
+// .notification-triangle {
+//   position: absolute;
+//   bottom: -17px;
+//   right: -7px;
+//   border-left: 15px solid transparent;
+//   border-right: 15px solid transparent;
+//   border-bottom: 27px solid black;
+// }
+.notification-count {
+  position: absolute;
+    bottom: 12px;
+    background: red;
+    padding: 0px;
+    border-radius: 10px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}

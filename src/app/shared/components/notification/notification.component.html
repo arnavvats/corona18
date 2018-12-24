@@ -1,0 +1,12 @@
+<main>
+  <div class="row mb-2 main-inner">
+      <h3 class="text-center notification-header">{{notifications.length}}  Notifications</h3>
+      <button (click)="clearNotifications()" class="btn clear" *ngIf="notifications.length">Clear</button>
+  </div>
+  <div class="notification-container">
+    <div *ngFor="let notification of notifications" class="notification-box">
+      <h4 class="m-0">{{ notification.title }}</h4>
+      <p class="m-0">{{ notification.body }}</p>
+    </div>
+  </div>
+</main>

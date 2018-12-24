@@ -1,28 +1,15 @@
 <main class="row">
     <div class="col-12 row middle ml-0 pl-0 pr-0">
     <div class="col-md-5 d-none d-md-block p-2 laptop">
-      <!-- <i class="fa fa-5x fa-cloud-upload pt-5 pb-3 text-center w-100"></i> -->
-      <!-- <p><i class="fa fa-flash"></i>
-        Sign up with webstream and easily reach to your viewers anywhere in the world.
-      </p>
-      <p><i class="fa fa-flash"></i>
-        Get your api key from the dashboard after signing up.
-      </p>
-      <p><i class="fa fa-flash"></i>
-        Start streaming your video from the stream url.
-      </p>
-      <p><i class="fa fa-flash"></i>
-        Get a 30-day free trial.
-      </p> -->
     </div>
     <div class="col-md-7 col-12  mr-0 p-2 sign-up-block">
         <div class="row m-2 dark">Sign {{ signInOnly ? 'In' : 'Up'}}</div>
       <div class=" row h-100 pl-3 pb-5">
       <div class="col-12 col-lg-6 left d-flex flex-column text-center pr-4"
-           [class.justify-content-center]="signInOnly "
-            [class.justify-content-around]="!signInOnly">
+           [class.justify-content-center]="signInOnly || forgotPasswordOnly"
+            [class.justify-content-around]="!signInOnly && !forgotPasswordOnly">
         <p class="dark">We will need...</p>
-        <div class="input-group p-2" [hidden]="signInOnly">
+        <div class="input-group p-2" [hidden]="signInOnly || forgotPasswordOnly">
           <input type="text" placeholder="Your name" class="form-control" [formControl]="signUpForm.get('name')">
           <i class="fa fa-lg fa-smile-o"></i>
           <p class="error w-100 mb-0 text-center" *ngIf="signUpForm.get('name').invalid && signUpForm.get('name').touched">Name must be atleast 3 letters. Double spaces are not allowed.</p>
@@ -32,7 +19,7 @@
           <i class="fa fa-lg fa-envelope-o"></i>
           <p class="error w-100 mb-0 text-center" *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched">Email is invalid.</p>
         </div>
-        <div class="input-group p-2" [hidden]="signInOnly">
+        <div class="input-group p-2" [hidden]="signInOnly || forgotPasswordOnly">
             <select class="form-control" [formControl]="signUpForm.get('collegeId')">
               <option value="">Select a college</option>
               <option value="wTtnzl2oRu6A1MrIf606">NIT Patna</option>
@@ -41,17 +28,17 @@
             </select>
             <i class="fa fa-lg fa-building"></i>
         </div>
-        <div class="input-group p-2" [hidden]="signInOnly || (signUpForm.get('collegeId').value !== 'custom')">
+        <div class="input-group p-2" [hidden]="signInOnly || (signUpForm.get('collegeId').value !== 'custom') || forgotPasswordOnly">
             <input class="form-control" placeholder="College name" [formControl]="signUpForm.get('collegeName')" trim>
             <i class="fa fa-lg fa-university"></i>
             <p class="error w-100 mb-0 text-center" *ngIf="signUpForm.get('collegeName').touched && signUpForm.errors && signUpForm.errors['collegeNameShort']">College name must be at least 3 letters.</p>
         </div>
-        <div class="input-group p-2">
+        <div class="input-group p-2" [hidden]="forgotPasswordOnly">
           <input type="password" placeholder="Your password" class="form-control" [formControl]="loginForm.get('password')">
           <i class="fa fa-lg fa-lock"></i>
           <p class="error w-100 mb-0 text-center" *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">Passwords must be at least 6 characters.</p>
         </div>
-        <div class="input-group p-2" [hidden]="signInOnly">
+        <div class="input-group p-2" [hidden]="signInOnly || forgotPasswordOnly">
           <input type="password" placeholder="One more time?" class="form-control" [formControl]="signUpForm.get('confirmPassword')">
           <i class="fa fa-lg fa-lock"></i>
           <p class="error w-100 mb-0 text-center"
@@ -59,8 +46,16 @@
         </div>
         <div class="input-group p-2 d-flex flex-column">
           <p *ngIf="backendError" class="error animated flash"> &#9785;&nbsp;{{backendError}}</p>
-          <button class="m-auto sign-button btn" (click)="signInOnly ? signIn() : signUp()" [disabled]="loading || loginForm.invalid || (!signInOnly && signUpForm.invalid)" >Sign {{ signInOnly ? 'In':'Up' }}</button>
-          <p class="dark text-center mt-1 mb-0 d-block d-lg-none">or &nbsp;</p><a (click)="(signInOnly = !signInOnly) && (backendError = '')" class="sign-in-link d-block d-lg-none">Sign {{signInOnly ? 'Up':'In'}}</a>
+          <button class="m-auto sign-button btn"
+          (click)="forgotPasswordOnly ? forgotPassword() : (signInOnly ? signIn() : signUp())"
+          [disabled]=
+          "loading || (!forgotPasswordOnly && loginForm.invalid)
+          || (!signInOnly && signUpForm.invalid && !forgotPasswordOnly) || (forgotPasswordOnly && !loginForm.get('email').valid)" >
+           {{ forgotPasswordOnly ? 'Send Mail' : (signInOnly ? 'Sign In':'Sign Up') }}
+          </button>
+          <p class="dark text-center mt-1 mb-0 d-block d-lg-none">or &nbsp;</p>
+          <a (click)="(signInOnly = !signInOnly) && (backendError = '')" class="sign-in-link d-block d-lg-none">Sign {{signInOnly ? 'Up':'In'}}</a>
+          <a class="mt-2" (click)="(forgotPasswordOnly = !forgotPasswordOnly) && (backendError = '')" style="color: #62628aed; font-size: 1em; cursor: pointer;">{{ forgotPasswordOnly? signInOnly ? 'Sign in' : 'Sign up': 'Forgot Password'}}</a>
         </div>
       </div>
       <div class="col-6 right d-none d-lg-block pl-4">

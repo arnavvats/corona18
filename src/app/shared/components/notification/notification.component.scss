@@ -1,0 +1,47 @@
+main {
+  background: black;
+  margin: 6px 10px 10px 10px;
+  box-shadow: 0px 0px 16px -2px white;
+  padding: 18px;
+  font-family: 'Nunito', sans-serif !important;
+  border-radius: 15px;
+  .notification-container {
+    max-height: 60vh;
+    overflow: scroll;
+  }
+
+  .main-inner {
+    padding: 0 18px 0 18px;
+    h3 {
+      width: 100%;
+    }
+    button {
+      position: absolute;
+      right: 25px;
+    }
+    @media(max-width: 500px) {
+      h3 {
+        font-size: 1.5em;
+      }
+      button {
+        font-size: 0.7em;
+      }
+    }
+  }
+  .notification-box {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    background: #8093a7;
+    h4 {
+      font-family: 'Josefin Sans', sans-serif;
+    }
+  }
+  .notification-header {
+    width: 90%;
+  }
+  .clear {
+      border-radius: 10px;
+      background: #c36363;
+  }
+}

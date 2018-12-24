@@ -4,13 +4,14 @@ import { map, flatMap } from 'rxjs/operators';
 import { eventData } from '../../shared/models/event-data.model';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { of } from 'rxjs';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CollegeService {
 
-  constructor(private afStore: AngularFirestore, private afdb: AngularFireDatabase) {
+  constructor(private afStore: AngularFirestore, private afdb: AngularFireDatabase, private afStorage: AngularFireStorage) {
   }
   getAllCollegeList() {
     if (!localStorage.getItem('collegeList')) {
@@ -39,9 +40,7 @@ export class CollegeService {
     });
   }
   getCollegeNameFromId(id) {
-    return this.afStore.doc('colleges/' + id).get().pipe(map(res => {
-      return res.data().name;
-    }));
+    return this.afdb.database.ref('colleges/' + id).once('value').then(res => res.val() && res.val().name);
   }
 
   getEventDataFromId(id) {
@@ -55,6 +54,10 @@ export class CollegeService {
     }
     return false;
   });
+  }
+
+  getEventNameFromId(id) {
+    return this.afdb.database.ref('events/' + id + '/name').once('value').then(res => res.val());
   }
   async registUserForEvent(uid, eventId) {
     const userData = await this.afStore.doc('users/' + uid).get().toPromise();
@@ -70,4 +73,8 @@ export class CollegeService {
       }
       await this.afStore.doc('users/' + uid).update(data);
     }
+    getImageURL(eventId, posterId) {
+      return this.afStorage.ref('posters/events/' + eventId + '/' + posterId).getDownloadURL();
+    }
+
 }

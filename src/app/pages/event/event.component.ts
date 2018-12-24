@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Route, ActivatedRoute, Router } from '@angular/router';
-import { eventData } from '../../shared/models/event-data.model';
+import { Component, OnInit, ElementRef, ViewChild, Renderer2 } from '@angular/core';
+import {  ActivatedRoute, Router } from '@angular/router';
 import { CollegeService } from 'src/app/shared/services/college.service';
 import { UserService } from 'src/app/shared/services/user.service';
 import { ModalService } from 'src/app/shared/services/modal.service';
@@ -22,7 +21,8 @@ export class EventComponent implements OnInit {
   eventID;
   Date = Date;
   canRegister = true;
-  constructor(private route: ActivatedRoute, private router: Router,
+  @ViewChild('main') main: ElementRef;
+  constructor(private route: ActivatedRoute, private router: Router, private renderer: Renderer2,
     private collegeService: CollegeService, private userSerivce: UserService, private modalService: ModalService) { }
 
   ngOnInit() {
@@ -40,6 +40,7 @@ export class EventComponent implements OnInit {
        this.eventID = res['id'];
       this.collegeService.getEventDataFromId(this.eventID).then( eventData => {
         this.event = eventData;
+        this.setBackGround(eventData && eventData.posterId);
         this.modalService.activateLoader.next(false);
         this.setEventTimer();
       });
@@ -83,5 +84,21 @@ export class EventComponent implements OnInit {
   }
   registerSoon() {
     this.modalService.createNewSnackbarWithData.next('Registrations will start soon!!');
+  }
+
+  setBackGround(posterId) {
+    if (posterId) {
+        const sub = this.collegeService.getImageURL(this.eventID, posterId).subscribe(url => {
+          this.renderer.setStyle
+      (this.main.nativeElement, 'background',
+       `linear-gradient(to bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("${url}") no-repeat center fixed`);
+          sub.unsubscribe();
+        });
+    } else {
+      this.renderer.setStyle
+      (this.main.nativeElement, 'background',
+       // tslint:disable-next-line:max-line-length
+       `linear-gradient(to bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../../../assets/images/coronaBackground.jpg") no-repeat center fixed`);
+    }
   }
 }

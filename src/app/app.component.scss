@@ -4,7 +4,7 @@
     width:100%;
     overflow-x: hidden;
 }
-app-loader, .video {
+app-loader {
   position: absolute;
   z-index: 2;
   top: 0;
@@ -13,6 +13,4 @@ app-loader, .video {
   width: 100vw;
   background: black;
 }
-video {
-  height: 100vh;
-}
+

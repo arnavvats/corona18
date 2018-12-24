@@ -18,6 +18,7 @@ export class SigninComponent implements OnInit {
   loading: Boolean;
   collegeList: Array<any>;
   signInForms: FormArray;
+  forgotPasswordOnly: Boolean;
   private referrer: string;
   constructor(private auth: AuthService,
      private modalService: ModalService,
@@ -37,6 +38,7 @@ export class SigninComponent implements OnInit {
   }, () => this.validateCollegeName());
   this.signInOnly = false;
   this.loading = false;
+  this.forgotPasswordOnly = false;
   this.signInForms = new FormArray([this.loginForm, this.signUpForm], () => this.confirmPassword());
   }
 
@@ -103,5 +105,20 @@ export class SigninComponent implements OnInit {
       }
     }
   }
+  async forgotPassword() {
+    if (this.loginForm.get('email').valid) {
+    try {
+      this.loading = true;
+      this.modalService.activateLoader.next('Sending link to ' + this.loginForm.get('email').value);
+      await this.auth.forgotPassword(this.loginForm.get('email').value);
+      this.modalService.createNewModalWithData.next('Success...please check your email to reset password');
+    } catch (e) {
+      this.backendError = e;
+    } finally {
+      this.loading = false;
+      this.modalService.activateLoader.next(false);
+    }
+  }
+}
 
 }

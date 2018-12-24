@@ -24,7 +24,8 @@ export class AuthService {
       data.collegeId = (await this.afdb.list('colleges').push({name: data.collegeName})).key();
     }
     const uid = this.afAuth.auth.currentUser.uid;
-    await this.afdb.object('users/' + uid).update({name: data.name, collegeId: data.collegeId, email: data.email, referrer: data.referrer, verified: false});
+    await this.afdb.object('users/' + uid).
+    update({name: data.name, collegeId: data.collegeId, email: data.email, referrer: data.referrer, verified: false});
     await this.logOut();
     } catch (e) {
       throw new Error(e && e.message);
@@ -54,6 +55,14 @@ export class AuthService {
     } catch (e) {
       throw new Error('Sorry, an error occurred');
     }
+  }
+
+   async forgotPassword(email) {
+     try {
+      await this.afAuth.auth.sendPasswordResetEmail(email);
+     } catch (e) {
+       throw new Error(e && e.message);
+     }
   }
 
 }

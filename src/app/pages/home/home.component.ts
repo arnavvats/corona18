@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { CollegeService } from 'src/app/shared/services/college.service';
 import { ModalService } from 'src/app/shared/services/modal.service';
 
@@ -13,8 +13,7 @@ export class HomeComponent implements OnInit {
   myParams: object = {};
   width = 100;
   height = 100;
-
-  constructor(private collegeService: CollegeService, private modalService: ModalService) {
+  constructor(private collegeService: CollegeService, private modalService: ModalService, private renderer: Renderer2) {
    }
 
   ngOnInit() {
@@ -26,8 +25,6 @@ export class HomeComponent implements OnInit {
       'right': 0,
       'bottom': 0
   };
-
-
 
   this.myParams = {
       particles: {
@@ -46,9 +43,11 @@ export class HomeComponent implements OnInit {
           }
       }
     };
+    this.modalService.activateLoader.next('Loading');
 
     this.collegeService.getEventDataFromId('fest').then(res => {
       this.events = res;
+      this.modalService.activateLoader.next(false);
     });
   }
 

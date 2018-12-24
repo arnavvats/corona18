@@ -1,5 +1,5 @@
 <div class="bg-img"></div>
-<particles [style]="myStyle" [width]="width" [height]="height" [params]="myParams"></particles>
+<particles [style]="myStyle" [params]="myParams" *ngIf="events"></particles>
 <main class="position-relative animated fadeIn">
     <img class="logo d-none d-sm-block" src="assets/images/Corona.png" style="filter: invert(1);">
     <div class="logo d-flex d-sm-none flex-column animated jackInTheBox">
@@ -15,3 +15,7 @@
             ></app-event-button>
     </div>
 </main>
+<div class="position-relative w-100 nitin text-center mb-3">
+  <img src="assets/images/nitin.png" class="img img-fluid">
+</div>
+

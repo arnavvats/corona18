@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewContainerRef, Renderer2, ElementRef, AfterViewInit, Host } from '@angular/core';
+import { Component, ViewChild, ViewContainerRef, Renderer2, ElementRef, AfterViewInit } from '@angular/core';
 import { ModalService } from './shared/services/modal.service';
 import { Router, NavigationEnd } from '@angular/router';
 import { CollegeService } from './shared/services/college.service';
@@ -15,7 +15,6 @@ export class AppComponent implements AfterViewInit {
   @ViewChild('appSnackbarHolder', { read: ViewContainerRef }) snackbarHolder;
   @ViewChild('contentHolder') contentHolder: ElementRef;
   @ViewChild('appLoaderHolder') appLoaderHolder: ElementRef;
-  @ViewChild('video') video: ElementRef;
 
   constructor(private modalService: ModalService, private router: Router,
      private collegeService: CollegeService, private notificationService: NotificationsService,
@@ -47,14 +46,6 @@ export class AppComponent implements AfterViewInit {
         this.render.removeClass(this.contentHolder.nativeElement, 'd-none');
       }
     });
-    setTimeout(() => {
-      this.render.addClass(this.video.nativeElement, 'animated');
-      this.render.addClass(this.video.nativeElement, 'fadeOut');
-    }, 9000);
-    setTimeout(() => {
-      console.log(this.render.destroyNode(this.video.nativeElement));
-      this.render.removeChild(this.el.nativeElement, this.video.nativeElement);
-    }, 10000);
-  }
 
+  }
 }
