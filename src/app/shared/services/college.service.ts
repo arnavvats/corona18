@@ -13,27 +13,6 @@ export class CollegeService {
 
   constructor(private afStore: AngularFirestore, private afdb: AngularFireDatabase, private afStorage: AngularFireStorage) {
   }
-  getAllCollegeList() {
-    if (!localStorage.getItem('collegeList')) {
-    return this.afdb.object('colleges').valueChanges().pipe(map((res: any) => {
-      let collegeList = [];
-      const keys = Object.keys(res);
-      keys.forEach(key => {
-        collegeList.push({id: key, ...res[key]});
-      });
-      collegeList.sort(this.comparator);
-      collegeList = collegeList.filter(doc => {
-        return doc.id !== 'wTtnzl2oRu6A1MrIf606';
-      });
-      localStorage.setItem('collegeList', JSON.stringify(collegeList));
-      return collegeList;
-    }));
-    }
-    return of(JSON.parse(localStorage.getItem('collegeList')));
-  }
-  comparator(a , b) {
-    return a.name.localeCompare(b.name);
-  }
   getAmbassadorLeaderboard() {
     return this.afdb.object('leaderboard/ambassadors').query.once('value').then(res => {
       return res.val();

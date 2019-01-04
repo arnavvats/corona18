@@ -4,8 +4,7 @@ import { UserService } from 'src/app/shared/services/user.service';
 import { ProfileService } from './profile.service';
 import { ModalService } from 'src/app/shared/services/modal.service';
 import { CollegeService } from 'src/app/shared/services/college.service';
-import { map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-profile',

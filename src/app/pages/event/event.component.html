@@ -1,13 +1,34 @@
-<main class="position-relative pt-5" #main>
-  <div class="about">
+<main class="position-relative container" #main >
+  <div class="about" [hidden]="showRounds">
     <h1 class="heading">
       {{ event && event.name ? event.name : ''}}
     </h1>
-    <div class="description">
+    <div class="description mb-2">
       {{event && event.description ? event.description : ''}}
     </div>
-    <div class="text-center pt-5 mb-1 timer-header">- &nbsp;STARTS &nbsp;IN &nbsp;-</div>
-    <div class="timer row mb-3">
+    <div *ngIf="event && event.links" class="mb-2 row sub-events-mobile">
+        <button class="btn btn-block mb-3 text-center heading" (click)="expandLinks = !expandLinks">
+          LINKS &nbsp;
+          <i class="fa"
+          [class.fa-arrow-down]="!expandLinks"
+          [class.fa-arrow-up]="expandLinks"></i>
+        </button>
+        <div class="col-12 row m-0 p-0" *ngIf="expandLinks">
+        <a *ngFor="let link of event.links"
+        [href]="link.url"
+        class="btn doc-link"
+        target="blank">
+          {{link.description.length > 57 ? ((link.description | slice:0:57) + '...') : link.description}}
+        </a>
+        </div>
+      </div>
+      <div *ngIf="event && event.rounds" class="row sub-events-mobile">
+          <button class="btn btn-block mb-3 text-center heading" (click)="openRounds()">
+            ROUNDS
+          </button>
+      </div>
+    <div class="text-center pt-1 mb-sm-1 timer-header">- &nbsp;STARTS &nbsp;IN &nbsp;-</div>
+    <div class="timer row mb-sm-3 p-sm-0 p-3">
       <div class="col-3">
         <p>{{timer.days}}</p>
         <p>DAYS</p>
@@ -25,12 +46,26 @@
           <p>SEC</p>
       </div>
     </div>
+    <div *ngIf="event && event.children" class="d-sm-none d-block row sub-events-mobile">
+      <button class="btn btn-block mb-3 text-center heading" (click)="expandSubEvents = !expandSubEvents">
+        SUB EVENTS
+        <i class="fa"
+        [class.fa-arrow-down]="!expandSubEvents"
+        [class.fa-arrow-up]="expandSubEvents"></i>
+      </button>
+      <div class="col-12 row m-0 p-0" *ngIf="expandSubEvents">
+      <a *ngFor="let child of event.children" [routerLink]="'/events/' + child.id" class="col-4 text-center p-1">
+        <img [src]="'assets/images/events-logo/' + child.imageURL">
+        <p style="word-break: break-word;">{{child.name}}</p>
+      </a>
+      </div>
+    </div>
     <button class="btn mt-5 p-2 position-relative" *ngIf="event && event.rounds && (event.startsAt > Date.now())"
       (click)="registerSoon()" [disabled]="!canRegister">REGISTER{{canRegister ? '' : "ED"}}</button>
 
   </div>
 
-    <div *ngIf="event && event.children" class="position-absolute w-100">
+    <div *ngIf="event && event.children" class="position-absolute w-100 d-sm-block d-none" [hidden]="showRounds">
             <app-event-button
             *ngFor="let child of event.children; let i = index"
              [left]="!(i % 2)" [imageURL]="child.imageURL"
@@ -39,5 +74,6 @@
              >
                 </app-event-button>
     </div>
+    <app-event-rounds *ngIf="event && event.rounds && showRounds" [rounds]="event.rounds" (closeEvent)="hideRounds()"></app-event-rounds>
 
 </main>

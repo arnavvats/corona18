@@ -1,4 +1,5 @@
 main{
+    min-height: 50vh;
     background: transparent;
     background-repeat: no-repeat;
     background-size: cover;
@@ -33,12 +34,17 @@ main{
       width:600px;
         margin-left: calc(50vw - 140px);
         text-align: center;
-        position: absolute;
       transition: transform 1s ease-in-out !important;
       transform: scale(1);
     }
     .logo:hover {
       transform: scale(1.25);
+    }
+    .events-sm {
+      img {
+        width: 60px;
+        height: 60px;
+      }
     }
 }
 .bg-img {

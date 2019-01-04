@@ -3,15 +3,15 @@ main{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-attachment: fixed;
   .timer-header {
     font-size: 2em;
   }
-  .heading,.timer-header {
+  .heading,.timer-header,.sub-events-mobile .heading {
     font-family: 'Orbitron', sans-serif;
-    @media (max-width: 500px) {
-      font-size: 1.2em;
-    }
-
   }
   .about{
       //margin-top: calc(50vh - 105px);;
@@ -25,8 +25,8 @@ main{
 
       }
       @media(max-width: 767px) {
-        margin: 0 90px 0 90px;
-        width: calc(100% - 180px);
+        padding: 20px;
+        width: 100%;
       }
       text-align: center;
   }
@@ -73,7 +73,23 @@ main{
       }
     }
   }
-
+  .sub-events-mobile {
+    .heading{
+      font-size: 1.5em;
+      border-radius:30px;
+    }
+    img {
+      height: 60px;
+      width: 60px;
+    }
+    .doc-link {
+      border-radius: 20px;
+      color: white;
+      background: #4a4a8e;
+      margin: 5px;
+      box-shadow: 2px 2px 6px white;
+    }
+  }
   button {
     font-size: 1.5em;
     bottom: 1em;
@@ -93,5 +109,18 @@ main{
 .event-list {
   @media(max-width: 500px) {
     // top: 0;
+  }
+}
+app-event-rounds {
+  display: block;
+  width:100%;
+  min-height: inherit;
+}
+.container {
+  @media(min-width: 576px) {
+    margin: 0 !important;
+    padding: 5px !important;
+    max-width: 100% !important;
+    width: 100% !important;
   }
 }

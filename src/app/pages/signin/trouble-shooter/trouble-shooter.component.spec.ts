@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EventButtonPhnComponent } from './event-button-phn.component';
+import { TroubleShooterComponent } from './trouble-shooter.component';
 
-describe('EventButtonPhnComponent', () => {
-  let component: EventButtonPhnComponent;
-  let fixture: ComponentFixture<EventButtonPhnComponent>;
+describe('TroubleShooterComponent', () => {
+  let component: TroubleShooterComponent;
+  let fixture: ComponentFixture<TroubleShooterComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EventButtonPhnComponent ]
+      declarations: [ TroubleShooterComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EventButtonPhnComponent);
+    fixture = TestBed.createComponent(TroubleShooterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

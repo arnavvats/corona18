@@ -2,14 +2,14 @@
     <div class="col-12 row middle ml-0 pl-0 pr-0">
     <div class="col-md-5 d-none d-md-block p-2 laptop">
     </div>
-    <div class="col-md-7 col-12  mr-0 p-2 sign-up-block">
-        <div class="row m-2 dark">Sign {{ signInOnly ? 'In' : 'Up'}}</div>
+    <div class="col-md-7 col-12  mr-0 p-2 sign-up-block" [hidden]="status === 'help'">
+        <div class="row m-2 dark">{{ mapStatusString() }}</div>
       <div class=" row h-100 pl-3 pb-5">
       <div class="col-12 col-lg-6 left d-flex flex-column text-center pr-4"
-           [class.justify-content-center]="signInOnly || forgotPasswordOnly"
-            [class.justify-content-around]="!signInOnly && !forgotPasswordOnly">
+           [class.justify-content-center]="status !== 'signUp'"
+            [class.justify-content-around]="status === 'signUp'">
         <p class="dark">We will need...</p>
-        <div class="input-group p-2" [hidden]="signInOnly || forgotPasswordOnly">
+        <div class="input-group p-2" [hidden]="status !== 'signUp'">
           <input type="text" placeholder="Your name" class="form-control" [formControl]="signUpForm.get('name')">
           <i class="fa fa-lg fa-smile-o"></i>
           <p class="error w-100 mb-0 text-center" *ngIf="signUpForm.get('name').invalid && signUpForm.get('name').touched">Name must be atleast 3 letters. Double spaces are not allowed.</p>
@@ -19,26 +19,25 @@
           <i class="fa fa-lg fa-envelope-o"></i>
           <p class="error w-100 mb-0 text-center" *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched">Email is invalid.</p>
         </div>
-        <div class="input-group p-2" [hidden]="signInOnly || forgotPasswordOnly">
+        <div class="input-group p-2" [hidden]="status !== 'signUp'">
             <select class="form-control" [formControl]="signUpForm.get('collegeId')">
-              <option value="">Select a college</option>
-              <option value="wTtnzl2oRu6A1MrIf606">NIT Patna</option>
-              <option *ngFor="let college of collegeList" [value]="college.id">{{college.name}}</option>
-              <option value="other">--- Other ---</option>
+              <option value="">Select college</option>
+              <option value="nitp">National Institute of Technology, Patna</option>
+              <option value="other">Other College</option>
             </select>
             <i class="fa fa-lg fa-building"></i>
         </div>
-        <div class="input-group p-2" [hidden]="signInOnly || (signUpForm.get('collegeId').value !== 'custom') || forgotPasswordOnly">
+        <div class="input-group p-2" [hidden]="status !== 'signUp' || (signUpForm.get('collegeId').value !== 'other') ">
             <input class="form-control" placeholder="College name" [formControl]="signUpForm.get('collegeName')" trim>
             <i class="fa fa-lg fa-university"></i>
             <p class="error w-100 mb-0 text-center" *ngIf="signUpForm.get('collegeName').touched && signUpForm.errors && signUpForm.errors['collegeNameShort']">College name must be at least 3 letters.</p>
         </div>
-        <div class="input-group p-2" [hidden]="forgotPasswordOnly">
+        <div class="input-group p-2" [hidden]="status === 'forgotPassword'">
           <input type="password" placeholder="Your password" class="form-control" [formControl]="loginForm.get('password')">
           <i class="fa fa-lg fa-lock"></i>
           <p class="error w-100 mb-0 text-center" *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">Passwords must be at least 6 characters.</p>
         </div>
-        <div class="input-group p-2" [hidden]="signInOnly || forgotPasswordOnly">
+        <div class="input-group p-2" [hidden]="status !== 'signUp'">
           <input type="password" placeholder="One more time?" class="form-control" [formControl]="signUpForm.get('confirmPassword')">
           <i class="fa fa-lg fa-lock"></i>
           <p class="error w-100 mb-0 text-center"
@@ -47,24 +46,35 @@
         <div class="input-group p-2 d-flex flex-column">
           <p *ngIf="backendError" class="error animated flash"> &#9785;&nbsp;{{backendError}}</p>
           <button class="m-auto sign-button btn"
-          (click)="forgotPasswordOnly ? forgotPassword() : (signInOnly ? signIn() : signUp())"
+          (click)="submitAccordingToStatus()"
+          style="width: 72%;"
           [disabled]=
-          "loading || (!forgotPasswordOnly && loginForm.invalid)
-          || (!signInOnly && signUpForm.invalid && !forgotPasswordOnly) || (forgotPasswordOnly && !loginForm.get('email').valid)" >
-           {{ forgotPasswordOnly ? 'Send Mail' : (signInOnly ? 'Sign In':'Sign Up') }}
+          "status !== 'help' && loading || (status !=='forgotPassword' && loginForm.invalid)
+          || (status ==='signUp' && signUpForm.invalid) || (status ==='forgotPassword' && !loginForm.get('email').valid)" >
+           {{ mapStatusString() }}
           </button>
           <p class="dark text-center mt-1 mb-0 d-block d-lg-none">or &nbsp;</p>
-          <a (click)="(signInOnly = !signInOnly) && (backendError = '')" class="sign-in-link d-block d-lg-none">Sign {{signInOnly ? 'Up':'In'}}</a>
-          <a class="mt-2" (click)="(forgotPasswordOnly = !forgotPasswordOnly) && (backendError = '')" style="color: #62628aed; font-size: 1em; cursor: pointer;">{{ forgotPasswordOnly? signInOnly ? 'Sign in' : 'Sign up': 'Forgot Password'}}</a>
+          <a (click)="changeStatus('signIn') && (backendError = '')" class="sign-in-link d-block d-lg-none" *ngIf="status !== 'signIn'">Sign In</a>
+          <a (click)="changeStatus('signUp') && (backendError = '')" class="sign-in-link d-block d-lg-none" *ngIf="status !== 'signUp'">Sign Up</a>
+          <a class="pt-2" (click)="changeStatus('forgotPassword') && (backendError = '')"
+          style="color: #62628aed; font-size: 1em; cursor: pointer;" *ngIf="status !== 'forgotPassword'">Forgot Password</a>
+          <a class="pt-2" (click)="changeStatus('resendVerification') && (backendError = '')"
+          style="color: #62628aed; font-size: 1em; cursor: pointer;" *ngIf="status !== 'resendVerification'">Resend Email Verification</a>
         </div>
       </div>
       <div class="col-6 right d-none d-lg-block pl-4">
         <p class="position-absolute mt-auto ml-0 or dark">OR</p>
-        <a class="m-auto sign-button text-center" (click)="(signInOnly = !signInOnly) && (backendError = '')">Sign {{signInOnly ? 'Up':'In'}}</a>
+        <a class="m-auto sign-button text-center" (click)="changeStatus('signIn') && (backendError = '')" *ngIf="status !== 'signIn'">Sign In</a>
+        <a class="m-auto sign-button text-center" (click)="changeStatus('signUp') && (backendError = '')" *ngIf="status !== 'signUp'" style="top: 60%;">Sign Up</a>
       </div>
       </div>
-
-
+    </div>
+    <div class="col-md-7 col-12  mr-0 p-2 sign-up-block" [hidden]="status !== 'help'">
+      <app-trouble-shooter class="d-flex h-100"></app-trouble-shooter>
+      <a (click)="changeStatus('signIn')" class="back-to-sign-in"><i class="fa fa-times"></i></a>
     </div>
     </div>
+    <a class="help position-relative" (click)="changeStatus('help')" *ngIf="status !== 'help'" style="z-index: 2;">
+      <i class="fa fa-info-circle"></i> Troubleshoot
+    </a>
   </main>

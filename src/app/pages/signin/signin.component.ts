@@ -13,12 +13,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class SigninComponent implements OnInit {
   loginForm: FormGroup;
   signUpForm: FormGroup;
-  signInOnly: Boolean;
   backendError: string;
   loading: Boolean;
-  collegeList: Array<any>;
   signInForms: FormArray;
-  forgotPasswordOnly: Boolean;
+    // status can be resendVerification, signIn, signUp, resendVerification, forgotPassword, help;
+    status = 'signIn';
   private referrer: string;
   constructor(private auth: AuthService,
      private modalService: ModalService,
@@ -33,44 +32,28 @@ export class SigninComponent implements OnInit {
   this.signUpForm = new FormGroup({
     'name': new FormControl('', [Validators.required, Validators.minLength(3), Validators.pattern('^(?!.*  ).+')]),
     'collegeId': new FormControl('', [Validators.required, Validators.minLength(3)]),
-    'collegeName': new FormControl('', [Validators.minLength(3)]),
+    'collegeName': new FormControl(null, [Validators.minLength(3)]),
     'confirmPassword': new FormControl('', [Validators.required, Validators.minLength(6)])
   }, () => this.validateCollegeName());
-  this.signInOnly = false;
   this.loading = false;
-  this.forgotPasswordOnly = false;
   this.signInForms = new FormArray([this.loginForm, this.signUpForm], () => this.confirmPassword());
   }
 
   ngOnInit() {
-    this.collegeService.getAllCollegeList().subscribe(res => {
-      this.collegeList = res;
-      this.collegeList = this.collegeList.filter(college => {
-        const x =  !(college.name.trim() === '' ||
-         (
-           (college.name.toLowerCase().indexOf('patna'))
-            !== -1 && (college.name.toLowerCase().indexOf('nit') !== -1
-            || college.name.toLowerCase().indexOf('national') !== -1)
-          ) ||
-          (college.name.toLowerCase().indexOf('nitp') !== -1 || college.name.toLowerCase().indexOf('nit p') !== -1)
-        );
-         return x;
-      });
-    });
     this.activatedRoute.queryParams.subscribe(params => {
       this.referrer = (params && params['ref']) || null;
     });
   }
   confirmPassword() {
-    if (this.signInOnly === false &&
+    if (this.status !== 'signIn' &&
       (this.loginForm.get('password').value !== this.signUpForm.get('confirmPassword').value)) {
       return {passwordMismatch: true};
       }
     return undefined;
   }
   validateCollegeName() {
-    if (this.signInOnly === false && this.signUpForm.get('collegeId').value === 'custom'
-         && this.signUpForm.get('collegeName').value.length < 3) {
+    if (this.status !== 'signIn' && this.signUpForm.get('collegeId').value === 'other'
+         && (this.signUpForm.get('collegeName').value === null || this.signUpForm.get('collegeName').value.length < 3)) {
           return {collegeNameShort: true};
     }
     return undefined;
@@ -107,6 +90,7 @@ export class SigninComponent implements OnInit {
   }
   async forgotPassword() {
     if (this.loginForm.get('email').valid) {
+      this.backendError = '';
     try {
       this.loading = true;
       this.modalService.activateLoader.next('Sending link to ' + this.loginForm.get('email').value);
@@ -119,6 +103,54 @@ export class SigninComponent implements OnInit {
       this.modalService.activateLoader.next(false);
     }
   }
+}
+
+mapStatusString() {
+  switch (this.status) {
+    case 'signIn':
+    return 'Sign In';
+    case 'signUp':
+    return 'Sign Up';
+    case 'forgotPassword':
+    return 'Forgot Password';
+    case 'resendVerification':
+    return 'Resend Email';
+    case 'help':
+    return 'Help';
+  }
+  return 'Unknown';
+}
+async resendEmailVerification() {
+  this.backendError = '';
+  this.loading = true;
+  this.modalService.activateLoader.next('Sending mail verification...');
+  if (this.loginForm.valid) {
+    try {
+    await this.auth.resendVerificationMail(this.loginForm.value);
+    } catch (e) {
+      this.backendError = e;
+      this.modalService.createNewModalWithData.next(e);
+    } finally {
+      this.loading = false;
+      this.modalService.activateLoader.next(false);
+    }
+  }
+}
+submitAccordingToStatus() {
+  switch (this.status) {
+    case 'signIn':
+    return this.signIn();
+    case 'signUp':
+    return this.signUp();
+    case 'forgotPassword':
+    return this.forgotPassword();
+    case 'resendVerification':
+    return this.resendEmailVerification();
+  }
+}
+changeStatus(status) {
+  window.scrollTo(0, 0);
+  this.status = status;
 }
 
 }

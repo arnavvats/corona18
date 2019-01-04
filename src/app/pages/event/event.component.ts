@@ -19,6 +19,9 @@ export class EventComponent implements OnInit {
   interval;
   user;
   eventID;
+  expandSubEvents = false;
+  expandLinks = false;
+  showRounds = false;
   Date = Date;
   canRegister = true;
   @ViewChild('main') main: ElementRef;
@@ -28,15 +31,7 @@ export class EventComponent implements OnInit {
   ngOnInit() {
     this.modalService.activateLoader.next('Loading Event Info');
     this.route.params.subscribe((res) => {
-      this.event = null;
-      if (this.interval) {
-        clearInterval(this.interval);
-      }
-      // this.userSerivce.user$.subscribe(user => {
-      //   if (user) {
-      //     //this.checkIfRegistered();
-      //   }
-      // });
+      this.reset();
        this.eventID = res['id'];
       this.collegeService.getEventDataFromId(this.eventID).then( eventData => {
         this.event = eventData;
@@ -90,15 +85,33 @@ export class EventComponent implements OnInit {
     if (posterId) {
         const sub = this.collegeService.getImageURL(this.eventID, posterId).subscribe(url => {
           this.renderer.setStyle
-      (this.main.nativeElement, 'background',
-       `linear-gradient(to bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("${url}") no-repeat center fixed`);
+      (this.main.nativeElement, 'background-image',
+       `linear-gradient(to bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("${url}")`);
           sub.unsubscribe();
         });
     } else {
       this.renderer.setStyle
-      (this.main.nativeElement, 'background',
+      (this.main.nativeElement, 'background-image',
        // tslint:disable-next-line:max-line-length
-       `linear-gradient(to bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../../../assets/images/coronaBackground.jpg") no-repeat center fixed`);
+       `linear-gradient(to bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../../../assets/images/coronaBackground.jpg")`);
     }
+  }
+  hideRounds() {
+    this.showRounds = false;
+    window.scrollTo (0, 0);
+  }
+  reset() {
+    this.event = null;
+    this.expandSubEvents = false;
+    this.expandLinks = false;
+    this.hideRounds();
+    if (this.interval) {
+      clearInterval(this.interval);
+    }
+  }
+  openRounds() {
+    this.showRounds = true;
+    window.scrollTo (0, 0);
+
   }
 }

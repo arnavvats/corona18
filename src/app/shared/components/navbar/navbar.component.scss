@@ -1,4 +1,6 @@
 nav {
+  position: fixed;
+  z-index: 2 !important;
   font-family: 'Roboto', sans-serif;
   z-index: 1;
   font-size: 0.9em;

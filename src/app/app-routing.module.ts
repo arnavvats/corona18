@@ -8,7 +8,6 @@ import { SponsorsComponent } from './pages/sponsors/sponsors.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
-import { EventPhnComponent} from './pages/event-phn/event-phn.component'
 import { AuthGuard } from './shared/guards/auth.guard';
 import { UnAuthGuard } from './shared/guards/un-auth.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
@@ -24,7 +23,6 @@ const routes: Routes = [
   {path: 'profile', component: ProfileComponent , canActivate: [AuthGuard]},
   {path: 'about-us', component: AboutUsComponent},
   {path: 'gallery', component: GalleryComponent},
-  {path: 'event-phn/:id', component: EventPhnComponent}
 ];
 
 @NgModule({

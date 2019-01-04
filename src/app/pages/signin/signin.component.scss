@@ -14,7 +14,7 @@ main {
 
     .laptop {
       background: #dad4b5ba url("../../../assets/images/Corona.png");
-      background-size: 400px;
+      background-size: contain;
       background-position:center;
       background-repeat: no-repeat;
 
@@ -100,8 +100,20 @@ main {
   color: #ca626c !important;
   font-size: 1.3em;
 }
-.sign-in-link:hover {
+.sign-in-link:hover,a:hover,button:hover {
   cursor: pointer;
 }
-
-
+.back-to-sign-in {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: red !important;
+  * {
+    color: red !important;
+  }
+  i {
+    border: 1px solid red;
+    border-radius: 20px;
+    padding: 1px 4px 2px 3px;
+    }
+}

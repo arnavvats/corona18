@@ -20,12 +20,14 @@ export class AuthService {
     await this.afAuth.auth.createUserWithEmailAndPassword(data.email, data.password);
     await this.afAuth.auth.currentUser.updateProfile({displayName: data.name, photoURL: null});
     await this.afAuth.auth.currentUser.sendEmailVerification();
-    if (data.collegeId === 'custom') {
-      data.collegeId = (await this.afdb.list('colleges').push({name: data.collegeName})).key();
-    }
     const uid = this.afAuth.auth.currentUser.uid;
+    if (data.collegeId === 'nitp') {
+      data.collegeName = 'National Institute of Technology, Patna';
+    }
     await this.afdb.object('users/' + uid).
-    update({name: data.name, collegeId: data.collegeId, email: data.email, referrer: data.referrer, verified: false});
+    update(
+      {name: data.name, collegeId: data.collegeId, email: data.email,
+        referrer: data.referrer, verified: false, collegeName: data.collegeName});
     await this.logOut();
     } catch (e) {
       throw new Error(e && e.message);
@@ -63,6 +65,18 @@ export class AuthService {
      } catch (e) {
        throw new Error(e && e.message);
      }
+  }
+  async resendVerificationMail(data) {
+    try {
+      await this.afAuth.auth.signInWithEmailAndPassword(data.email, data.password);
+      if (this.afAuth.auth.currentUser.emailVerified === true) {
+        throw new Error('Your email has already been verified. You have been signed in.');
+      }
+      await this.afAuth.auth.currentUser.sendEmailVerification();
+      await this.logOut();
+    } catch (e) {
+      throw new Error(e && e.message);
+    }
   }
 
 }
