@@ -11,7 +11,7 @@
         <div class="row">
             <h4 class="col-12">
                 <i class="fa fa-info-circle mr-1"></i>
-                DESCRITPTION</h4>
+                DESCRIpTTION</h4>
           <p class="col-12">{{activeRound.description}}</p>
         </div>
         <div class="row" *ngIf="activeRound.rules">
@@ -24,13 +24,13 @@
       </div>
       <div class="row">
           <h4 class="col-12">
-              <i class="fa fa-clock-o mr-1"></i>
+              <i class="fa fa-map-marker mr-1"></i>
               VENUE</h4>
           <p class="col-12">{{activeRound.venue ? activeRound.venue : 'unknown'}}</p>
       </div>
       <div class="row">
           <h4 class="col-12">
-              <i class="fa fa-map-marker mr-1"></i>
+              <i class="fa fa-clock-o mr-1"></i>
               TIMINGS</h4>
           <p class="col-12">Starts at {{ activeRound.startsAt | date:'short' }}</p>
           <p class="col-12">Ends at {{ activeRound.endsAt | date:'short'}}</p>
