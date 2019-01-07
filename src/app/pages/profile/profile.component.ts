@@ -77,7 +77,7 @@ export class ProfileComponent implements OnInit {
     }
 
     if (this.imageFile.size / 1024 <= 10 || this.imageFile.size / (1024 * 1024) >= 10) {
-        errMsg = 'Size should not be more than 10MB or less than 10KB';
+        errMsg = 'Size should be between 10KB and 10MB';
     }
     if (errMsg !== '') {
         this.modalService.createNewSnackbarWithData.next(errMsg);
@@ -92,16 +92,16 @@ export class ProfileComponent implements OnInit {
 
 
   calculatePercentage() {
-    let percent = 0;
-    const regularKeys = ['name', 'email', 'phoneNumber', 'photoURL', 'rollNo', 'yearOfCompletion', 'degree', 'branch'];
+    let percent = 9;
+    const regularKeys = ['name', 'email', 'verified', 'branch', 'rollNo',
+    'degree', 'collegeName', 'yearOfCompletion',
+     'phoneNumber', 'photoURL'];
    regularKeys.forEach(key => {
     if (this.currentProfile[key]) {
-      percent += 11;
+      percent += 9;
     }
    });
-   if (this.currentProfile.collegeId !== 'other' || this.currentProfile.collegeName ) {
-    percent += 12;
-   }
+   if (percent === 99) { percent = 100; }
    this.percentageComplete = percent;
   }
 

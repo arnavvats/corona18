@@ -1,22 +1,32 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { User } from 'firebase';
 import { AngularFireDatabase } from '@angular/fire/database';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   public user: User;
-  constructor(private afAuth: AngularFireAuth, private afStore: AngularFirestore, private afdb: AngularFireDatabase) {
+  constructor(private afAuth: AngularFireAuth, private afdb: AngularFireDatabase, private httpClient: HttpClient) {
     afAuth.authState.subscribe(res => {
       this.user = res;
     });
   }
 
+  checkEmailAddressValidity(email) {
+    return this.httpClient.get('https://open.kickbox.com/v1/disposable/' + email).toPromise()
+            .then(res => {
+              if (res && res['disposable'] === true) {
+                throw new Error('This seems to be a disposable email address.');
+              }
+            });
+  }
+
   async signUp(data) {
      try {
+    await this.checkEmailAddressValidity(data.email);
     await this.afAuth.auth.createUserWithEmailAndPassword(data.email, data.password);
     await this.afAuth.auth.currentUser.updateProfile({displayName: data.name, photoURL: null});
     await this.afAuth.auth.currentUser.sendEmailVerification();

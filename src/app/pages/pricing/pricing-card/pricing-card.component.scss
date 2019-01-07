@@ -1,0 +1,45 @@
+main {
+  font-family: 'Josefin Sans', sans-serif;
+  background: #2d2231;
+  border-radius: 10px;
+  height: 60vh;
+  @media(max-width: 500px) {
+    height: 70vh;
+  }
+  display: flex;
+  flex-direction: column;
+  .title {
+    background: #321c4e;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .main-content {
+    background: #251433;
+  }
+  .bottom-content {
+    .bottom-content-heading {
+      border-bottom: 2px solid white;
+    }
+    .bottom-row {
+      background: #5e5e9e;
+      padding: 0.5em;
+      p {
+        margin: 0;
+      }
+    }
+    .purchase {
+      .btn {
+        border-color: transparent;
+        border-radius: 0;
+        background: #4f4996;
+
+      }
+      .btn:hover {
+        background: #666e7d;
+
+      }
+    }
+
+  }
+
+}

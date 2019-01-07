@@ -11,6 +11,7 @@ import { GalleryComponent } from './pages/gallery/gallery.component';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { UnAuthGuard } from './shared/guards/un-auth.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { PricingComponent } from './pages/pricing/pricing.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: 'profile', component: ProfileComponent , canActivate: [AuthGuard]},
   {path: 'about-us', component: AboutUsComponent},
   {path: 'gallery', component: GalleryComponent},
+  {path: 'pricing', component: PricingComponent}
 ];
 
 @NgModule({

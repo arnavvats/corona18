@@ -34,7 +34,9 @@ import { NotificationComponent } from './shared/components/notification/notifica
 import { ProfileComponent } from './pages/profile/profile.component';
 import { EventRoundsComponent } from './pages/event/event-rounds/event-rounds.component';
 import { TroubleShooterComponent } from './pages/signin/trouble-shooter/trouble-shooter.component';
-
+import { PricingComponent } from './pages/pricing/pricing.component';
+import { PricingCardComponent } from './pages/pricing/pricing-card/pricing-card.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +58,9 @@ import { TroubleShooterComponent } from './pages/signin/trouble-shooter/trouble-
     NotificationComponent,
     ProfileComponent,
     EventRoundsComponent,
-    TroubleShooterComponent
+    TroubleShooterComponent,
+    PricingComponent,
+    PricingCardComponent
   ],
   imports: [
     BrowserModule,
@@ -73,6 +77,7 @@ import { TroubleShooterComponent } from './pages/signin/trouble-shooter/trouble-
     AngularFireFunctionsModule,
     AngularFireMessagingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: true }),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

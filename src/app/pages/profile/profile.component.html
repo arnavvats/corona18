@@ -1,8 +1,4 @@
 <main class="container-fluid" *ngIf="currentProfile">
-  <div class="completion-level position-relative mb-2">
-    <span class="completion-background d-block" [style.width]= "this.percentageComplete + '%'"></span>
-    <p class="m-0 position-relative text-center">Profile {{percentageComplete}} % Complete</p>
-  </div>
   <form [formGroup]="detailsForm">
   <div class="row">
     <div class="col-12 d-flex justify-content-center mb-2">
@@ -12,8 +8,9 @@
     </div>
     <div class="col-12">
       <div class="row col-12 text-center">
+          <h4 class="w-100 text-uppercase" style="color: #b16e6e;">{{currentProfile.name}}</h4>
           <p class="w-100">{{
-            currentProfile.name + " | " + currentProfile.email }} {{currentProfile.collegeName ? ' | ' + currentProfile.collegeName : ''}}</p>
+             currentProfile.email }} {{currentProfile.collegeName ? ' | ' + currentProfile.collegeName : ''}}</p>
       </div>
       <div class="row-col-12 d-flex justify-content-center mb-2" *ngIf="currentProfile.admin">
         <i class="fa fa-2x fa-user-o mr-1"></i>
@@ -23,48 +20,52 @@
           <i class="fa fa-2x fa-star-o mr-1"></i>
           <p class="d-flex flex-column justify-content-center m-0">You're a Campus Ambassador</p>
         </div>
-      <div class="row detailsform-main">
-        <div class="col-12 row">
-          <div class="col-sm-3 col-4">
+      <div class="completion-level position-relative mb-2 p-0">
+          <span class="completion-background d-block" [style.width]= "this.percentageComplete + '%'"></span>
+          <p class="m-0 position-relative text-center">Profile {{percentageComplete}} % Complete</p>
+      </div>
+      <div class="container detailsform-main">
+        <div class="w-100 d-flex mb-2 form-field">
+          <div class="form-label">
             Phone
           </div>
-          <input tpye="text" class="col-sm-9 col-8" formControlName="phoneNumber" placeholder="10-digit-number">
-          <p *ngIf="detailsForm.get('phoneNumber').invalid" class="col-sm-9 offset-sm-3 col-8 offset-8 text-center" style="color:red;">Invalid phone number</p>
+          <input tpye="text" class="form-value" formControlName="phoneNumber" placeholder="10-digit-number">
+          <p *ngIf="detailsForm.get('phoneNumber').invalid" class="w-75 text-center" style="color:red;">Invalid phone number</p>
         </div>
-        <div class="col-12 row" *ngIf="currentProfile.collegeId === 'other' && !currentProfile.collegeName">
-          <div class="col-sm-3 col-4">
+        <div class="w-100 d-flex mb-2 form-field" *ngIf="currentProfile.collegeId === 'other' && !currentProfile.collegeName">
+          <div class="form-label">
             College Name
           </div>
-          <input type="text" class="col-sm-9 col-8" formControlName="collegeName"
+          <input type="text" class="form-value" formControlName="collegeName"
           placeholder="Enter your college name, you have registered as non-NITPian">
         </div>
-        <div class="col-12 row">
-            <div class="col-sm-3 col-4">
+        <div class="w-100 d-flex mb-2 form-field">
+            <div class="form-label">
                 Insitiute Roll No.
               </div>
-              <input type="text" class="col-sm-9 col-8" formControlName="rollNo" placeholder="">
+              <input type="text" class="form-value" formControlName="rollNo" placeholder="">
         </div>
-        <div class="col-12 row">
-            <div class="col-sm-3 col-4">
+        <div class="w-100 d-flex mb-2 form-field">
+            <div class="form-label">
                 Degree
               </div>
-              <input type="text" class="col-sm-9 col-8" formControlName="degree" placeholder="Example - B.Tech, M.Tech, etc">
+              <input type="text" class="form-value" formControlName="degree" placeholder="Example - B.Tech, M.Tech, etc">
         </div>
-        <div class="col-12 row">
-            <div class="col-sm-3 col-4">
+        <div class="w-100 d-flex mb-2 form-field">
+            <div class="form-label">
                 Branch
               </div>
-              <input type="text" class="col-sm-9 col-8" formControlName="branch" placeholder="Example - CS, ECE">
+              <input type="text" class="form-value" formControlName="branch" placeholder="Example - CS, ECE">
         </div>
-        <div class="col-12 row">
-            <div class="col-sm-3 col-4">
+        <div class="w-100 d-flex mb-2 form-field">
+            <div class="form-label">
                 Year of Completion
               </div>
-              <input type="tel" class="col-sm-9 col-8" formControlName="yearOfCompletion" placeholder="">
+              <input type="tel" class="form-value" formControlName="yearOfCompletion" placeholder="">
               <p *ngIf="detailsForm.get('yearOfCompletion').invalid" class="col-sm-9 offset-sm-3 col-8 offset-8 text-center" style="color:red;">Invalid year</p>
         </div>
       </div>
-      <div class="col-12 mb-2">
+      <div class="w-100 mb-2">
           <button class="btn btn-block btn-primary submit-btn" (click)="updateProfile()" [disabled]="detailsForm.invalid" *ngIf="percentageComplete !== 100">Submit (Changes cannot be undone)</button>
       </div>
     </div>

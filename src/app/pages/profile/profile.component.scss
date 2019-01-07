@@ -1,5 +1,8 @@
 main {
   font-family: 'Nunito', sans-serif;
+  min-height: 90vh;
+  background-color: #49464d;
+background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='brick-wall' fill='%23000000' fill-opacity='0.4'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   .completion-level {
     background: #63636f;
     border-radius: 10px;
@@ -31,9 +34,40 @@ main {
     background-repeat: no-repeat;
     background-image: url('../../../assets/images/profile-placeholder.png');
   }
-  .detailsform-main div.row {
-    margin-top: 1em;
-    margin-bottom: 1em;
+  .detailsform-main {
+    border-radius: 10px;
+    .form-field {
+      .form-label {
+        padding: 1em;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        background: #14212f96;
+        @media(min-width: 768px) {
+          width: 25%;
+        }
+        @media(min-width: 500px) and (max-width: 767px) {
+          width: 33%;
+        }
+        @media(max-width: 499px) {
+          width: 40%;
+        }
+      }
+      .form-value {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        padding-left: 3em;
+        background: #0b1c29ab;
+        @media(min-width: 768px) {
+          width: 75%;
+        }
+        @media(min-width: 500px) and (max-width: 767px) {
+          width: 67%;
+        }
+        @media(max-width: 499px) {
+          width: 60%;
+        }
+      }
+    }
   }
   .submit-btn {
     background: none;
@@ -44,10 +78,7 @@ main {
     color: black;
   }
 }
-input {
-  background: black;
 
-}
 input:disabled {
   border: none;
 }
