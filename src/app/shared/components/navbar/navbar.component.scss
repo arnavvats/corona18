@@ -1,9 +1,7 @@
 nav {
-  position: fixed;
+  font-family: 'Elkwood', sans-serif;
   z-index: 2 !important;
-  font-family: 'Roboto', sans-serif;
-  z-index: 1;
-  font-size: 0.9em;
+  font-size: 1.3em;
   transition: background-color 1s ease-in-out;
   .navbar-brand {
     font-size: 1.5rem;
@@ -35,14 +33,6 @@ app-notification {
   width: 95vw;
   z-index: 4;
 }
-// .notification-triangle {
-//   position: absolute;
-//   bottom: -17px;
-//   right: -7px;
-//   border-left: 15px solid transparent;
-//   border-right: 15px solid transparent;
-//   border-bottom: 27px solid black;
-// }
 .notification-count {
   position: absolute;
     bottom: 12px;
@@ -52,4 +42,29 @@ app-notification {
     width: 20px;
     height: 20px;
     text-align: center;
+}
+@media(min-width: 500px) {
+  nav {
+    position: fixed;
+
+  }
+}
+@media(max-width: 500px) {
+  nav {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  }
+  .navbar-collapse {
+    width: 40vw;
+  }
+}
+.fa-bell {
+  font-size: 1.5em;
+}
+.active {
+  color: black !important;
+  background: white;
+  border-radius: 30px;
+  padding: 0.2em;
 }

@@ -1,6 +1,7 @@
 
 <app-navbar></app-navbar>
-<div #contentHolder class="holder">
+<div #contentHolder class="holder flex-row" style="display: flex;">
+  <app-sidenav [ngClass]="{'animated': true, 'slideInLeft': !sidebarClosed, 'slideOutLeft': sidebarClosed}"></app-sidenav>
   <router-outlet></router-outlet>
 </div>
 <ng-template #appModalHolder></ng-template>

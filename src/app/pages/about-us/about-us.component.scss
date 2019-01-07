@@ -5,6 +5,7 @@ main {
   background-position: center;
   font-family: 'Architects Daughter', cursive;
   min-height: 90vh;
+  width: 100vw;
 
   .yellow {
     color: #ccbd8f;
@@ -41,10 +42,10 @@ main {
     }
     .right-info {
       background:url('../../../assets/images/aboutus-ourexpertiseN.png');
-      background-size: 200px 200px; 
+      background-size: 200px 200px;
       background-position-x: center;
       background-position-y: center;
-      background-repeat: no-repeat; 
+      background-repeat: no-repeat;
       }
     .curved-arrow-bottom-left {
       position: absolute;

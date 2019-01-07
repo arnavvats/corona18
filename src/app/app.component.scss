@@ -1,8 +1,33 @@
+app-sidenav {
+  height: 100vh;
+  animation-duration: 0.5s !important;
+  @media(max-width: 499px) {
+    min-width: 50vw;
+
+  }
+  @media(max-width: 767px) {
+    min-width: 40vw;
+
+  }
+  position: fixed;
+  z-index: 2;
+  background: black;
+}
 .holder{
-    margin-top: 4em;
+    margin-top: 3.1em;
     background-color: black;
     width:100%;
     overflow-x: hidden;
+    @media(min-width: 768px) {
+      app-sidenav {
+        display: none !important;
+      }
+    }
+    @media(max-width: 767px) {
+      app-sidenav {
+        display: block;
+      }
+    }
 }
 app-loader {
   position: absolute;
@@ -13,4 +38,3 @@ app-loader {
   width: 100vw;
   background: black;
 }
-

@@ -3,6 +3,7 @@ import { ModalService } from './shared/services/modal.service';
 import { Router, NavigationEnd } from '@angular/router';
 import { CollegeService } from './shared/services/college.service';
 import { NotificationsService } from './shared/services/notifications.service';
+import { NavService } from './shared/components/navbar/nav.service';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,7 @@ import { NotificationsService } from './shared/services/notifications.service';
 })
 export class AppComponent implements AfterViewInit {
   title = 'corona18';
+  sidebarClosed = true;
   @ViewChild('appModalHolder', { read: ViewContainerRef }) modalHolder;
   @ViewChild('appSnackbarHolder', { read: ViewContainerRef }) snackbarHolder;
   @ViewChild('contentHolder') contentHolder: ElementRef;
@@ -18,7 +20,7 @@ export class AppComponent implements AfterViewInit {
 
   constructor(private modalService: ModalService, private router: Router,
      private collegeService: CollegeService, private notificationService: NotificationsService,
-     private render: Renderer2, private el: ElementRef) {
+     private render: Renderer2, private el: ElementRef, private navService: NavService) {
     modalService.createNewModalWithData.subscribe(data => {
       if (data) {
         modalService.createModal(this.modalHolder, data);
@@ -33,17 +35,21 @@ export class AppComponent implements AfterViewInit {
       if (!(evt instanceof NavigationEnd)) {
           return;
       }
+      this.navService.closeSidebar();
       window.scrollTo(0, 0);
+  });
+  this.navService.sidebarClosed$.subscribe(sidebarClosed => {
+    this.sidebarClosed = sidebarClosed;
   });
   }
   ngAfterViewInit() {
     this.modalService.activateLoader.subscribe(val => {
       if (val) {
-        this.render.removeClass(this.appLoaderHolder.nativeElement, 'd-none');
-        this.render.addClass(this.contentHolder.nativeElement, 'd-none');
+        this.render.removeStyle(this.appLoaderHolder.nativeElement, 'display');
+        this.render.setStyle(this.contentHolder.nativeElement, 'display', 'none');
       } else {
-        this.render.addClass(this.appLoaderHolder.nativeElement, 'd-none');
-        this.render.removeClass(this.contentHolder.nativeElement, 'd-none');
+        this.render.setStyle(this.appLoaderHolder.nativeElement, 'display', 'none');
+        this.render.setStyle(this.contentHolder.nativeElement, 'display', 'flex');
       }
     });
 

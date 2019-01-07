@@ -3,15 +3,19 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { User } from 'firebase';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   public user: User;
+  public user$: BehaviorSubject<User | null>;
   constructor(private afAuth: AngularFireAuth, private afdb: AngularFireDatabase, private httpClient: HttpClient) {
+    this.user$ = new BehaviorSubject(null);
     afAuth.authState.subscribe(res => {
       this.user = res;
+      this.user$.next(this.user);
     });
   }
 

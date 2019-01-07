@@ -1,0 +1,36 @@
+main {
+  font-family: 'Elkwood', sans-serif;
+  text-transform: uppercase !important;
+  .image-holder {
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid transparent;
+    border-radius: 40px;
+  }
+  .active {
+    background: white !important;
+    border-radius: 20px;
+    color: black;
+    padding: 0.2em !important;
+  }
+  .log-out {
+    margin:auto;
+    background: #ab6e6e6e;
+    border-radius: 30px;
+    font-size: 0.8em;
+    padding: 0.5em;
+  }
+  button:not(.log-out) {
+    border: none;
+    margin: auto;
+    background: black;
+    padding: 0.5em;
+  }
+
+
+}
+

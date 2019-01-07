@@ -37,6 +37,7 @@ import { TroubleShooterComponent } from './pages/signin/trouble-shooter/trouble-
 import { PricingComponent } from './pages/pricing/pricing.component';
 import { PricingCardComponent } from './pages/pricing/pricing-card/pricing-card.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SidenavComponent } from './shared/components/sidenav/sidenav.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +61,8 @@ import { HttpClientModule } from '@angular/common/http';
     EventRoundsComponent,
     TroubleShooterComponent,
     PricingComponent,
-    PricingCardComponent
+    PricingCardComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,

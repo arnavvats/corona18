@@ -1,29 +1,31 @@
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark pt-0 pb-0 pl-2" #navbar>
+<nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark pt-0 pb-0 pl-1 t-1" #navbar>
   <div class="d-flex justify-content-center flex-row">
-      <a class="navbar-brand" routerLink="">
+      <a class="navbar-brand d-md-block d-none" routerLink="">
           <img class="img-corona" src="../../../../assets/images/CoronaIcon.png">
       </a>
+      <button class="navbar-toggler d-md-none d-block mr-1" type="button" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" (click)="toggleSidebar()"></span>
+        </button>
       <a class="d-flex flex-column justify-content-center position-relative"
       (click)="toggleNotification()">
-          <i class="fa fa-2x fa-bell"></i>
+          <i class="fa fa-bell"></i>
           <span class="notification-count" *ngIf="numberOfNotifications">{{numberOfNotifications}}</span>
       </a>
+
   </div>
 
-
-  <button class="navbar-toggler" type="button" aria-label="Toggle navigation" (click)="toggleDropDown()">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" #dropDown>
+  <div class="collapse navbar-collapse">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item" *ngIf="user">
-        <a class="nav-link" routerLink="profile" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Profile<span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink="profile" routerLinkActive="active">Profile<span class="sr-only">(current)</span></a>
       </li>
 
     <li class="nav-item">
-        <a class="nav-link" routerLink="about-us" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">About Us<span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink="about-us" routerLinkActive="active">About Us<span class="sr-only">(current)</span></a>
       </li>
+      <li class="nav-item dropdown">
+          <a class="nav-link" routerLink="pricing" routerLinkActive="active">Pricing <span class="sr-only">(current)</span></a>
+        </li>
 
       <li class="nav-item dropdown">
           <a class="nav-link" routerLink="gallery" routerLinkActive="active">Gallery <span class="sr-only">(current)</span></a>
@@ -35,7 +37,7 @@
 
 
       <li class="nav-item dropdown">
-        <a class="nav-link" routerLink="campus-ambassador" routerLinkActive="active">Campus Ambassador <span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink="campus-ambassador" routerLinkActive="active">CAP<span class="sr-only">(current)</span></a>
       </li>
 
       <li class="nav-item">
@@ -43,7 +45,7 @@
         </li>
 
       <li class="nav-item dropdown " *ngIf="user">
-        <a class="nav-link" (click)="logOut()" routerLinkActive="active">Logout({{user.displayName}})<span class="sr-only">(current)</span></a>
+        <a class="nav-link" (click)="logOut()" routerLinkActive="active">Logout({{user.displayName.split(' ')[0]}})<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item dropdown" *ngIf="!user">
           <a class="nav-link" routerLink="sign-in" routerLinkActive="active">Sign in <span class="sr-only">(current)</span></a>
