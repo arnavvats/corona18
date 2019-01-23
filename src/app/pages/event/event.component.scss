@@ -5,6 +5,7 @@ main{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background:linear-gradient(to bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../../../assets/images/coronaBackground.jpg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -124,5 +125,18 @@ app-event-rounds {
     padding: 5px !important;
     max-width: 100% !important;
     width: 100% !important;
+  }
+}
+.wallpaper-bg {
+  overflow: hidden;
+  transition: height 1s ease-in-out;
+  background: black;
+  a {
+    z-index: 1;
+    position: absolute;
+    left: calc(50% - 60px);
+    animation-duration: 2s;
+    color: #f8f9fa;
+    transition: top 1s ease-in-out;
   }
 }

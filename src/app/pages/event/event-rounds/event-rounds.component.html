@@ -1,4 +1,4 @@
-<div class="container mt-1 position-relative">
+<div class="container mt-3 position-relative animated slideInUp">
   <div class="row">
       <div class="col-12">
           <a *ngFor="let round of rounds; let i = index" (click)="activateRound(i)"
@@ -11,7 +11,7 @@
         <div class="row">
             <h4 class="col-12">
                 <i class="fa fa-info-circle mr-1"></i>
-                DESCRIpTTION</h4>
+                DESCRIPTION</h4>
           <p class="col-12">{{activeRound.description}}</p>
         </div>
         <div class="row" *ngIf="activeRound.rules">

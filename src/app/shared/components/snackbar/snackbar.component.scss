@@ -14,6 +14,6 @@ div {
   visibility: visible; /* Show the snackbar */
   /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
  However, delay the fade out process for 2.5 seconds */
- -webkit-animation: bounceIn 0.8s, zoomOut 1s 2s;
- animation: bounceIn 0.8s, zoomOut 1s 2s;
+ -webkit-animation: bounceIn 0.8s, zoomOut 1s 3s;
+ animation: bounceIn 0.8s, zoomOut 1s 3s;
 }

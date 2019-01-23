@@ -1,0 +1,11 @@
+--2019-01-10 07:43:28--  http://www.ultimatecomputerclassses.com/thumbnail.asp?file=assets/images/no_network_tx-512.png
+Resolving www.ultimatecomputerclassses.com (www.ultimatecomputerclassses.com)... 50.97.133.80
+Connecting to www.ultimatecomputerclassses.com (www.ultimatecomputerclassses.com)|50.97.133.80|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2420 (2.4K) [image/png]
+Saving to: ‘thumbnail.asp?file=assets%2Fimages%2Fno_network_tx-512.png’
+
+          thumbnail   0%[                    ]       0  --.-KB/s               thumbnail.asp?file= 100%[===================>]   2.36K  --.-KB/s    in 0s      
+
+2019-01-10 07:43:29 (110 MB/s) - ‘thumbnail.asp?file=assets%2Fimages%2Fno_network_tx-512.png’ saved [2420/2420]
+

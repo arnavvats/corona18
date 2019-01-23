@@ -1,0 +1,16 @@
+<button class="btn mt-2 p-2 position-relative regBtn animated infinite pulse" [disabled]="!registrationState.canRegisterForEvent"
+      (click)="submitRegisterSolo()" >{{ registrationState.buttonMessage }}</button>
+<div *ngIf="registrationState.isRegisteredForEvent" class="w-100 soloDetail d-flex">
+  <div class="w-50 regTime">
+    <i class="fa fa-calendar-o"></i>
+    <p>Registerd {{registrationState.registeredAt | date: 'short'}}</p>
+  </div>
+  <div class="w-50 round" *ngIf="registrationState.round !== 'winner'">
+    <i class="fa fa-flag-o"></i>
+   <p>Round {{ registrationState.round + 1 }}</p>
+  </div>
+  <div class="w-50 winner" *ngIf="registrationState.round === 'winner'">
+    <i class="fa fa-trophy"></i>
+   <p> Your're a Winner </p>
+  </div>
+</div>

@@ -1,16 +1,28 @@
 <main class="w-100 d-flex flex-column text-center">
-  <div class="w-100 pt-2 pl-1 pr-1">
-    <div class="image-holder" [ngStyle]="{'background-image':profilePicture}"></div>
+  <div class="w-100 pt-3 pl-1 pr-1 mb-3">
+    <div class="image-holder" [ngStyle]="{'background-image':profilePictureURL}"></div>
     <h3 class="m-0 mt-2" *ngIf="user">{{user.displayName.split(' ')[0]}}</h3>
   </div>
-  <button routerLink='/campus-ambassador' routerLinkActive='active'>CAP</button>
-  <button routerLink='/events/fest' routerLinkActive='active'>Events</button>
-  <button routerLink='/gallery' routerLinkActive='active'> Gallery</button>
-  <button routerLink='/profile' routerLinkActive='active' *ngIf="user">Profile</button>
-  <button routerLink='/about-us' routerLinkActive='active'>About Us</button>
-  <button routerLink='/sponsors' routerLinkActive='active'>Sponsors</button>
-  <button routerLink='/pricing' routerLinkActive='active' class="mb-2">Pricing</button>
   <button class="btn log-out" *ngIf="user" (click)="logOut()">Log Out</button>
   <button class="btn log-out" *ngIf="!user" routerLink='/sign-in'>Log In</button>
-
+  <button routerLink='' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}">Home</button>
+  <button routerLink='/profile' routerLinkActive='active' *ngIf="user">Profile</button>
+  <button routerLink='/dashboard' routerLinkActive='active' *ngIf="user">Dashboard</button>
+  <button routerLink='/live' routerLinkActive='active'>Live</button>
+  <button routerLink='/events/fest' routerLinkActive='active'>Events</button>
+  <button routerLink='/campus-ambassador' routerLinkActive='active'>CAP</button>
+  <button routerLink='/pricing' routerLinkActive='active' class="mb-2">Pricing</button>
+  <button routerLink='/gallery' routerLinkActive='active'> Gallery</button>
+  <button routerLink='/sponsors' routerLinkActive='active'>Sponsors</button>
+  <button (click)="toggleAboutUs()">About Us <i class="fa ml-1"
+    [class.fa-caret-down]="!displayAboutUs"
+    [class.fa-caret-up]="displayAboutUs"
+    ></i></button>
+  <div *ngIf="displayAboutUs" class="d-flex flex-column justify-content-center dropper">
+      <button routerLink='/about-us' routerLinkActive='active'>About TCF</button>
+      <button routerLink='/directors-desk' routerLinkActive='active'>Director's Desk</button>
+      <button routerLink='/faculty' routerLinkActive='active'>TCF Faculty</button>
+      <button routerLink='/our-team' routerLinkActive='active'>TCF Team</button>
+  </div>
+  <button routerLink='/developers' routerLinkActive='active'>Developers</button>
 </main>

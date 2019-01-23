@@ -1,6 +1,6 @@
 import { Component, ViewChild, ViewContainerRef, Renderer2, ElementRef, AfterViewInit } from '@angular/core';
 import { ModalService } from './shared/services/modal.service';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { CollegeService } from './shared/services/college.service';
 import { NotificationsService } from './shared/services/notifications.service';
 import { NavService } from './shared/components/navbar/nav.service';
@@ -18,9 +18,9 @@ export class AppComponent implements AfterViewInit {
   @ViewChild('contentHolder') contentHolder: ElementRef;
   @ViewChild('appLoaderHolder') appLoaderHolder: ElementRef;
 
-  constructor(private modalService: ModalService, private router: Router,
-     private collegeService: CollegeService, private notificationService: NotificationsService,
-     private render: Renderer2, private el: ElementRef, private navService: NavService) {
+  constructor(private modalService: ModalService, private router: Router
+    , private navService: NavService, private notification: NotificationsService,
+     private render: Renderer2, private el: ElementRef) {
     modalService.createNewModalWithData.subscribe(data => {
       if (data) {
         modalService.createModal(this.modalHolder, data);
@@ -35,7 +35,6 @@ export class AppComponent implements AfterViewInit {
       if (!(evt instanceof NavigationEnd)) {
           return;
       }
-      this.navService.closeSidebar();
       window.scrollTo(0, 0);
   });
   this.navService.sidebarClosed$.subscribe(sidebarClosed => {

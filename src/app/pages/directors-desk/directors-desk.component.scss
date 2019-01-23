@@ -1,0 +1,32 @@
+main {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Nunito', sans-serif;
+    background: linear-gradient(to bottom, #040202, #ff000030);
+    img {
+      max-width: 100px;
+    }
+  }
+
+    .img-holder {
+      font-family: 'Inconsolata', monospace;
+      background: linear-gradient(to bottom, #ff000030, black);
+      img {
+        max-width: 80vw;
+      }
+    }
+    .director-letter {
+      font-family: 'Inconsolata', monospace;
+      background-image: linear-gradient(to bottom, #000000c2, #000000eb), url('../../../assets/images/our-team/coronaOrange.png');
+      background-repeat: no-repeat;
+      background-position: center
+    }
+}

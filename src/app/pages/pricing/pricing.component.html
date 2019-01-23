@@ -2,23 +2,29 @@
   <div class="row pt-2 pl-1 pr-1 pb-2">
     <div class="col-12 text-center pricing-top pt-2">
       <h1>Plans and Pricing</h1>
-      <p class="mt-5 animated pulse infinite">Available only for students outside of NIT Patna.
+      <p class="mt-5 animated pulse infinite">Online registrations Available only for students outside of NIT Patna.
       </p>
-      <p class="w-50 m-auto">If you are a native student, Please make sure you had selected NIT Patna as your college on sign up
+      <p class="w-50 m-auto">If you are a native student, Please make sure you had selected NIT Patna as your college on sign up.
         Verifications will be done on the registration desk.
       </p>
-      <button class="btn btn-primary mt-4 mb-1 pl-4 pr-4">Pricing Document & Policy</button>
+      <!-- <button class="btn btn-primary mt-4 mb-1 pl-4 pr-4">Pricing Document & Policy</button> -->
       <p>Got Questions ? <a href="tel: +91 8294556381" class="link">Make a call</a></p>
     </div>
   </div>
   <div class="w-100 position-relative pricing-row-container pb-5" *ngIf="packageList.length">
       <span (click)="scrollLeft()" class="left"><i class="fa fa-2x fa-arrow-left m-auto"></i></span>
       <span (click)="scrollRight()" class="right"><i class="fa fa-2x fa-arrow-right m-auto"></i></span>
-       <app-pricing-card class="m-1 d-inline-block left"></app-pricing-card>
-       <app-pricing-card class="m-1 d-inline-block center"></app-pricing-card>
-       <app-pricing-card class="m-1 d-inline-block right"></app-pricing-card>
+       <app-pricing-card class="m-1 d-inline-block left" (purchase)="openIframe()"></app-pricing-card>
+       <app-pricing-card class="m-1 d-inline-block center" (purchase)="openIframe()"></app-pricing-card>
+       <app-pricing-card class="m-1 d-inline-block right" (purchase)="openIframe()"></app-pricing-card>
 
   </div>
+  <div [hidden]="!isIframeOpen" class="iframe">
+    <div class="iframe-holder">
+        <i class="fa fa-2x fa-times" (click)="closeIframe()"></i>
+        <iframe src="https://www.thecollegefever.com/events/iframe/widget/corona-melange19"
+        frameborder="0" allowfullscreen width="320" height="510" overflow="hidden" seamless="seamless"></iframe>
+    </div>
 
-
+  </div>
 </main>

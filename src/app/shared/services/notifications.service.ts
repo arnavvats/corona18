@@ -1,3 +1,4 @@
+import { ModalService } from './modal.service';
 import { Injectable, OnDestroy } from '@angular/core';
 import { AngularFireMessaging } from '@angular/fire/messaging';
 import { AngularFireDatabase } from '@angular/fire/database';
@@ -5,15 +6,18 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { take, combineLatest } from 'rxjs/operators';
 import { SwUpdate } from '@angular/service-worker';
 import { BehaviorSubject } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NotificationsService {
   notificationsArray = new BehaviorSubject([]);
+  lastConnection = Date.now();
+  lastState = 'online';
   constructor(private afMessaging: AngularFireMessaging,
     private afDB: AngularFireDatabase,
-    private afAuth: AngularFireAuth, private swUpdate: SwUpdate) {
+    private afAuth: AngularFireAuth, private swUpdate: SwUpdate, private router: Router, private modalService: ModalService) {
        this.getPermission().then(res => {
           this.receiveMessage();
      });
@@ -29,6 +33,20 @@ export class NotificationsService {
     window.addEventListener('focus', () => {
       this.getNotificationsFromLocal();
     });
+    this.afDB.database.ref('.info/connected').on('value', (snap) => {
+      if (snap.val() === true) {
+        this.lastConnection = Date.now();
+        this.lastState = 'online';
+      }
+    });
+    setInterval(() => {
+      if (Date.now() - this.lastConnection > 30000 && this.lastState === 'online') {
+        if (this.modalService.activateLoader.value) {
+          this.modalService.activateLoader.next('Seems like your internet is not working!');
+        }
+        this.lastState = 'offline';
+      }
+    }, 30000);
    }
     async updateToken(token, uid) {
       const user = await this.afAuth.authState.pipe(take(1)).toPromise();
@@ -58,7 +76,7 @@ export class NotificationsService {
     if (!lastToken) { return ; }
     lastToken = JSON.parse(lastToken);
     if (lastToken.type === 'unknown') {
-      await this.afDB.database.ref('fcmTokenList/unknown' + lastToken.tokenValue).remove();
+      await this.afDB.database.ref('fcmTokenList/unknown/' + lastToken.tokenValue).remove();
     } else if (lastToken.type === 'user') {
       await this.afDB.database.ref('fcmTokenList/users/' + lastToken.uid + '/' + lastToken.tokenValue).remove();
     }

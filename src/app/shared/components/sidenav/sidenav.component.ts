@@ -1,6 +1,9 @@
+import { UserService } from 'src/app/shared/services/user.service';
 import { ModalService } from 'src/app/shared/services/modal.service';
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import { NavService } from '../navbar/nav.service';
+import { Router, NavigationStart } from '@angular/router';
 
 @Component({
   selector: 'app-sidenav',
@@ -9,22 +12,25 @@ import { AuthService } from '../../services/auth.service';
 })
 
 export class SidenavComponent {
-  coronaDefault = `url('../../../../assets/images/CoronaIcon.png')`;
-  profileDefault = `url('../../../../assets/images/profile-placeholder.png')`;
-  profilePicture = this.coronaDefault;
-  constructor(private auth: AuthService, private modalService: ModalService) {
-    this.auth.user$.subscribe(user => {
-      if (user && user.photoURL) {
-     this.profilePicture = 'url(\'' + user.photoURL + '\')';
-      } else if (user) {
-        this.profilePicture = this.profileDefault;
-      } else {
-        this.profilePicture = this.coronaDefault;
+  profilePictureURL;
+  displayAboutUs = false;
+  constructor(private auth: AuthService, private modalService: ModalService, private router: Router, private navService: NavService) {
+    this.auth.getProfilePictureImageURL().subscribe(res => {
+      this.profilePictureURL = res;
+    });
+    this.router.events.subscribe(evt => {
+      if (evt instanceof NavigationStart) {
+        this.navService.closeSidebar();
+        this.displayAboutUs = false;
       }
-   });
+    });
   }
   get user() {
     return this.auth.user;
+  }
+
+  toggleAboutUs() {
+    this.displayAboutUs = !this.displayAboutUs;
   }
   async logOut() {
     try {

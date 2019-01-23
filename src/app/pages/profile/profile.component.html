@@ -2,7 +2,7 @@
   <form [formGroup]="detailsForm">
   <div class="row">
     <div class="col-12 d-flex justify-content-center mb-2">
-      <button (click)="file.click()" class="profile-image-button" *ngIf="percentageComplete !== 100"><i class="fa fa-camera"></i></button>
+      <button (click)="file.click()" class="profile-image-button"><i class="fa fa-camera"></i></button>
       <input type="file" #file hidden accept="image/*" (change)="previewImage($event)">
       <div #profileImageHolder class="profile-image"></div>
     </div>
@@ -12,17 +12,31 @@
           <p class="w-100">{{
              currentProfile.email }} {{currentProfile.collegeName ? ' | ' + currentProfile.collegeName : ''}}</p>
       </div>
-      <div class="row-col-12 d-flex justify-content-center mb-2" *ngIf="currentProfile.admin">
+      <div class="row col-12 d-flex justify-content-center mb-2" *ngIf="currentProfile.admin">
         <i class="fa fa-2x fa-user-o mr-1"></i>
         <p class="d-flex flex-column justify-content-center m-0">You're an admin of {{currentProfile.adminAccess}}</p>
       </div>
-      <div class="row-col-12 d-flex  justify-content-center mb-2" *ngIf="currentProfile.ambassador">
+      <div class="row col-12 d-flex  justify-content-center mb-2" *ngIf="currentProfile.ambassador">
           <i class="fa fa-2x fa-star-o mr-1"></i>
           <p class="d-flex flex-column justify-content-center m-0">You're a Campus Ambassador</p>
-        </div>
-      <div class="completion-level position-relative mb-2 p-0">
-          <span class="completion-background d-block" [style.width]= "this.percentageComplete + '%'"></span>
-          <p class="m-0 position-relative text-center">Profile {{percentageComplete}} % Complete</p>
+      </div>
+      <div class="row col-12 d-flex  justify-content-center mb-2 align-items-center" *ngIf="currentProfile.tcfId; else noTcfId">
+          <p class="d-flex flex-column justify-content-center mr-2 align-items-center mt-0 mb-0" style="align-items: center;">Your TCF'ID is </p>
+          <button class="btn btn-success">{{currentProfile.tcfId}}</button>
+      </div>
+      <ng-template #noTcfId>
+        <p class="row col-12 text-center m-2 d-flex justify-content-center">No TCF'ID yet.</p>
+      </ng-template>
+      <div class="row col-12 d-flex  justify-content-center mb-2 align-items-center">
+          <ul class="list-inline"  *ngIf="currentProfile.packages && currentProfile.packages.length > 0; else noPackages">
+            <li class="list-inline-item" *ngFor="let package of packages">
+              <i [ngClass]="package.class"></i>
+              <p>{{package.name}}</p>
+            </li>
+          </ul>
+          <ng-template #noPackages>
+            Not yet subscribed to any fest package.
+          </ng-template>
       </div>
       <div class="container detailsform-main">
         <div class="w-100 d-flex mb-2 form-field">
@@ -30,15 +44,8 @@
             Phone
           </div>
           <input tpye="text" class="form-value" formControlName="phoneNumber" placeholder="10-digit-number">
-          <p *ngIf="detailsForm.get('phoneNumber').invalid" class="w-75 text-center" style="color:red;">Invalid phone number</p>
         </div>
-        <div class="w-100 d-flex mb-2 form-field" *ngIf="currentProfile.collegeId === 'other' && !currentProfile.collegeName">
-          <div class="form-label">
-            College Name
-          </div>
-          <input type="text" class="form-value" formControlName="collegeName"
-          placeholder="Enter your college name, you have registered as non-NITPian">
-        </div>
+        <p *ngIf="detailsForm.get('phoneNumber').invalid" class="w-75 text-center" style="color:red;">Invalid phone number</p>
         <div class="w-100 d-flex mb-2 form-field">
             <div class="form-label">
                 Insitiute Roll No.
@@ -61,12 +68,12 @@
             <div class="form-label">
                 Year of Completion
               </div>
-              <input type="tel" class="form-value" formControlName="yearOfCompletion" placeholder="">
-              <p *ngIf="detailsForm.get('yearOfCompletion').invalid" class="col-sm-9 offset-sm-3 col-8 offset-8 text-center" style="color:red;">Invalid year</p>
+              <input type="tel" class="form-value" formControlName="yearOfCompletion" placeholder="Ex - 2020">
         </div>
+        <p *ngIf="detailsForm.get('yearOfCompletion').invalid" class="w-75 text-center" style="color:red;">Invalid year</p>
       </div>
-      <div class="w-100 mb-2">
-          <button class="btn btn-block btn-primary submit-btn" (click)="updateProfile()" [disabled]="detailsForm.invalid" *ngIf="percentageComplete !== 100">Submit (Changes cannot be undone)</button>
+      <div class="w-100 mb-2" *ngIf="!(currentProfile && currentProfile.tcfId)">
+          <button class="btn btn-block btn-primary submit-btn" (click)="updateProfile()" [disabled]="detailsForm.invalid">Submit</button>
       </div>
     </div>
   </div>

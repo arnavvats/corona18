@@ -3,7 +3,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { User } from 'firebase';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, of } from 'rxjs';
+import { map, flatMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -46,6 +47,25 @@ export class AuthService {
     } catch (e) {
       throw new Error(e && e.message);
     }
+  }
+
+  getProfilePictureImageURL() {
+    const coronaDefault = `url('../../../../assets/images/CoronaIcon.png')`;
+  const profileDefault = `url('../../../../assets/images/profile-placeholder.png')`;
+    return this.user$.pipe(flatMap((user) => {
+      if (user) {
+        if (user.uid) {
+          return this.afdb.object('users/' + user.uid + '/photoURL').valueChanges().pipe(map(photoURL => {
+            if (photoURL !== null) {
+              return `url('${photoURL}')`;
+            } else {
+              return profileDefault;
+            }
+          }));
+        }
+      }
+      return of(coronaDefault);
+    }));
   }
 
   async signIn(data) {

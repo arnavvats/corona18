@@ -1,29 +1,53 @@
-<div class="bg-img"></div>
-<particles [style]="myStyle" [params]="myParams" *ngIf="events"></particles>
-<main class="position-relative animated fadeIn">
-    <img class="logo d-none d-sm-block position-absolute" src="assets/images/Corona.png" style="filter: invert(1);">
-    <div class="logo d-flex d-sm-none flex-column animated jackInTheBox">
-        <img class="" src="assets/images/CoronaIcon.png">
-        <img class="" src="assets/images/CoronaText.png">
-        <img class="year" src="assets/images/CoronaYear.png">
+<main class="pt-5">
+  <div class="w-100 body-home d-flex flex-row mb-5" style="max-height: 30vh;">
+      <div style="width: 40%;" class="text-right d-md-block d-flex flex-column justify-content-center logos">
+          <img src="assets/images/CoronaText.png">
+          <img src="assets/images/CoronaYear.png">
+      </div>
+    <div style="width: 60%; border-left: 10px solid white;" class="d-flex flex-column">
+      <div style="clip-path: polygon(0 1%, 80% 0%, 100% 100%, 0% 100%);
+      width: fit-content;
+      color: black;
+      background: white;font-family: 'Elkwood', sans-serif; font-size: 1.5em;" class="pr-5">This year's theme</div>
+      <h3 style="font-family: 'Espresso', sans-serif;padding-left: 0.8em;padding-top:0.5em;text-shadow: 2px 2px 4px grey;">THE BOHEMIAN ESCAPADE</h3>
+      <p style="font-family: 'Pacifico', sans-serif; padding-left: 2em;    font-size: 1.1em;
+      text-shadow: 1px 1px 2px #8a949cf7;">Dream like a Boho, work like a boss!</p>
     </div>
-    <div *ngIf="events && events.children" class="d-sm-block d-none">
-            <app-event-button  *ngFor="let child of events.children; let i = index"
-            [left]="!(i % 2)" [imageURL]="child.imageURL"
-             [text]="child.name"
-             [route]="child.id"
-            ></app-event-button>
-    </div>
-    <div  *ngIf="events && events.children" class="d-sm-none d-block container events-sm">
-      <div class="row">
-      <a *ngFor="let child of events.children" class="col-6 text-center" [routerLink]="'events/' + child.id">
-        <img [src]="'assets/images/events-logo/' + child.imageURL" class="animated pulse infinite">
-        <p>{{child.name}}</p>
-      </a>
-    </div>
-    </div>
-</main>
-<div class="position-relative w-100 nitin text-center mb-3">
-  <img src="assets/images/nitin.png" class="img img-fluid">
-</div>
+  </div>
+  <div class="w-100 d-flex flex-row justify-content-center pb-5" style="max-height: 70vh;">
+      <div style="width: 10%;" class="d-md-flex d-none flex-column justify-content-center" *ngIf="events">
+        <app-event-button [imageURL]="events.children[0].imageURL" [text]="events.children[0].name" [route]="events.children[0].id" [left]="true"></app-event-button>
+        <app-event-button [imageURL]="events.children[1].imageURL" [text]="events.children[1].name" [route]="events.children[1].id" [left]="true"></app-event-button>
 
+      </div>
+      <div style="width: 80%; max-height: 70vh;text-align: center;position: relative;" class="home-images">
+          <carousel>
+          <slide>
+            <img src="assets/images/rivaldo.jpg" alt="first slide" style="display: block; max-height: 70vh;margin:auto;">
+          </slide>
+          <slide>
+            <img src="assets/images/cricketExchange.jpeg" alt="second slide" style="display: block; max-height: 70vh;margin:auto;">
+          </slide>
+          <slide>
+            <img src="assets/images/rapido.jpg" alt="third slide" style="display: block; max-height: 70vh;margin:auto;">
+          </slide>
+          <slide>
+            <img src="assets/images/patnacomedian.jpeg" alt="fourth slide" style="display: block; max-height: 70vh;margin:auto;">
+          </slide>
+        </carousel>
+      </div>
+      <div style="width: 10%;" class="d-md-flex d-none flex-column justify-content-center" *ngIf="events">
+          <app-event-button [imageURL]="events.children[2].imageURL" [text]="events.children[2].name" [route]="events.children[2].id"></app-event-button>
+          <app-event-button [imageURL]="events.children[3].imageURL" [text]="events.children[3].name" [route]="events.children[3].id"></app-event-button>
+
+      </div>
+    </div>
+    <div *ngIf="events && events.children" class="d-sm-none d-block row sub-events-mobile w-100 pt-2 pb-4">
+        <div class="col-12 row m-0 p-0">
+        <a *ngFor="let child of events.children" [routerLink]="'/events/' + child.id" class="col-6 text-center p-1">
+          <img [src]="'assets/images/events-logo/' + child.imageURL">
+          <p style="word-break: break-word;">{{child.name}}</p>
+        </a>
+        </div>
+      </div>
+</main>

@@ -1,0 +1,84 @@
+
+main {
+  width: 98vw;
+  background-image: linear-gradient(to bottom, #00000094, #000000e0),url('../../../assets/images/our-team/coronaOrange.png');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  .header {
+    display: flex;
+    justify-content: space-around;
+    max-height: 20vh;
+    align-items: center;
+    font-family: 'Orbitron', sans-serif;
+    h1 {
+      text-shadow: 2px 1px 2px #d6d5d5;    }
+    .logo {
+      max-height: 18vh;
+      position: relative;
+      img {
+        max-height: 18vh;
+      }
+    }
+  }
+  .content {
+    background-attachment: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    .member-holder {
+      margin-bottom: 1em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.5s;
+      .member-image {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+      }
+      .member-description {
+        text-align: center;
+        .post {
+          font-family: 'Inconsolata', monospace;
+          white-space: pre-line;
+        }
+        .name {
+          font-family: 'Josefin Sans', sans-serif;
+        }
+        .mobile {
+          text-decoration: none !important;
+          font-family: 'Inconsolata', monospace;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          i {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+          }
+          p {
+            margin: 0;
+          }
+        }
+      }
+      @media(min-width: 768px) {
+        width: 23vw;
+      }
+      @media(min-width: 576px) and (max-width: 767px) {
+        width: 33vw;
+      }
+      @media(min-width: 420px) and (max-width: 575px) {
+        width: 49vw;
+      }
+      @media(max-width: 419px) {
+        width: 95vw;
+      }
+    }
+
+    .member-holder:hover {
+      transform: scale(1.1);
+    }
+  }
+}

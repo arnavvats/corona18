@@ -1,0 +1,25 @@
+<div class="position-relative animated zoomIn">
+  <a (click)="close()" class="close-btn"><i class="fa fa-2x fa-times"></i></a>
+<table>
+  <thead>
+    <tr>
+      <th>Event Name</th>
+      <th>Round</th>
+      <th>Registered At</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let solo of solos">
+      <td>
+        {{ solo.eventName }}
+      </td>
+      <td>
+        {{ solo.round }}
+      </td>
+      <td>
+        {{ solo.registeredAt | date:'short' }}
+      </td>
+    </tr>
+  </tbody>
+  </table>
+</div>

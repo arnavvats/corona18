@@ -23,12 +23,22 @@ main {
     border-radius: 30px;
     font-size: 0.8em;
     padding: 0.5em;
+    margin-bottom: 0.5em;
   }
   button:not(.log-out) {
     border: none;
     margin: auto;
     background: black;
     padding: 0.5em;
+  }
+  button {
+    outline: none !important;
+  }
+  .dropper {
+    font-size: 0.8em;
+    button.active {
+      background: #ffffff5e !important;
+    }
   }
 
 

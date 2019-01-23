@@ -68,3 +68,21 @@ app-notification {
   border-radius: 30px;
   padding: 0.2em;
 }
+.navbar-toggler {
+  outline: none !important;
+}
+#button-basic {
+  background: black;
+    font-size: 1.3rem;
+    box-shadow: none !important;
+    color: grey;
+}
+.dropdown-item {
+  color: black !important;
+}
+.dropdown-menu-left {
+  left: -60px !important;
+}
+i {
+  color: grey !important;
+}

@@ -99,4 +99,38 @@ main {
   }
 
 }
+.iframe {
+  position: absolute;
+  bottom: 0vh;
+  z-index: 3;
+  width: 100vw;
+  background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.7));
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  .iframe-holder {
+    position: relative;
+    margin: auto;
+    iframe {
+      margin: auto;
+      position: relative;
+    }
+    i {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      border: 1px solid black;
+      background: red;
+      border-radius: 20px;
+      height: 40px;
+      width: 40px;
+      display: flex;
+      z-index: 3;
+    }
+    i::before {
+      margin: auto;
+    }
+  }
+}
+
 

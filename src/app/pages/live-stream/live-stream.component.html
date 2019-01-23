@@ -1,0 +1,16 @@
+<main>
+  <div class="liveStreamList" *ngIf="!openedStream">
+      <h2 class="text-center">LIVE STREAMS</h2>
+    <div *ngFor="let stream of liveStreams">
+      <div class="bg-holder" [ngStyle]="stream.bgStyle" (click)="openStream(stream)">
+        <h2>{{stream.title}}</h2>
+        <p>{{stream.description}}</p>
+      </div>
+
+    </div>
+  </div>
+  <div class="liveStream" *ngIf="openedStream">
+    <span class="fa fa-2x fa-times"(click)="closeStream()"></span>
+    <iframe [src]="openedStream.src | safeHtml" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</main>

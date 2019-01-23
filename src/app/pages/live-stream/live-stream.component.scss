@@ -1,0 +1,42 @@
+.liveStream {
+  iframe {
+    width: 99vw;
+    height: 100vh;
+  }
+
+  span {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 1;
+  }
+}
+.liveStreamList {
+  font-family: 'Inconsolata', monospace;
+  width: 99vw;
+  min-height: 100vh;
+  background: linear-gradient(to right, #00000073, #00000073), url("../../../assets/images/coronaBackground.jpg");
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  .bg-holder {
+   display: flex;
+   margin: 0.5em;
+   flex-direction: column;
+   justify-content: space-around;
+    @media(min-width: 768px) {
+      width: 250px;
+      height: 200px;
+    }
+    @media(max-width: 767px) and (min-width: 576px) {
+      width: 350px;
+      height: 290px;
+    }
+    @media(max-width: 575px) {
+      width: 400px;
+      height: 300px;
+    }
+  }
+}

@@ -1,0 +1,72 @@
+<main class="text-center pt-5">
+    <h4 class="main-heading text-center p-3 mb-3 mt-2 ml-auto mr-auto animated rubberBand" *ngIf="!watchState">Registration Activity</h4>
+  <div class="w-100 d-flex flex-column align-items-center" *ngIf="!watchState">
+    <div class="w-75 d-flex flex-sm-row flex-column justify-content-between">
+      <button class="btn solo-registrations mb-2 animated pulse" (click)="setWatchStateToSolo()" [disabled]="!soloRegistrations || soloRegistrations.length === 0">
+        <i class="fa fa-user"></i>
+        <p>See Solo Registrations</p>
+      </button>
+      <button class="btn team-registrations mb-2 animated pulse" (click)="setWatchStateToTeam()" [disabled]="!teamRegistrations || teamRegistrations.length === 0">
+        <i class="fa fa-users"></i>
+        <p>See Team Registrations</p>
+      </button>
+    </div>
+    <div class="w-75 d-flex flex-sm-row flex-column justify-content-around">
+      <div class="chart day-chart mb-3 animated slideInLeft">
+          <div class="d-flex flex-row justify-content-center align-items-center pt-1">
+            <span class="active-dot"></span>
+            <h6 class="m-0">Per Day Registrations</h6>
+          </div>
+          <div *ngIf="registrationCount" class="canvas">
+                <canvas baseChart
+                [datasets]="registrationCount.datasets"
+                [labels]="registrationCount.labels"
+                [options]="registrationCount.options"
+                [colors]="registrationCount.colors"
+                [chartType]="registrationCount.chartType"
+                            >
+                    </canvas>
+              </div>
+      </div>
+      <div class="chart round-chart mb-3 animated slideInRight">
+          <div class="d-flex flex-row justify-content-center align-items-center pt-1">
+              <span class="active-dot"></span>
+              <h6 class="m-0">Round Qualifications</h6>
+            </div>
+          <div *ngIf="roundsCount" class="canvas">
+              <canvas baseChart
+              [datasets]="roundsCount.datasets"
+              [labels]="roundsCount.labels"
+              [chartType]="roundsCount.chartType"
+                          >
+              </canvas>
+            </div>
+      </div>
+    </div>
+    <div class="w-75 d-flex counts animated zoomIn">
+        <div *ngIf="teamRegistrationsCount !== null">
+            <h1>{{teamRegistrationsCount}}</h1>
+            <p>Team Registrations</p>
+          </div>
+          <div *ngIf="soloRegistrationsCount !== null">
+            <h1>{{soloRegistrationsCount}}</h1>
+            <p>Solo Registrations</p>
+          </div>
+          <div *ngIf="packageCount !== null">
+            <h1>{{packageCount}}</h1>
+            <p>Packages</p>
+          </div>
+    </div>
+
+        <div *ngIf="packs" class="w-75 packs animated fadeInUp">
+          <button *ngFor="let pack of packs" [style.background]="pack.background">
+            <i [ngClass]="pack.class"></i>
+            <p>{{ pack.name }}</p>
+          </button>
+        </div>
+    </div>
+  <app-team-registration-activity *ngIf="watchState === 'team'" (setWatchStateToNull)="setWatchStateToNull()"
+        [teams]="teamRegistrations"></app-team-registration-activity>
+        <app-solo-registration-activity *ngIf="watchState === 'solo'" (setWatchStateToNull)="setWatchStateToNull()"
+        [solos]="soloRegistrations"></app-solo-registration-activity>
+</main>

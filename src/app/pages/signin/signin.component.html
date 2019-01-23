@@ -15,7 +15,7 @@
           <p class="error w-100 mb-0 text-center" *ngIf="signUpForm.get('name').invalid && signUpForm.get('name').touched">Name must be atleast 3 letters. Double spaces are not allowed.</p>
         </div>
         <div class="input-group p-2">
-          <input type="text" placeholder="Your email address" class="form-control" [formControl]="loginForm.get('email')">
+          <input type="text" placeholder="Your email address" class="form-control" [formControl]="loginForm.get('email')" trim>
           <i class="fa fa-lg fa-envelope-o"></i>
           <p class="error w-100 mb-0 text-center" *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched">Email is invalid.</p>
         </div>
@@ -54,18 +54,18 @@
            {{ mapStatusString() }}
           </button>
           <p class="dark text-center mt-1 mb-0 d-block d-lg-none">or &nbsp;</p>
-          <a (click)="changeStatus('signIn') && (backendError = '')" class="sign-in-link d-block d-lg-none" *ngIf="status !== 'signIn'">Sign In</a>
-          <a (click)="changeStatus('signUp') && (backendError = '')" class="sign-in-link d-block d-lg-none" *ngIf="status !== 'signUp'">Sign Up</a>
-          <a class="pt-2" (click)="changeStatus('forgotPassword') && (backendError = '')"
+          <a (click)="changeStatus('signIn')" class="sign-in-link d-block d-lg-none" *ngIf="status !== 'signIn'">Sign In</a>
+          <a (click)="changeStatus('signUp')" class="sign-in-link d-block d-lg-none" *ngIf="status !== 'signUp'">Sign Up</a>
+          <a class="pt-2" (click)="changeStatus('forgotPassword')"
           style="color: #62628aed; font-size: 1em; cursor: pointer;" *ngIf="status !== 'forgotPassword'">Forgot Password</a>
-          <a class="pt-2" (click)="changeStatus('resendVerification') && (backendError = '')"
+          <a class="pt-2" (click)="changeStatus('resendVerification')"
           style="color: #62628aed; font-size: 1em; cursor: pointer;" *ngIf="status !== 'resendVerification'">Resend Email Verification</a>
         </div>
       </div>
       <div class="col-6 right d-none d-lg-block pl-4">
         <p class="position-absolute mt-auto ml-0 or dark">OR</p>
-        <a class="m-auto sign-button text-center" (click)="changeStatus('signIn') && (backendError = '')" *ngIf="status !== 'signIn'">Sign In</a>
-        <a class="m-auto sign-button text-center" (click)="changeStatus('signUp') && (backendError = '')" *ngIf="status !== 'signUp'" style="top: 60%;">Sign Up</a>
+        <a class="m-auto sign-button text-center" (click)="changeStatus('signIn')" *ngIf="status !== 'signIn'">Sign In</a>
+        <a class="m-auto sign-button text-center" (click)="changeStatus('signUp')" *ngIf="status !== 'signUp'" style="top: 60%;">Sign Up</a>
       </div>
       </div>
     </div>

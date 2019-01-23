@@ -14,7 +14,7 @@ export class SnackbarComponent implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.selfRef.destroy();
-    }, 3000);
+    }, 4800);
   }
 
 }

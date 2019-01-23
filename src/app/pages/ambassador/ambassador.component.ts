@@ -42,7 +42,7 @@ export class AmbassadorComponent implements OnInit {
 
   setUserDetail(uid) {
     this.userService.getUserInfo(uid).then(res => {
-      this.userDetail = res.val();
+      this.userDetail = res;
     });
   }
 

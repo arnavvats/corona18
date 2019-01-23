@@ -1,0 +1,14 @@
+button {
+  font-family: 'Press Start 2P', cursive;
+  border: 2px solid white;
+  background: transparent;
+  padding: 0.5em;
+  background: #77217fab;
+  border: 1px solid #f54796 !important;
+}
+button:not(:disabled):hover {
+  background: rgba(213, 0, 249, 0.52);
+}
+p {
+  font-family: 'Josefin Sans', sans-serif;
+}

@@ -1,20 +1,24 @@
 app-sidenav {
-  height: 100vh;
   animation-duration: 0.5s !important;
-  @media(max-width: 499px) {
-    min-width: 50vw;
+  height: 92vh;
+  overflow: scroll;
+  top: 3.1em;
 
-  }
-  @media(max-width: 767px) {
+  @media(min-width: 576px) and (max-width: 767px) {
     min-width: 40vw;
 
   }
+  @media(max-width: 575px) {
+    min-width: 55vw;
+
+  }
+
   position: fixed;
   z-index: 2;
   background: black;
 }
 .holder{
-    margin-top: 3.1em;
+    margin-top: 4em;
     background-color: black;
     width:100%;
     overflow-x: hidden;
@@ -38,3 +42,4 @@ app-loader {
   width: 100vw;
   background: black;
 }
+

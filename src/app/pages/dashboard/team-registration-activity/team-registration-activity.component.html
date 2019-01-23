@@ -1,0 +1,92 @@
+<div class="w-100 position-relative main animated zoomIn">
+    <a (click)="close()" class="close-btn"><i class="fa fa-2x fa-times"></i></a>
+    <div class="w-100 p-2">
+    <select (change)="setSelectedTeam($event)" class="w-100 p-1">
+        <option value=''>Click to Select Event &#8681;</option>
+        <option *ngFor="let team of teams; let i = index" [value]="i">{{team.eventName}}</option>
+      </select>
+</div>
+<div *ngIf="selectedTeam" class="animated slideInUp">
+  <table class="info">
+    <thead>
+      <tr>
+          <th>Event Name</th>
+          <th>{{ selectedTeam.eventName }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Team ID</td>
+        <td>{{ selectedTeam.teamID }}</td>
+      </tr>
+      <tr>
+        <td>
+          Team Name
+        </td>
+        <td>
+          {{ selectedTeam.teamName }}
+        </td>
+      </tr>
+      <tr>
+        <td>Round</td>
+        <td>{{ selectedTeam.round }}</td>
+      </tr>
+      <tr>
+        <td>Registered at</td>
+        <td>
+          {{ selectedTeam.registeredAt | date:'short' }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 class="heading-captain mt-2 mb-2">Captain</h3>
+  <table class="captain">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>{{ selectedTeam.captain.name }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          TCF ID
+        </td>
+        <td>
+          {{ selectedTeam.captain.tcfId ? '-' : selectedTeam.captain.tcfId}}
+        </td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td> {{ selectedTeam.captain.email }} </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 class="heading-members mt-2 mb-2">Members</h3>
+  <table *ngFor="let member of selectedTeam.members" class="members mb-2">
+      <thead>
+          <tr>
+            <th>Name</th>
+            <th>{{ member.name }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              TCF ID
+            </td>
+            <td>
+              {{ member.tcfId ? member.tcfId : '-'}}
+            </td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td> {{ member.email }} </td>
+          </tr>
+        </tbody>
+  </table>
+  <p *ngIf="selectedTeam.members.length === 0" class="text-center">
+    --
+  </p>
+</div>
+</div>

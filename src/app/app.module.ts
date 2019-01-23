@@ -16,7 +16,6 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
 import { NgxGalleryModule } from 'ngx-gallery';
-import { ParticlesModule } from 'angular-particle';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
@@ -38,6 +37,24 @@ import { PricingComponent } from './pages/pricing/pricing.component';
 import { PricingCardComponent } from './pages/pricing/pricing-card/pricing-card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SidenavComponent } from './shared/components/sidenav/sidenav.component';
+import { CarouselModule, BsDropdownModule } from 'ngx-bootstrap';
+import { TeamRegistrationComponent } from './pages/event/team-registration/team-registration.component';
+import { SoloRegistrationComponent } from './pages/event/solo-registration/solo-registration.component';
+import { ErrorComponent } from './pages/error/error.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { ChartsModule } from 'ng2-charts';
+import { SoloRegistrationActivityComponent } from './pages/dashboard/solo-registration-activity/solo-registration-activity.component';
+import { TeamRegistrationActivityComponent } from './pages/dashboard/team-registration-activity/team-registration-activity.component';
+import { InputTrimModule } from 'ng2-trim-directive';
+import { DirectorsDeskComponent } from './pages/directors-desk/directors-desk.component';
+import { FacultyComponent } from './pages/faculty/faculty.component';
+import { OurTeamComponent } from './pages/our-team/our-team.component';
+import { DevelopersComponent } from './pages/developers/developers.component';
+import { LiveStreamComponent } from './pages/live-stream/live-stream.component';
+import { SafeHtmlPipe } from './shared/pipes/safe-html.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +71,7 @@ import { SidenavComponent } from './shared/components/sidenav/sidenav.component'
     GalleryComponent,
     ModalComponent,
     SafePipe,
+    SafeHtmlPipe,
     SnackbarComponent,
     LoaderComponent,
     NotificationComponent,
@@ -62,15 +80,26 @@ import { SidenavComponent } from './shared/components/sidenav/sidenav.component'
     TroubleShooterComponent,
     PricingComponent,
     PricingCardComponent,
-    SidenavComponent
+    SidenavComponent,
+    TeamRegistrationComponent,
+    SoloRegistrationComponent,
+    ErrorComponent,
+    DashboardComponent,
+    SoloRegistrationActivityComponent,
+    TeamRegistrationActivityComponent,
+    DirectorsDeskComponent,
+    FacultyComponent,
+    OurTeamComponent,
+    DevelopersComponent,
+    LiveStreamComponent
   ],
   imports: [
     BrowserModule,
+    NoopAnimationsModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     NgxGalleryModule,
-    ParticlesModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFireStorageModule,
@@ -78,8 +107,13 @@ import { SidenavComponent } from './shared/components/sidenav/sidenav.component'
     AngularFireDatabaseModule,
     AngularFireFunctionsModule,
     AngularFireMessagingModule,
+    CarouselModule.forRoot(),
+    BsDropdownModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: true }),
-    HttpClientModule
+    HttpClientModule,
+    NgxChartsModule,
+    ChartsModule,
+    InputTrimModule
   ],
   providers: [],
   bootstrap: [AppComponent],

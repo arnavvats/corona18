@@ -48,6 +48,8 @@ export class HomeComponent implements OnInit {
     this.collegeService.getEventDataFromId('fest').then(res => {
       this.events = res;
       this.modalService.activateLoader.next(false);
+    }).catch(e => {
+      this.modalService.createNewSnackbarWithData.next(e && e.message);
     });
   }
 

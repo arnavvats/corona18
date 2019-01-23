@@ -1,10 +1,33 @@
 <main class="position-relative" #main >
-  <div class="about" [hidden]="showRounds">
+  <a class="wallpaper w-100 wallpaper-bg text-center position-relative" [ngStyle]="{'height': showWallpaper ? 'calc(100%)' : (wallpaperSrc && !showRounds ? '30vh' : '0vh')}" (click)="showWallpaper = !showWallpaper" >
+    <img [src]='wallpaperSrc | safe' style="max-height: 90vh; max-width: 100%;width: auto;" *ngIf="wallpaperSrc">
+    <a class="btn wallPaper btn-primary" *ngIf="wallpaperSrc" class="animated infinite bounce ad-1point5" [style.top]="showWallpaper ? '83%' : '20vh'">
+      <p>{{showWallpaper ? 'Hide' : 'Show'}} Wallpaper</p>
+      <i
+      class="fa fa-2x "
+      [class.fa-caret-up]="showWallpaper"
+      [class.fa-caret-down]="!showWallpaper"></i>
+    </a>
+  </a>
+  <div class="about pt-5" [hidden]="showRounds">
     <h1 class="heading">
       {{ event && event.name ? event.name : ''}}
     </h1>
     <div class="description mb-2">
       {{event && event.description ? event.description : ''}}
+    </div>
+    <div class="col-12 mb-2 d-flex flex-column mt-2" *ngIf="event && event.registrationDetail" style="border-top: 2px solid;">
+        <div class="w-100" *ngIf="event.registrationDetail.packages">
+          <p>Any one of the subscriptions are required to register:</p>
+          <ul class="list-inline d-flex flex-wrap justify-content-center">
+            <li *ngFor="let pack of packagesRequired" class="list-item-inline mr-2 mb-2">
+              <div class="btn" style="font-family: 'Nunito';" [style.background]="pack.background">
+                <i [ngClass]="pack.class"></i>
+                <p>{{ pack.name }}</p>
+              </div>
+            </li>
+          </ul>
+        </div>
     </div>
     <div *ngIf="event && event.links" class="mb-2 row sub-events-mobile">
         <button class="btn btn-block mb-3 text-center heading" (click)="expandLinks = !expandLinks">
@@ -27,7 +50,52 @@
             ROUNDS
           </button>
       </div>
-    <div class="text-center pt-1 mb-sm-1 timer-header">- &nbsp;STARTS &nbsp;IN &nbsp;-</div>
+      <div *ngIf="event && event.children" class="d-block row sub-events-mobile">
+        <button class="btn btn-block mb-3 text-center heading" (click)="expandSubEvents = !expandSubEvents">
+          SUB EVENTS
+          <i class="fa"
+          [class.fa-arrow-down]="!expandSubEvents"
+          [class.fa-arrow-up]="expandSubEvents"></i>
+        </button>
+        <div class="col-12 row m-0 p-0 animated zoomIn" *ngIf="expandSubEvents">
+        <a *ngFor="let child of event.children" [routerLink]="'/events/' + child.id" class="col-4 text-center p-1">
+          <img [src]="'assets/images/events-logo/' + child.imageURL">
+          <p style="word-break: break-word;">{{child.name}}</p>
+        </a>
+
+      </div>
+      </div>
+      <div class="btn animated infinite pulse mt-3" *ngIf="event && event.registrationDetail
+                                                        && (!event.registrationDetail.restricted || event.registrationDetail.captainOnly)" style="
+      padding: 0.5em;
+      font-size: 1em;
+      color: black;
+      border: 1px solid;
+      background: #ffffff80;">
+      <p *ngIf="!event.registrationDetail.restricted" class="m-0">
+        Registrations for 1st round are free
+      </p>
+      <p *ngIf="event.registrationDetail.captainOnly" class="m-0">
+        Only the captain needs to pay for the team.
+      </p>
+      </div>
+      <div *ngIf="(user$ | async) && event && event.registrationDetail; else pleaseLogin">
+        <div *ngIf="event && event.registrationDetail && event.registrationDetail.type === 'solo'">
+            <app-solo-registration [registrationState]="registrationState" (registerSolo)="registerSolo($event)"></app-solo-registration>
+            </div>
+             <div *ngIf="event && event.registrationDetail && event.registrationDetail.type === 'team'">
+            <app-team-registration [registrationState]="registrationState"
+             (registerAsCaptain)="registerAsCaptain($event)"
+             (registerAsMember)="registerAsMember($event)"
+              ></app-team-registration>
+        </div>
+      </div>
+      <ng-template #pleaseLogin>
+        <p *ngIf="event && event.registrationDetail">
+          Please Login to register for events.
+        </p>
+      </ng-template>
+    <div class="text-center pt-1 mb-sm-1 timer-header">- {{ timerMessage }}-</div>
     <div class="timer row mb-sm-3 p-sm-0 p-3">
       <div class="col-3">
         <p>{{timer.days}}</p>
@@ -46,34 +114,6 @@
           <p>SEC</p>
       </div>
     </div>
-    <div *ngIf="event && event.children" class="d-sm-none d-block row sub-events-mobile">
-      <button class="btn btn-block mb-3 text-center heading" (click)="expandSubEvents = !expandSubEvents">
-        SUB EVENTS
-        <i class="fa"
-        [class.fa-arrow-down]="!expandSubEvents"
-        [class.fa-arrow-up]="expandSubEvents"></i>
-      </button>
-      <div class="col-12 row m-0 p-0" *ngIf="expandSubEvents">
-      <a *ngFor="let child of event.children" [routerLink]="'/events/' + child.id" class="col-4 text-center p-1">
-        <img [src]="'assets/images/events-logo/' + child.imageURL">
-        <p style="word-break: break-word;">{{child.name}}</p>
-      </a>
-      </div>
-    </div>
-    <button class="btn mt-5 p-2 position-relative" *ngIf="event && event.rounds && (event.startsAt > Date.now())"
-      (click)="registerSoon()" [disabled]="!canRegister">REGISTER{{canRegister ? '' : "ED"}}</button>
-
-  </div>
-
-    <div *ngIf="event && event.children" class="position-absolute w-100 d-sm-block d-none" [hidden]="showRounds">
-            <app-event-button
-            *ngFor="let child of event.children; let i = index"
-             [left]="!(i % 2)" [imageURL]="child.imageURL"
-             [text]="child.name"
-             [route]="child.id"
-             >
-                </app-event-button>
     </div>
     <app-event-rounds *ngIf="event && event.rounds && showRounds" [rounds]="event.rounds" (closeEvent)="hideRounds()"></app-event-rounds>
-
 </main>

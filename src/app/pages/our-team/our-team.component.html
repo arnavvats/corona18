@@ -1,0 +1,23 @@
+<main class="mb-4">
+  <div class="header pt-2 pl-1 pr-1">
+    <div class="logo">
+        <img src="assets/images/nitlogo.png" class="nit animated shake">
+    </div>
+    <h1 class="animated rubberBand text-center">THE TEAM</h1>
+  </div>
+  <div class="content">
+      <div *ngFor="let member of teamDetail" class="member-holder mr-2">
+          <div [ngStyle]="imageStyle(member.localImageURL)" class="member-image">
+
+          </div>
+          <div class="member-description mt-1">
+              <div class="name">{{member.name}}</div>
+              <a class="mobile" [href]="('callto:' + member.mobile) | safe">
+               <i class="fa fa-phone mr-2"></i> <p>{{member.mobile}}</p>
+              </a>
+              <div class="post">{{member.post}}</div>
+          </div>
+        </div>
+
+  </div>
+</main>

@@ -1,0 +1,65 @@
+<div *ngIf="registrationState">
+<div *ngIf="registrationState.canRegisterForEvent">
+<button (click)="asCaptain = true" *ngIf="!(asCaptain === true) && registrationState.canRegisterAsCaptain" class="btn btn-primary m-2">
+  Register as Captain
+</button>
+<button (click)="asCaptain = false" *ngIf="!(asCaptain === false) && registrationState.canRegisterAsMember" class="btn btn-primary m-2">
+  Register as member
+</button>
+<div class="w-100 d-flex align-items-baseline text-center justify-content-center">
+<div *ngIf="asCaptain === true && asCaptain !== null" class="p-2">
+    <input type="text" [formControl]="teamName" class="form-control">
+    <p class="error" *ngIf="teamName.errors">
+      Team Name should be between 3 to 40 characters
+    </p>
+    <button (click)="submitRegistrationAsCaptain()" class="btn btn-primary" [disabled]="teamName.invalid">
+        Submit
+      </button>
+</div>
+<div *ngIf="asCaptain === false && asCaptain !== null" class="p-2">
+    <input type="text" [formControl]="teamID" class="form-control">
+    <p class="error" *ngIf="teamID.errors">
+      Team ID should be between 5-10 characters
+    </p>
+    <button (click)="submitRegistrationAsMember()" class="btn btn-primary" [disabled]="teamID.invalid">
+      Submit
+    </button>
+</div>
+</div>
+</div>
+<div *ngIf="registrationState.isRegisteredForEvent">
+  <h2 class="team-name">Team Name: {{registrationState.teamDetail.name}}</h2>
+  <h4 class="team-id">Team ID: {{ registrationState.teamID }}</h4>
+  <h6 class="registered-at">Registered At: {{ registrationState.registeredAt | date:'short' }}</h6>
+  <div class="round" *ngIf="registrationState.round !== 'winner'">
+    <i class="fa fa-flag-o mr-2"></i>
+    <p>Round {{registrationState.round + 1}}</p>
+  </div>
+  <div class="round" *ngIf="registrationState.round === 'winner'">
+    <i class="fa fa-trophy-o mr-2"></i>
+    You're a winner
+  </div>
+  <table class="table table-bordered w-100">
+    <thead>
+      <th>Captain</th>
+      <th>Members</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{registrationState.teamDetail.captain}}</td>
+        <td>
+          <ul class="list-unstyled" *ngIf="registrationState.teamDetail.members.length > 0">
+            <li *ngFor="let member of registrationState.teamDetail.members">
+              {{member}}
+            </li>
+          </ul>
+          <p *ngIf="registrationState.teamDetail.members.length === 0"> -- </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="!(registrationState.canRegisterForEvent || registrationState.isRegisteredForEvent)">
+  {{registrationState.status}}
+</div>
+</div>

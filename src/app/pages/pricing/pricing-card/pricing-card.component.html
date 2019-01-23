@@ -1,4 +1,4 @@
-<main class="text-center" *ngIf="pack">
+<main class="text-center" *ngIf="!!pack">
   <h6 class="w-100 pt-2 pb-2 m-0 title">{{ pack && pack.name }}</h6>
   <div class="w-100 main-content m-0 pt-4 pl-2 pr-2 pt-2 pb-4">
     <p class="mb-0 small">{{pack.description}}</p>
@@ -14,7 +14,7 @@
         <p>&#x20b9; {{pack.payment.other}}/-</p>
     </div>
     <div class="purchase mt-4">
-      <button class="btn p-2">Purchase</button>
+      <button class="btn p-2" (click)="emitPurchase()">Purchase</button>
     </div>
   </div>
 </main>

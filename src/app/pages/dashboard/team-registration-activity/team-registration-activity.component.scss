@@ -1,0 +1,85 @@
+select {
+  background: #413286;
+  text-align: center;
+  text-align-last: center;
+  border: 0;
+  outline: none !important;
+  appearance: none !important;
+}
+select,.heading-captain,.heading-members {
+  font-family: 'Orbitron';
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 350px;
+
+}
+table thead tr th,
+table tbody tr td {
+  padding: 5px;
+}
+table thead tr:first-child th:first-child,{
+  border-top-left-radius: 6px;
+}
+
+table thead tr:first-child th:last-child, {
+  border-top-right-radius: 6px;
+}
+table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 6px;
+}
+
+table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 6px;
+}
+
+table  {
+  thead {
+  font-family: 'Josefin Sans';
+  }
+  tbody {
+  font-family: 'Architects Daughter';
+  }
+  &.info {
+    tbody, thead {
+      tr {
+        td:first-child,th:first-child {
+          background:linear-gradient(to right, #a07ae4, #8148e6);
+            }
+        td:last-child, th:last-child {
+          background: linear-gradient(to right,#5e40bb , #413286 );
+        }
+      }
+    }
+  }
+  &.captain {
+    tbody, thead {
+      tr {
+        td:first-child,th:first-child {
+          background: linear-gradient(to right, #476d48, #3e502a);            }
+        td:last-child, th:last-child {
+          background: linear-gradient(to right, #496939, #243e1b);        }
+      }
+    }
+  }
+  &.members {
+    tbody, thead {
+      tr {
+        td:first-child,th:first-child {
+          background: linear-gradient(to right, #af936a, #c38f4c);            }
+        td:last-child, th:last-child {
+          background: linear-gradient(to right, #d09a63, #864e30);        }
+      }
+    }
+  }
+}
+.close-btn {
+  right: -5px;
+}
+.main {
+  min-width: 60vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

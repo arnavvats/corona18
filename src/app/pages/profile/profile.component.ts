@@ -1,9 +1,11 @@
+import { ImageCompressService } from 'ng2-image-compress';
 import { Component, OnInit, ViewChild, Renderer2, ElementRef } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from 'src/app/shared/services/user.service';
 import { ProfileService } from './profile.service';
 import { ModalService } from 'src/app/shared/services/modal.service';
 import { CollegeService } from 'src/app/shared/services/college.service';
+import { FestPackageFactory } from 'src/app/shared/models/package-mapping';
 
 
 @Component({
@@ -15,8 +17,7 @@ export class ProfileComponent implements OnInit {
 @ViewChild('profileImageHolder') profileImageHolder: ElementRef;
   detailsForm = new FormGroup({
     'phoneNumber': new FormControl(null, [Validators.max(9999999999), Validators.min(6000000000)]),
-    'photoURL': new FormControl(''),
-    'collegeName': new FormControl(null),
+    'photoURL': new FormControl(null),
     'rollNo': new FormControl(null),
     'yearOfCompletion': new FormControl(null, [Validators.max(2100), Validators.min(1900)]),
     'degree': new FormControl(null),
@@ -25,8 +26,9 @@ export class ProfileComponent implements OnInit {
   imageFile;
   currentProfile;
   percentageComplete = 0;
+  packages = [];
   constructor(private userService: UserService, private profileService: ProfileService,
-    private collegeService: CollegeService,
+    private collegeService: CollegeService, private imgCompressService: ImageCompressService,
      private modalService: ModalService, private renderer: Renderer2) { }
 
   ngOnInit() {
@@ -41,81 +43,48 @@ export class ProfileComponent implements OnInit {
 
   }
   setCurrentProfile() {
+    this.detailsForm.disable();
     const uid = this.userService.uid;
-    return this.userService.getUserDetail(uid).then(res => {
+    return this.userService.getUserDetail().then(res => {
         if (res) {
        this.currentProfile = res;
        console.log(this.currentProfile);
-       return this.getCurrentCollegeName().then(() => {
-        return this.getAdminAccessName();
-       }).then(() => {
-        return this.calculatePercentage();
-       }).then(() => {
-        Object.keys(this.currentProfile).forEach(key => {
-          if (this.detailsForm.get(key)) {
-            this.detailsForm.get(key).disable();
-            this.detailsForm.get(key).setValue(this.currentProfile[key]);
-          }
+       const currentFormValue = this.detailsForm.value;
+        Object.keys(currentFormValue).forEach(formKey => {
+          currentFormValue[formKey] = (this.currentProfile && this.currentProfile[formKey]) || null;
         });
+       this.detailsForm.setValue(currentFormValue);
+          if (this.currentProfile.packages) {
+            this.packages = this.getPackageInfo(this.currentProfile.packages);
+          }
+        return this.getAdminAccessName()
+       .then(() => {
+         if (!this.currentProfile.tcfId) {
+          this.detailsForm.enable();
+       }
+        if (this.profileImageHolder) {
         if (this.currentProfile.photoURL) {
           this.renderer.
           setStyle(this.profileImageHolder.nativeElement, 'background-image', 'url(\'' + this.currentProfile.photoURL + '\')');
         } else {
           this.renderer.removeStyle(this.profileImageHolder.nativeElement, 'background-image');
         }
+      }
        });
       }
       });
   }
-  previewImage(e) {
-    this.imageFile = e.target.files[0];
-    console.log(this.imageFile.size / 1024);
-    console.log(this.imageFile);
-    let errMsg = '';
-    if (this.imageFile.type.slice(0, 5) !== 'image') {
-        errMsg = 'File is not image';
-    }
-
-    if (this.imageFile.size / 1024 <= 10 || this.imageFile.size / (1024 * 1024) >= 10) {
-        errMsg = 'Size should be between 10KB and 10MB';
-    }
-    if (errMsg !== '') {
-        this.modalService.createNewSnackbarWithData.next(errMsg);
-        this.imageFile = null;
-        this.renderer.removeStyle(this.profileImageHolder.nativeElement, 'background-image');
-        return;
-    }
-    const url = URL.createObjectURL(e.target.files[0]);
+   async previewImage(e) {
+    this.imageFile = await this.profileService.checkAndCompressFile(e.target.files[0]);
+    const url = URL.createObjectURL(this.imageFile);
     this.renderer.setStyle(this.profileImageHolder.nativeElement, 'background-image', 'url(\'' + url + '\')');
     this.detailsForm.get('photoURL').enable();
 }
 
 
-  calculatePercentage() {
-    let percent = 9;
-    const regularKeys = ['name', 'email', 'verified', 'branch', 'rollNo',
-    'degree', 'collegeName', 'yearOfCompletion',
-     'phoneNumber', 'photoURL'];
-   regularKeys.forEach(key => {
-    if (this.currentProfile[key]) {
-      percent += 9;
-    }
-   });
-   if (percent === 99) { percent = 100; }
-   this.percentageComplete = percent;
-  }
-
-  getCurrentCollegeName() {
-    return  this.collegeService.getCollegeNameFromId(this.currentProfile.collegeId).then((res) => {
-     if (res) {
-      this.currentProfile.collegeName = res;
-     }
-    });
-  }
-
-  getAdminAccessName() {
+  async getAdminAccessName() {
     if (this.currentProfile.admin) {
-    this.collegeService.getEventNameFromId(this.currentProfile.admin).then(res => {
+    return await this.collegeService.getEventNameFromId(this.currentProfile.admin).then(res => {
       this.currentProfile.adminAccess = res;
     });
   }
@@ -131,7 +100,14 @@ export class ProfileComponent implements OnInit {
       this.detailsForm.get('photoURL').enable();
        this.detailsForm.get('photoURL').setValue(url);
     }
-    await this.profileService.updateProfileDatabase(this.detailsForm.value, uid);
+    const updationData = {};
+     Object.assign(updationData, this.detailsForm.value);
+    Object.keys(updationData).forEach(key => {
+      if (updationData[key] === undefined) {
+        delete updationData[key];
+      }
+    });
+    await this.profileService.updateProfileDatabase(updationData, uid);
     await this.setCurrentProfile();
 
   } catch (e) {
@@ -140,7 +116,12 @@ export class ProfileComponent implements OnInit {
   }
   finally {
     this.modalService.activateLoader.next(false);
-
   }
+  }
+    getPackageInfo(packs) {
+    if (!packs || packs.length === 0) {
+      return[];
+    }
+    return packs.map(pack => FestPackageFactory(pack));
   }
 }

@@ -60,9 +60,12 @@ export class SigninComponent implements OnInit {
   }
 
   async signUp() {
-    this.loading = true;
-    this.modalService.activateLoader.next('Just a second...signing you up');
     try {
+      if (!this.signInForms.valid) {
+        throw new Error('Please enter valid values');
+      }
+      this.loading = true;
+      this.modalService.activateLoader.next('Just a second...signing you up');
      await this.auth.signUp({...this.loginForm.value, ...this.signUpForm.value, referrer: this.referrer});
      this.modalService.createNewModalWithData.next('success, please verify your email...a link has been sent to you!');
     } catch (e) {
@@ -73,10 +76,12 @@ export class SigninComponent implements OnInit {
     }
   }
   async signIn() {
-    if (this.loginForm.valid) {
-        this.loading = true;
-        this.modalService.activateLoader.next('Just a second...signing you in');
         try {
+          if (!this.loginForm.valid) {
+            throw new Error('Please enter valid values');
+          }
+          this.loading = true;
+          this.modalService.activateLoader.next('Just a second...signing you in');
           await this.auth.signIn(this.loginForm.value);
           this.modalService.activateLoader.next(false);
           this.router.navigateByUrl('/');
@@ -86,7 +91,6 @@ export class SigninComponent implements OnInit {
         this.loading = false;
         this.modalService.activateLoader.next(false);
       }
-    }
   }
   async forgotPassword() {
     if (this.loginForm.get('email').valid) {
@@ -121,11 +125,13 @@ mapStatusString() {
   return 'Unknown';
 }
 async resendEmailVerification() {
-  this.backendError = '';
-  this.loading = true;
-  this.modalService.activateLoader.next('Sending mail verification...');
-  if (this.loginForm.valid) {
     try {
+      if (!this.loginForm.valid) {
+        throw new Error('Please enter valid values');
+      }
+      this.modalService.activateLoader.next('Sending mail verification...');
+      this.backendError = '';
+        this.loading = true;
     await this.auth.resendVerificationMail(this.loginForm.value);
     } catch (e) {
       this.backendError = e;
@@ -134,7 +140,6 @@ async resendEmailVerification() {
       this.loading = false;
       this.modalService.activateLoader.next(false);
     }
-  }
 }
 submitAccordingToStatus() {
   switch (this.status) {
@@ -151,6 +156,7 @@ submitAccordingToStatus() {
 changeStatus(status) {
   window.scrollTo(0, 0);
   this.status = status;
+this.backendError = null;
 }
 
 }

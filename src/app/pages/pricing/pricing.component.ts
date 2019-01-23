@@ -1,6 +1,6 @@
 import { ModalService } from './../../shared/services/modal.service';
 import { PricingService } from './pricing.service';
-import { Component, OnInit, ViewChild, ElementRef, Renderer2, ViewChildren, QueryList, AfterViewInit, AfterContentChecked } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2, ViewChildren, QueryList, AfterViewInit, AfterContentChecked, ChangeDetectorRef } from '@angular/core';
 import { PricingCardComponent } from './pricing-card/pricing-card.component';
 
 @Component({
@@ -8,33 +8,35 @@ import { PricingCardComponent } from './pricing-card/pricing-card.component';
   templateUrl: './pricing.component.html',
   styleUrls: ['./pricing.component.scss']
 })
-export class PricingComponent implements OnInit, AfterViewInit, AfterContentChecked {
+export class PricingComponent implements AfterViewInit {
   @ViewChild('pricingRow') pricingRow: ElementRef;
   scrollInterval = null;
   packageList = [];
   central = null;
+  isIframeOpen = false;
   @ViewChildren(PricingCardComponent) pricingCards: QueryList<PricingCardComponent>;
   pricingCardsElements: Array<PricingCardComponent> = [];
-  constructor(private renderer: Renderer2, private pricingService: PricingService, private modalService: ModalService) { }
+  constructor(private renderer: Renderer2, private pricingService: PricingService,
+     private modalService: ModalService, private cd: ChangeDetectorRef) {
 
-  ngOnInit() {
-  }
-  ngAfterViewInit() {
+   }
 
+ngAfterViewInit() {
+  setTimeout(() => {
     this.modalService.activateLoader.next('Getting Packages');
     this.pricingService.getPackages().then(res => {
       this.packageList = res;
+      const sub = this.pricingCards.changes.subscribe(() => {
+        this.pricingCardsElements = this.pricingCards.toArray();
+        this.setUpPackages();
+        this.cd.detectChanges();
+        sub.unsubscribe();
+       });
       this.central = Math.floor(this.packageList.length / 2);
      this.modalService.activateLoader.next(false);
    });
-  }
-  ngAfterContentChecked() {
-    if (this.pricingCards
-      && this.pricingCardsElements.length === 0 && this.pricingCards.length !== 0) {
-     this.pricingCardsElements = this.pricingCards.toArray();
-      this.setUpPackages();
-  }
-  }
+  }, 0);
+}
   setUpPackages() {
     this.pricingCardsElements[1].pack = this.packageList[this.central];
     if (this.central + 1 > this.packageList.length - 1) {
@@ -113,6 +115,11 @@ export class PricingComponent implements OnInit, AfterViewInit, AfterContentChec
     this.renderer.removeClass(el, 'center');
     this.renderer.addClass(el, 'left');
   }
-
+  openIframe() {
+    this.isIframeOpen = true;
+  }
+  closeIframe() {
+    this.isIframeOpen = false;
+  }
 
 }
